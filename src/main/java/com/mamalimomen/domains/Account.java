@@ -9,7 +9,7 @@ import java.util.List;
 
 @Entity
 @SelectBeforeUpdate
-@Table(name = "tbl_account", catalog = "HW14_One", schema = "HW14_One")
+@Table(name = "tbl_account", catalog = "HW15_One", schema = "HW15_One")
 @NamedQueries({
         @NamedQuery(
                 name = "Account.findOneByUsername",
@@ -31,8 +31,13 @@ public final class Account extends BaseEntity implements Comparable<Account> {
     private List<Post> posts = new ArrayList<>();
 
     @ManyToMany(cascade = CascadeType.MERGE)
+    @JoinTable(name = "saver_saved", joinColumns = {@JoinColumn(name = "account_id")}, inverseJoinColumns = {@JoinColumn(name = "post_id")},
+            uniqueConstraints = {@UniqueConstraint(name = "unique_saver_saved", columnNames = {"account_id", "post_id"})})
+    private List<Post> savedPosts = new ArrayList<>();
+
+    @ManyToMany(cascade = CascadeType.MERGE)
     @JoinTable(name = "follower_following", joinColumns = {@JoinColumn(name = "follower_id")}, inverseJoinColumns = {@JoinColumn(name = "following_id")},
-            uniqueConstraints = {@UniqueConstraint(name = "unique_follower_following",columnNames = {"follower_id","following_id"})})
+            uniqueConstraints = {@UniqueConstraint(name = "unique_follower_following", columnNames = {"follower_id", "following_id"})})
     private List<Account> followings = new ArrayList<>();
 
     @ManyToMany(mappedBy = "followings", cascade = CascadeType.MERGE)
@@ -70,6 +75,14 @@ public final class Account extends BaseEntity implements Comparable<Account> {
         this.followers = followers;
     }
 
+    public List<Post> getSavedPosts() {
+        return savedPosts;
+    }
+
+    public void setSavedPosts(List<Post> savedPosts) {
+        this.savedPosts = savedPosts;
+    }
+
     public void addPost(Post post) {
         this.getPosts().add(post);
     }
@@ -79,9 +92,8 @@ public final class Account extends BaseEntity implements Comparable<Account> {
         following.getFollowers().add(this);
     }
 
-    public void addFollower(Account follower) {
-        this.getFollowers().add(follower);
-        follower.getFollowings().add(this);
+    public void addSavedPost(Post saved) {
+        this.getSavedPosts().add(saved);
     }
 
     @Override

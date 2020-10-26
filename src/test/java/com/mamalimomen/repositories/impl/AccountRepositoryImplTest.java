@@ -1,11 +1,16 @@
 package com.mamalimomen.repositories.impl;
 
+import com.mamalimomen.base.controllers.utilities.InValidDataException;
+import com.mamalimomen.domains.Account;
+import com.mamalimomen.domains.User;
+import com.mamalimomen.repositories.AccountRepository;
 import org.junit.jupiter.api.*;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import java.util.NoSuchElementException;
+import java.util.Optional;
 import java.util.concurrent.TimeUnit;
 
 import static junit.framework.TestCase.*;

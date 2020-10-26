@@ -1,12 +1,8 @@
 package com.mamalimomen.services.impl;
 
-import com.mamalimomen.base.controllers.guis.DialogProvider;
-import com.mamalimomen.base.controllers.utilities.InValidDataException;
-import com.mamalimomen.base.controllers.utilities.SingletonScanner;
 import com.mamalimomen.base.services.impl.BaseServiceImpl;
 import com.mamalimomen.controllers.utilities.AppManager;
 import com.mamalimomen.controllers.utilities.Services;
-import com.mamalimomen.domains.Account;
 import com.mamalimomen.domains.Comment;
 import com.mamalimomen.domains.Like;
 import com.mamalimomen.domains.Post;
@@ -17,6 +13,7 @@ import com.mamalimomen.services.LikeService;
 import com.mamalimomen.services.PostService;
 
 import javax.persistence.EntityManager;
+import javax.servlet.http.HttpServletRequest;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
@@ -27,31 +24,16 @@ public class PostServiceImpl extends BaseServiceImpl<Long, Post, PostRepository>
     }
 
     @Override
-    public Optional<Post> createNewPost() {
+    public Optional<Post> createNewPost(HttpServletRequest req) {
         Post post = new Post();
-        while (true) {
-            try {
-                DialogProvider.createAndShowTerminalMessage("%s", "Text: ");
-                String text = SingletonScanner.readParagraph();
-                if (text.equalsIgnoreCase("esc")) {
-                    break;
-                }
-                post.setText(text);
 
-                DialogProvider.createAndShowTerminalMessage("%s", "Image Path: ");
-                String imagePath = SingletonScanner.readLine();
-                if (!imagePath.equalsIgnoreCase("pass")) {
-                    post.setImagePath(imagePath);
-                }
+        post.setText(req.getParameter("text"));
 
-                post.setCreateDate(new Date(System.currentTimeMillis()));
+        post.setImagePath(req.getParameter("img_path"));
 
-                return Optional.of(post);
-            } catch (InValidDataException e) {
-                DialogProvider.createAndShowTerminalMessage("%s %s%s%n%n", "Wrong entered data format for", e.getMessage(), "!");
-            }
-        }
-        return Optional.empty();
+        post.setCreateDate(new Date(System.currentTimeMillis()));
+
+        return Optional.of(post);
     }
 
     @Override
@@ -60,8 +42,8 @@ public class PostServiceImpl extends BaseServiceImpl<Long, Post, PostRepository>
     }
 
     @Override
-    public String updateExistPost(Post post) {
-        while (true) {
+    public String updateExistPost(HttpServletRequest req) {
+        /*while (true) {
             try {
                 DialogProvider.createAndShowTerminalMessage("%s (old = %s): ", "New Text", post.getText());
                 String newText = SingletonScanner.readParagraph();
@@ -86,17 +68,19 @@ public class PostServiceImpl extends BaseServiceImpl<Long, Post, PostRepository>
             } catch (InValidDataException e) {
                 DialogProvider.createAndShowTerminalMessage("%s %s%s%n%n", "Wrong entered data format for", e.getMessage(), "!");
             }
-        }
+        }*/
         return "You Cancelled this operation!";
     }
 
     @Override
-    public String addExistPostALike(Post liked, Account liker) {
-        LikeService likeService = AppManager.getService(Services.LIKE_SERVICE);
-        Optional<Like> oLike = likeService.createNewLike(liker);
+    public String addExistPostALike(HttpServletRequest req) {
+        Post post = findOneById(Post.class, Long.parseLong(req.getParameter("id"))).get();
+
+        LikeService ls = AppManager.getService(Services.LIKE_SERVICE);
+        Optional<Like> oLike = ls.createNewLike(req);
         if (oLike.isPresent()) {
-            liked.addLike(oLike.get());
-            if (repository.updateOne(liked)) {
+            post.addLike(oLike.get());
+            if (repository.updateOne(post)) {
                 return "Like selected post successfully!";
             }
         }
@@ -104,12 +88,14 @@ public class PostServiceImpl extends BaseServiceImpl<Long, Post, PostRepository>
     }
 
     @Override
-    public String addExistPostAComment(Post commented, Account commenter) {
-        CommentService commentService = AppManager.getService(Services.COMMENT_SERVICE);
-        Optional<Comment> oComment = commentService.createNewComment(commenter);
+    public String addExistPostAComment(HttpServletRequest req) {
+        Post post = findOneById(Post.class, Long.parseLong(req.getParameter("id"))).get();
+
+        CommentService cs = AppManager.getService(Services.COMMENT_SERVICE);
+        Optional<Comment> oComment = cs.createNewComment(req);
         if (oComment.isPresent()) {
-            commented.addComment(oComment.get());
-            if (repository.updateOne(commented)) {
+            post.addComment(oComment.get());
+            if (repository.updateOne(post)) {
                 return "Comment selected post successfully!";
             }
         }

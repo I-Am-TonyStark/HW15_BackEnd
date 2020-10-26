@@ -1,5 +1,6 @@
 package com.mamalimomen.services.impl;
 
+import com.mamalimomen.services.PostService;
 import org.junit.jupiter.api.*;
 
 import javax.persistence.EntityManager;

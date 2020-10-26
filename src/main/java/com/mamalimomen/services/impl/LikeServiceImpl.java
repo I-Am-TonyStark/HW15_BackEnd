@@ -8,6 +8,7 @@ import com.mamalimomen.repositories.impl.LikeRepositoryImpl;
 import com.mamalimomen.services.LikeService;
 
 import javax.persistence.EntityManager;
+import javax.servlet.http.HttpServletRequest;
 import java.util.Optional;
 
 public class LikeServiceImpl extends BaseServiceImpl<Long, Like, LikeRepository> implements LikeService {
@@ -17,10 +18,11 @@ public class LikeServiceImpl extends BaseServiceImpl<Long, Like, LikeRepository>
     }
 
     @Override
-    public Optional<Like> createNewLike(Account liker) {
+    public Optional<Like> createNewLike(HttpServletRequest req) {
+        Account account = (Account) req.getSession().getAttribute("account");
         Like like = new Like();
 
-        like.setLiker(liker);
+        like.setLiker(account);
 
         return Optional.of(like);
     }

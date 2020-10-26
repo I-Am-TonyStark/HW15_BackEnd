@@ -1,0 +1,1022 @@
+00:40:23,241 INFO  [org.hibernate.jpa.internal.util.LogHelper] - HHH000204: Processing PersistenceUnitInfo [name: persistence-unit-one]
+00:40:23,706 INFO  [org.hibernate.Version] - HHH000412: Hibernate Core {5.4.4.Final}
+00:40:24,400 INFO  [org.hibernate.annotations.common.Version] - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+00:40:24,945 WARN  [org.hibernate.orm.connections.pooling] - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+Loading class `com.mysql.jdbc.Driver'. This is deprecated. The new driver class is `com.mysql.cj.jdbc.Driver'. The driver is automatically registered via the SPI and manual loading of the driver class is generally unnecessary.
+00:40:24,957 INFO  [org.hibernate.orm.connections.pooling] - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://127.0.0.1:3306/HW15_One?createDatabaseIfNotExist=true&autoReconnection=true&characterEncoding=UTF-8&userSSL=false]
+00:40:24,959 INFO  [org.hibernate.orm.connections.pooling] - HHH10001001: Connection properties: {password=****, user=mamali}
+00:40:24,959 INFO  [org.hibernate.orm.connections.pooling] - HHH10001003: Autocommit mode: false
+00:40:24,965 INFO  [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl] - HHH000115: Hibernate connection pool size: 20 (min=1)
+00:40:25,671 INFO  [org.hibernate.dialect.Dialect] - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+00:40:28,890 DEBUG [org.hibernate.SQL] - alter table HW15_One.tbl_comment drop foreign key FKc9jbrsjv5t2rh0pgfyeg0v6ah
+00:40:28,898 INFO  [org.hibernate.orm.connections.access] - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@359914b6] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+00:40:28,994 WARN  [org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl] - GenerationTarget encountered exception accepting command : Error executing DDL "alter table HW15_One.tbl_comment drop foreign key FKc9jbrsjv5t2rh0pgfyeg0v6ah" via JDBC Statement
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "alter table HW15_One.tbl_comment drop foreign key FKc9jbrsjv5t2rh0pgfyeg0v6ah" via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlString(SchemaDropperImpl.java:375)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlStrings(SchemaDropperImpl.java:359)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applyConstraintDropping(SchemaDropperImpl.java:331)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.dropFromMetadata(SchemaDropperImpl.java:230)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.performDrop(SchemaDropperImpl.java:154)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:126)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:112)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:145)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:73)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:315)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:462)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:935)
+	at org.hibernate.jpa.HibernatePersistenceProvider.createEntityManagerFactory(HibernatePersistenceProvider.java:56)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:79)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:54)
+	at com.mamalimomen.base.controllers.utilities.PersistenceUnitManager.getEntityManager(PersistenceUnitManager.java:19)
+	at com.mamalimomen.controllers.utilities.AppManager.startApp(AppManager.java:31)
+	at com.mamalimomen.controllers.AppContextListener.contextInitialized(AppContextListener.java:11)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4689)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5155)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:743)
+	at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:719)
+	at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:705)
+	at org.apache.catalina.startup.HostConfig.manageApp(HostConfig.java:1719)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.apache.tomcat.util.modeler.BaseModelMBean.invoke(BaseModelMBean.java:286)
+	at java.management/com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke(DefaultMBeanServerInterceptor.java:809)
+	at java.management/com.sun.jmx.mbeanserver.JmxMBeanServer.invoke(JmxMBeanServer.java:801)
+	at org.apache.catalina.mbeans.MBeanFactory.createStandardContext(MBeanFactory.java:482)
+	at org.apache.catalina.mbeans.MBeanFactory.createStandardContext(MBeanFactory.java:431)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.apache.tomcat.util.modeler.BaseModelMBean.invoke(BaseModelMBean.java:286)
+	at java.management/com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke(DefaultMBeanServerInterceptor.java:809)
+	at java.management/com.sun.jmx.mbeanserver.JmxMBeanServer.invoke(JmxMBeanServer.java:801)
+	at java.management/com.sun.jmx.remote.security.MBeanServerAccessController.invoke(MBeanServerAccessController.java:468)
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl.doOperation(RMIConnectionImpl.java:1466)
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl$PrivilegedOperation.run(RMIConnectionImpl.java:1307)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:691)
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl.doPrivilegedOperation(RMIConnectionImpl.java:1406)
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl.invoke(RMIConnectionImpl.java:827)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at java.rmi/sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:359)
+	at java.rmi/sun.rmi.transport.Transport$1.run(Transport.java:200)
+	at java.rmi/sun.rmi.transport.Transport$1.run(Transport.java:197)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:691)
+	at java.rmi/sun.rmi.transport.Transport.serviceCall(Transport.java:196)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:587)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:828)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(TCPTransport.java:705)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:391)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:704)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Caused by: java.sql.SQLSyntaxErrorException: Table 'hw15_one.tbl_comment' doesn't exist
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:764)
+	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54)
+	... 64 more
+00:40:29,011 DEBUG [org.hibernate.SQL] - alter table HW15_One.tbl_comment drop foreign key FKlijfoqww9kni45ay4va3pktsp
+00:40:29,013 WARN  [org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl] - GenerationTarget encountered exception accepting command : Error executing DDL "alter table HW15_One.tbl_comment drop foreign key FKlijfoqww9kni45ay4va3pktsp" via JDBC Statement
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "alter table HW15_One.tbl_comment drop foreign key FKlijfoqww9kni45ay4va3pktsp" via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlString(SchemaDropperImpl.java:375)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlStrings(SchemaDropperImpl.java:359)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applyConstraintDropping(SchemaDropperImpl.java:331)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.dropFromMetadata(SchemaDropperImpl.java:230)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.performDrop(SchemaDropperImpl.java:154)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:126)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:112)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:145)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:73)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:315)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:462)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:935)
+	at org.hibernate.jpa.HibernatePersistenceProvider.createEntityManagerFactory(HibernatePersistenceProvider.java:56)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:79)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:54)
+	at com.mamalimomen.base.controllers.utilities.PersistenceUnitManager.getEntityManager(PersistenceUnitManager.java:19)
+	at com.mamalimomen.controllers.utilities.AppManager.startApp(AppManager.java:31)
+	at com.mamalimomen.controllers.AppContextListener.contextInitialized(AppContextListener.java:11)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4689)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5155)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:743)
+	at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:719)
+	at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:705)
+	at org.apache.catalina.startup.HostConfig.manageApp(HostConfig.java:1719)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.apache.tomcat.util.modeler.BaseModelMBean.invoke(BaseModelMBean.java:286)
+	at java.management/com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke(DefaultMBeanServerInterceptor.java:809)
+	at java.management/com.sun.jmx.mbeanserver.JmxMBeanServer.invoke(JmxMBeanServer.java:801)
+	at org.apache.catalina.mbeans.MBeanFactory.createStandardContext(MBeanFactory.java:482)
+	at org.apache.catalina.mbeans.MBeanFactory.createStandardContext(MBeanFactory.java:431)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.apache.tomcat.util.modeler.BaseModelMBean.invoke(BaseModelMBean.java:286)
+	at java.management/com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke(DefaultMBeanServerInterceptor.java:809)
+	at java.management/com.sun.jmx.mbeanserver.JmxMBeanServer.invoke(JmxMBeanServer.java:801)
+	at java.management/com.sun.jmx.remote.security.MBeanServerAccessController.invoke(MBeanServerAccessController.java:468)
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl.doOperation(RMIConnectionImpl.java:1466)
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl$PrivilegedOperation.run(RMIConnectionImpl.java:1307)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:691)
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl.doPrivilegedOperation(RMIConnectionImpl.java:1406)
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl.invoke(RMIConnectionImpl.java:827)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at java.rmi/sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:359)
+	at java.rmi/sun.rmi.transport.Transport$1.run(Transport.java:200)
+	at java.rmi/sun.rmi.transport.Transport$1.run(Transport.java:197)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:691)
+	at java.rmi/sun.rmi.transport.Transport.serviceCall(Transport.java:196)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:587)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:828)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(TCPTransport.java:705)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:391)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:704)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Caused by: java.sql.SQLSyntaxErrorException: Table 'hw15_one.tbl_comment' doesn't exist
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:764)
+	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54)
+	... 64 more
+00:40:29,020 DEBUG [org.hibernate.SQL] - alter table HW15_One.tbl_like drop foreign key FK1cmbiit0rv1bqc4tcstc2euxp
+00:40:29,022 WARN  [org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl] - GenerationTarget encountered exception accepting command : Error executing DDL "alter table HW15_One.tbl_like drop foreign key FK1cmbiit0rv1bqc4tcstc2euxp" via JDBC Statement
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "alter table HW15_One.tbl_like drop foreign key FK1cmbiit0rv1bqc4tcstc2euxp" via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlString(SchemaDropperImpl.java:375)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlStrings(SchemaDropperImpl.java:359)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applyConstraintDropping(SchemaDropperImpl.java:331)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.dropFromMetadata(SchemaDropperImpl.java:230)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.performDrop(SchemaDropperImpl.java:154)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:126)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:112)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:145)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:73)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:315)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:462)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:935)
+	at org.hibernate.jpa.HibernatePersistenceProvider.createEntityManagerFactory(HibernatePersistenceProvider.java:56)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:79)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:54)
+	at com.mamalimomen.base.controllers.utilities.PersistenceUnitManager.getEntityManager(PersistenceUnitManager.java:19)
+	at com.mamalimomen.controllers.utilities.AppManager.startApp(AppManager.java:31)
+	at com.mamalimomen.controllers.AppContextListener.contextInitialized(AppContextListener.java:11)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4689)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5155)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:743)
+	at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:719)
+	at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:705)
+	at org.apache.catalina.startup.HostConfig.manageApp(HostConfig.java:1719)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.apache.tomcat.util.modeler.BaseModelMBean.invoke(BaseModelMBean.java:286)
+	at java.management/com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke(DefaultMBeanServerInterceptor.java:809)
+	at java.management/com.sun.jmx.mbeanserver.JmxMBeanServer.invoke(JmxMBeanServer.java:801)
+	at org.apache.catalina.mbeans.MBeanFactory.createStandardContext(MBeanFactory.java:482)
+	at org.apache.catalina.mbeans.MBeanFactory.createStandardContext(MBeanFactory.java:431)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.apache.tomcat.util.modeler.BaseModelMBean.invoke(BaseModelMBean.java:286)
+	at java.management/com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke(DefaultMBeanServerInterceptor.java:809)
+	at java.management/com.sun.jmx.mbeanserver.JmxMBeanServer.invoke(JmxMBeanServer.java:801)
+	at java.management/com.sun.jmx.remote.security.MBeanServerAccessController.invoke(MBeanServerAccessController.java:468)
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl.doOperation(RMIConnectionImpl.java:1466)
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl$PrivilegedOperation.run(RMIConnectionImpl.java:1307)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:691)
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl.doPrivilegedOperation(RMIConnectionImpl.java:1406)
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl.invoke(RMIConnectionImpl.java:827)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at java.rmi/sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:359)
+	at java.rmi/sun.rmi.transport.Transport$1.run(Transport.java:200)
+	at java.rmi/sun.rmi.transport.Transport$1.run(Transport.java:197)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:691)
+	at java.rmi/sun.rmi.transport.Transport.serviceCall(Transport.java:196)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:587)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:828)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(TCPTransport.java:705)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:391)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:704)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Caused by: java.sql.SQLSyntaxErrorException: Table 'hw15_one.tbl_like' doesn't exist
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:764)
+	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54)
+	... 64 more
+00:40:29,027 DEBUG [org.hibernate.SQL] - alter table HW15_One.tbl_like drop foreign key FKf3jkcoh4cegoljumhfn3vx7df
+00:40:29,029 WARN  [org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl] - GenerationTarget encountered exception accepting command : Error executing DDL "alter table HW15_One.tbl_like drop foreign key FKf3jkcoh4cegoljumhfn3vx7df" via JDBC Statement
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "alter table HW15_One.tbl_like drop foreign key FKf3jkcoh4cegoljumhfn3vx7df" via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlString(SchemaDropperImpl.java:375)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlStrings(SchemaDropperImpl.java:359)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applyConstraintDropping(SchemaDropperImpl.java:331)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.dropFromMetadata(SchemaDropperImpl.java:230)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.performDrop(SchemaDropperImpl.java:154)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:126)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:112)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:145)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:73)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:315)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:462)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:935)
+	at org.hibernate.jpa.HibernatePersistenceProvider.createEntityManagerFactory(HibernatePersistenceProvider.java:56)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:79)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:54)
+	at com.mamalimomen.base.controllers.utilities.PersistenceUnitManager.getEntityManager(PersistenceUnitManager.java:19)
+	at com.mamalimomen.controllers.utilities.AppManager.startApp(AppManager.java:31)
+	at com.mamalimomen.controllers.AppContextListener.contextInitialized(AppContextListener.java:11)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4689)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5155)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:743)
+	at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:719)
+	at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:705)
+	at org.apache.catalina.startup.HostConfig.manageApp(HostConfig.java:1719)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.apache.tomcat.util.modeler.BaseModelMBean.invoke(BaseModelMBean.java:286)
+	at java.management/com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke(DefaultMBeanServerInterceptor.java:809)
+	at java.management/com.sun.jmx.mbeanserver.JmxMBeanServer.invoke(JmxMBeanServer.java:801)
+	at org.apache.catalina.mbeans.MBeanFactory.createStandardContext(MBeanFactory.java:482)
+	at org.apache.catalina.mbeans.MBeanFactory.createStandardContext(MBeanFactory.java:431)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.apache.tomcat.util.modeler.BaseModelMBean.invoke(BaseModelMBean.java:286)
+	at java.management/com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke(DefaultMBeanServerInterceptor.java:809)
+	at java.management/com.sun.jmx.mbeanserver.JmxMBeanServer.invoke(JmxMBeanServer.java:801)
+	at java.management/com.sun.jmx.remote.security.MBeanServerAccessController.invoke(MBeanServerAccessController.java:468)
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl.doOperation(RMIConnectionImpl.java:1466)
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl$PrivilegedOperation.run(RMIConnectionImpl.java:1307)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:691)
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl.doPrivilegedOperation(RMIConnectionImpl.java:1406)
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl.invoke(RMIConnectionImpl.java:827)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at java.rmi/sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:359)
+	at java.rmi/sun.rmi.transport.Transport$1.run(Transport.java:200)
+	at java.rmi/sun.rmi.transport.Transport$1.run(Transport.java:197)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:691)
+	at java.rmi/sun.rmi.transport.Transport.serviceCall(Transport.java:196)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:587)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:828)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(TCPTransport.java:705)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:391)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:704)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Caused by: java.sql.SQLSyntaxErrorException: Table 'hw15_one.tbl_like' doesn't exist
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:764)
+	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54)
+	... 64 more
+00:40:29,033 DEBUG [org.hibernate.SQL] - alter table HW15_One.tbl_post drop foreign key FK2rrfo89uhrve5r94w910mfb0l
+00:40:29,125 WARN  [org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl] - GenerationTarget encountered exception accepting command : Error executing DDL "alter table HW15_One.tbl_post drop foreign key FK2rrfo89uhrve5r94w910mfb0l" via JDBC Statement
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "alter table HW15_One.tbl_post drop foreign key FK2rrfo89uhrve5r94w910mfb0l" via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlString(SchemaDropperImpl.java:375)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlStrings(SchemaDropperImpl.java:359)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applyConstraintDropping(SchemaDropperImpl.java:331)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.dropFromMetadata(SchemaDropperImpl.java:230)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.performDrop(SchemaDropperImpl.java:154)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:126)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:112)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:145)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:73)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:315)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:462)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:935)
+	at org.hibernate.jpa.HibernatePersistenceProvider.createEntityManagerFactory(HibernatePersistenceProvider.java:56)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:79)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:54)
+	at com.mamalimomen.base.controllers.utilities.PersistenceUnitManager.getEntityManager(PersistenceUnitManager.java:19)
+	at com.mamalimomen.controllers.utilities.AppManager.startApp(AppManager.java:31)
+	at com.mamalimomen.controllers.AppContextListener.contextInitialized(AppContextListener.java:11)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4689)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5155)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:743)
+	at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:719)
+	at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:705)
+	at org.apache.catalina.startup.HostConfig.manageApp(HostConfig.java:1719)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.apache.tomcat.util.modeler.BaseModelMBean.invoke(BaseModelMBean.java:286)
+	at java.management/com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke(DefaultMBeanServerInterceptor.java:809)
+	at java.management/com.sun.jmx.mbeanserver.JmxMBeanServer.invoke(JmxMBeanServer.java:801)
+	at org.apache.catalina.mbeans.MBeanFactory.createStandardContext(MBeanFactory.java:482)
+	at org.apache.catalina.mbeans.MBeanFactory.createStandardContext(MBeanFactory.java:431)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.apache.tomcat.util.modeler.BaseModelMBean.invoke(BaseModelMBean.java:286)
+	at java.management/com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke(DefaultMBeanServerInterceptor.java:809)
+	at java.management/com.sun.jmx.mbeanserver.JmxMBeanServer.invoke(JmxMBeanServer.java:801)
+	at java.management/com.sun.jmx.remote.security.MBeanServerAccessController.invoke(MBeanServerAccessController.java:468)
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl.doOperation(RMIConnectionImpl.java:1466)
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl$PrivilegedOperation.run(RMIConnectionImpl.java:1307)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:691)
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl.doPrivilegedOperation(RMIConnectionImpl.java:1406)
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl.invoke(RMIConnectionImpl.java:827)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at java.rmi/sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:359)
+	at java.rmi/sun.rmi.transport.Transport$1.run(Transport.java:200)
+	at java.rmi/sun.rmi.transport.Transport$1.run(Transport.java:197)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:691)
+	at java.rmi/sun.rmi.transport.Transport.serviceCall(Transport.java:196)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:587)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:828)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(TCPTransport.java:705)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:391)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:704)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Caused by: java.sql.SQLSyntaxErrorException: Can't DROP 'FK2rrfo89uhrve5r94w910mfb0l'; check that column/key exists
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:764)
+	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54)
+	... 64 more
+00:40:29,129 DEBUG [org.hibernate.SQL] - drop table if exists HW15_One.tbl_account
+00:40:29,191 DEBUG [org.hibernate.SQL] - drop table if exists HW15_One.tbl_comment
+00:40:29,208 DEBUG [org.hibernate.SQL] - drop table if exists HW15_One.tbl_like
+00:40:29,211 DEBUG [org.hibernate.SQL] - drop table if exists HW15_One.tbl_post
+00:40:29,316 DEBUG [org.hibernate.SQL] - alter table follower_following drop foreign key FK4h29uaom1kwktrh5y06r5w1mj
+00:40:29,318 WARN  [org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl] - GenerationTarget encountered exception accepting command : Error executing DDL "alter table follower_following drop foreign key FK4h29uaom1kwktrh5y06r5w1mj" via JDBC Statement
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "alter table follower_following drop foreign key FK4h29uaom1kwktrh5y06r5w1mj" via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlString(SchemaDropperImpl.java:375)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlStrings(SchemaDropperImpl.java:359)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applyConstraintDropping(SchemaDropperImpl.java:331)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.dropFromMetadata(SchemaDropperImpl.java:230)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.performDrop(SchemaDropperImpl.java:154)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:126)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:112)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:145)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:73)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:315)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:462)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:935)
+	at org.hibernate.jpa.HibernatePersistenceProvider.createEntityManagerFactory(HibernatePersistenceProvider.java:56)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:79)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:54)
+	at com.mamalimomen.base.controllers.utilities.PersistenceUnitManager.getEntityManager(PersistenceUnitManager.java:19)
+	at com.mamalimomen.controllers.utilities.AppManager.startApp(AppManager.java:31)
+	at com.mamalimomen.controllers.AppContextListener.contextInitialized(AppContextListener.java:11)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4689)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5155)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:743)
+	at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:719)
+	at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:705)
+	at org.apache.catalina.startup.HostConfig.manageApp(HostConfig.java:1719)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.apache.tomcat.util.modeler.BaseModelMBean.invoke(BaseModelMBean.java:286)
+	at java.management/com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke(DefaultMBeanServerInterceptor.java:809)
+	at java.management/com.sun.jmx.mbeanserver.JmxMBeanServer.invoke(JmxMBeanServer.java:801)
+	at org.apache.catalina.mbeans.MBeanFactory.createStandardContext(MBeanFactory.java:482)
+	at org.apache.catalina.mbeans.MBeanFactory.createStandardContext(MBeanFactory.java:431)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.apache.tomcat.util.modeler.BaseModelMBean.invoke(BaseModelMBean.java:286)
+	at java.management/com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke(DefaultMBeanServerInterceptor.java:809)
+	at java.management/com.sun.jmx.mbeanserver.JmxMBeanServer.invoke(JmxMBeanServer.java:801)
+	at java.management/com.sun.jmx.remote.security.MBeanServerAccessController.invoke(MBeanServerAccessController.java:468)
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl.doOperation(RMIConnectionImpl.java:1466)
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl$PrivilegedOperation.run(RMIConnectionImpl.java:1307)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:691)
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl.doPrivilegedOperation(RMIConnectionImpl.java:1406)
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl.invoke(RMIConnectionImpl.java:827)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at java.rmi/sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:359)
+	at java.rmi/sun.rmi.transport.Transport$1.run(Transport.java:200)
+	at java.rmi/sun.rmi.transport.Transport$1.run(Transport.java:197)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:691)
+	at java.rmi/sun.rmi.transport.Transport.serviceCall(Transport.java:196)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:587)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:828)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(TCPTransport.java:705)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:391)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:704)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Caused by: java.sql.SQLSyntaxErrorException: Table 'hw15_one.follower_following' doesn't exist
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:764)
+	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54)
+	... 64 more
+00:40:29,323 DEBUG [org.hibernate.SQL] - alter table follower_following drop foreign key FK7krl1j630b8t2kpdvn455jtqn
+00:40:29,325 WARN  [org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl] - GenerationTarget encountered exception accepting command : Error executing DDL "alter table follower_following drop foreign key FK7krl1j630b8t2kpdvn455jtqn" via JDBC Statement
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "alter table follower_following drop foreign key FK7krl1j630b8t2kpdvn455jtqn" via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlString(SchemaDropperImpl.java:375)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlStrings(SchemaDropperImpl.java:359)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applyConstraintDropping(SchemaDropperImpl.java:331)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.dropFromMetadata(SchemaDropperImpl.java:230)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.performDrop(SchemaDropperImpl.java:154)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:126)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:112)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:145)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:73)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:315)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:462)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:935)
+	at org.hibernate.jpa.HibernatePersistenceProvider.createEntityManagerFactory(HibernatePersistenceProvider.java:56)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:79)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:54)
+	at com.mamalimomen.base.controllers.utilities.PersistenceUnitManager.getEntityManager(PersistenceUnitManager.java:19)
+	at com.mamalimomen.controllers.utilities.AppManager.startApp(AppManager.java:31)
+	at com.mamalimomen.controllers.AppContextListener.contextInitialized(AppContextListener.java:11)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4689)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5155)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:743)
+	at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:719)
+	at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:705)
+	at org.apache.catalina.startup.HostConfig.manageApp(HostConfig.java:1719)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.apache.tomcat.util.modeler.BaseModelMBean.invoke(BaseModelMBean.java:286)
+	at java.management/com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke(DefaultMBeanServerInterceptor.java:809)
+	at java.management/com.sun.jmx.mbeanserver.JmxMBeanServer.invoke(JmxMBeanServer.java:801)
+	at org.apache.catalina.mbeans.MBeanFactory.createStandardContext(MBeanFactory.java:482)
+	at org.apache.catalina.mbeans.MBeanFactory.createStandardContext(MBeanFactory.java:431)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.apache.tomcat.util.modeler.BaseModelMBean.invoke(BaseModelMBean.java:286)
+	at java.management/com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke(DefaultMBeanServerInterceptor.java:809)
+	at java.management/com.sun.jmx.mbeanserver.JmxMBeanServer.invoke(JmxMBeanServer.java:801)
+	at java.management/com.sun.jmx.remote.security.MBeanServerAccessController.invoke(MBeanServerAccessController.java:468)
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl.doOperation(RMIConnectionImpl.java:1466)
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl$PrivilegedOperation.run(RMIConnectionImpl.java:1307)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:691)
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl.doPrivilegedOperation(RMIConnectionImpl.java:1406)
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl.invoke(RMIConnectionImpl.java:827)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at java.rmi/sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:359)
+	at java.rmi/sun.rmi.transport.Transport$1.run(Transport.java:200)
+	at java.rmi/sun.rmi.transport.Transport$1.run(Transport.java:197)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:691)
+	at java.rmi/sun.rmi.transport.Transport.serviceCall(Transport.java:196)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:587)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:828)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(TCPTransport.java:705)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:391)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:704)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Caused by: java.sql.SQLSyntaxErrorException: Table 'hw15_one.follower_following' doesn't exist
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:764)
+	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54)
+	... 64 more
+00:40:29,329 DEBUG [org.hibernate.SQL] - alter table saver_saved drop foreign key FKsbesy82g9lrth9cgvbxhktrif
+00:40:29,331 WARN  [org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl] - GenerationTarget encountered exception accepting command : Error executing DDL "alter table saver_saved drop foreign key FKsbesy82g9lrth9cgvbxhktrif" via JDBC Statement
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "alter table saver_saved drop foreign key FKsbesy82g9lrth9cgvbxhktrif" via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlString(SchemaDropperImpl.java:375)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlStrings(SchemaDropperImpl.java:359)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applyConstraintDropping(SchemaDropperImpl.java:331)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.dropFromMetadata(SchemaDropperImpl.java:230)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.performDrop(SchemaDropperImpl.java:154)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:126)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:112)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:145)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:73)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:315)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:462)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:935)
+	at org.hibernate.jpa.HibernatePersistenceProvider.createEntityManagerFactory(HibernatePersistenceProvider.java:56)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:79)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:54)
+	at com.mamalimomen.base.controllers.utilities.PersistenceUnitManager.getEntityManager(PersistenceUnitManager.java:19)
+	at com.mamalimomen.controllers.utilities.AppManager.startApp(AppManager.java:31)
+	at com.mamalimomen.controllers.AppContextListener.contextInitialized(AppContextListener.java:11)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4689)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5155)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:743)
+	at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:719)
+	at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:705)
+	at org.apache.catalina.startup.HostConfig.manageApp(HostConfig.java:1719)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.apache.tomcat.util.modeler.BaseModelMBean.invoke(BaseModelMBean.java:286)
+	at java.management/com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke(DefaultMBeanServerInterceptor.java:809)
+	at java.management/com.sun.jmx.mbeanserver.JmxMBeanServer.invoke(JmxMBeanServer.java:801)
+	at org.apache.catalina.mbeans.MBeanFactory.createStandardContext(MBeanFactory.java:482)
+	at org.apache.catalina.mbeans.MBeanFactory.createStandardContext(MBeanFactory.java:431)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.apache.tomcat.util.modeler.BaseModelMBean.invoke(BaseModelMBean.java:286)
+	at java.management/com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke(DefaultMBeanServerInterceptor.java:809)
+	at java.management/com.sun.jmx.mbeanserver.JmxMBeanServer.invoke(JmxMBeanServer.java:801)
+	at java.management/com.sun.jmx.remote.security.MBeanServerAccessController.invoke(MBeanServerAccessController.java:468)
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl.doOperation(RMIConnectionImpl.java:1466)
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl$PrivilegedOperation.run(RMIConnectionImpl.java:1307)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:691)
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl.doPrivilegedOperation(RMIConnectionImpl.java:1406)
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl.invoke(RMIConnectionImpl.java:827)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at java.rmi/sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:359)
+	at java.rmi/sun.rmi.transport.Transport$1.run(Transport.java:200)
+	at java.rmi/sun.rmi.transport.Transport$1.run(Transport.java:197)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:691)
+	at java.rmi/sun.rmi.transport.Transport.serviceCall(Transport.java:196)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:587)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:828)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(TCPTransport.java:705)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:391)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:704)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Caused by: java.sql.SQLSyntaxErrorException: Table 'hw15_one.saver_saved' doesn't exist
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:764)
+	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54)
+	... 64 more
+00:40:29,336 DEBUG [org.hibernate.SQL] - alter table saver_saved drop foreign key FKbk1o6eel1dp8q4yjvry6mughf
+00:40:29,338 WARN  [org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl] - GenerationTarget encountered exception accepting command : Error executing DDL "alter table saver_saved drop foreign key FKbk1o6eel1dp8q4yjvry6mughf" via JDBC Statement
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "alter table saver_saved drop foreign key FKbk1o6eel1dp8q4yjvry6mughf" via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlString(SchemaDropperImpl.java:375)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlStrings(SchemaDropperImpl.java:359)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applyConstraintDropping(SchemaDropperImpl.java:331)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.dropFromMetadata(SchemaDropperImpl.java:230)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.performDrop(SchemaDropperImpl.java:154)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:126)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:112)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:145)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:73)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:315)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:462)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:935)
+	at org.hibernate.jpa.HibernatePersistenceProvider.createEntityManagerFactory(HibernatePersistenceProvider.java:56)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:79)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:54)
+	at com.mamalimomen.base.controllers.utilities.PersistenceUnitManager.getEntityManager(PersistenceUnitManager.java:19)
+	at com.mamalimomen.controllers.utilities.AppManager.startApp(AppManager.java:31)
+	at com.mamalimomen.controllers.AppContextListener.contextInitialized(AppContextListener.java:11)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4689)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5155)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:743)
+	at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:719)
+	at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:705)
+	at org.apache.catalina.startup.HostConfig.manageApp(HostConfig.java:1719)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.apache.tomcat.util.modeler.BaseModelMBean.invoke(BaseModelMBean.java:286)
+	at java.management/com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke(DefaultMBeanServerInterceptor.java:809)
+	at java.management/com.sun.jmx.mbeanserver.JmxMBeanServer.invoke(JmxMBeanServer.java:801)
+	at org.apache.catalina.mbeans.MBeanFactory.createStandardContext(MBeanFactory.java:482)
+	at org.apache.catalina.mbeans.MBeanFactory.createStandardContext(MBeanFactory.java:431)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.apache.tomcat.util.modeler.BaseModelMBean.invoke(BaseModelMBean.java:286)
+	at java.management/com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke(DefaultMBeanServerInterceptor.java:809)
+	at java.management/com.sun.jmx.mbeanserver.JmxMBeanServer.invoke(JmxMBeanServer.java:801)
+	at java.management/com.sun.jmx.remote.security.MBeanServerAccessController.invoke(MBeanServerAccessController.java:468)
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl.doOperation(RMIConnectionImpl.java:1466)
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl$PrivilegedOperation.run(RMIConnectionImpl.java:1307)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:691)
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl.doPrivilegedOperation(RMIConnectionImpl.java:1406)
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl.invoke(RMIConnectionImpl.java:827)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at java.rmi/sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:359)
+	at java.rmi/sun.rmi.transport.Transport$1.run(Transport.java:200)
+	at java.rmi/sun.rmi.transport.Transport$1.run(Transport.java:197)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:691)
+	at java.rmi/sun.rmi.transport.Transport.serviceCall(Transport.java:196)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:587)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:828)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(TCPTransport.java:705)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:391)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:704)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Caused by: java.sql.SQLSyntaxErrorException: Table 'hw15_one.saver_saved' doesn't exist
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:764)
+	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54)
+	... 64 more
+00:40:29,342 DEBUG [org.hibernate.SQL] - drop table if exists follower_following
+00:40:29,354 DEBUG [org.hibernate.SQL] - drop table if exists saver_saved
+00:40:29,388 DEBUG [org.hibernate.SQL] - create table HW15_One.tbl_account (id bigint not null, is_deleted bit not null, about_me text not null, first_name varchar(255) not null, last_name varchar(255) not null, password varchar(255) not null, username varchar(255) not null, primary key (id)) engine=InnoDB
+00:40:29,392 INFO  [org.hibernate.orm.connections.access] - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@77293304] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+00:40:29,781 DEBUG [org.hibernate.SQL] - create table HW15_One.tbl_comment (id bigint not null, is_deleted bit not null, create_date date not null, message text not null, fk_writer_account bigint not null, fk_post bigint not null, primary key (id)) engine=InnoDB
+00:40:30,043 DEBUG [org.hibernate.SQL] - create table HW15_One.tbl_like (id bigint not null, is_deleted bit not null, fk_liker_account bigint not null, fk_post bigint not null, primary key (id)) engine=InnoDB
+00:40:30,253 DEBUG [org.hibernate.SQL] - create table HW15_One.tbl_post (id bigint not null, is_deleted bit not null, create_date date not null, image_path varchar(255), text text not null, fk_account bigint not null, primary key (id)) engine=InnoDB
+00:40:30,545 DEBUG [org.hibernate.SQL] - alter table HW15_One.tbl_like add constraint unique_liker_post unique (fk_liker_account, fk_post)
+00:40:30,720 DEBUG [org.hibernate.SQL] - create table follower_following (follower_id bigint not null, following_id bigint not null) engine=InnoDB
+00:40:30,951 DEBUG [org.hibernate.SQL] - create table saver_saved (account_id bigint not null, post_id bigint not null) engine=InnoDB
+00:40:31,183 DEBUG [org.hibernate.SQL] - alter table follower_following add constraint unique_follower_following unique (follower_id, following_id)
+00:40:31,602 DEBUG [org.hibernate.SQL] - alter table saver_saved add constraint unique_saver_saved unique (account_id, post_id)
+00:40:32,030 DEBUG [org.hibernate.SQL] - alter table HW15_One.tbl_comment add constraint FKc9jbrsjv5t2rh0pgfyeg0v6ah foreign key (fk_writer_account) references HW15_One.tbl_account (id)
+00:40:32,813 DEBUG [org.hibernate.SQL] - alter table HW15_One.tbl_comment add constraint FKlijfoqww9kni45ay4va3pktsp foreign key (fk_post) references HW15_One.tbl_post (id)
+00:40:33,589 DEBUG [org.hibernate.SQL] - alter table HW15_One.tbl_like add constraint FK1cmbiit0rv1bqc4tcstc2euxp foreign key (fk_liker_account) references HW15_One.tbl_account (id)
+00:40:35,360 DEBUG [org.hibernate.SQL] - alter table HW15_One.tbl_like add constraint FKf3jkcoh4cegoljumhfn3vx7df foreign key (fk_post) references HW15_One.tbl_post (id)
+00:40:36,135 DEBUG [org.hibernate.SQL] - alter table HW15_One.tbl_post add constraint FK2rrfo89uhrve5r94w910mfb0l foreign key (fk_account) references HW15_One.tbl_account (id)
+00:40:37,018 DEBUG [org.hibernate.SQL] - alter table follower_following add constraint FK4h29uaom1kwktrh5y06r5w1mj foreign key (following_id) references HW15_One.tbl_account (id)
+00:40:38,336 DEBUG [org.hibernate.SQL] - alter table follower_following add constraint FK7krl1j630b8t2kpdvn455jtqn foreign key (follower_id) references HW15_One.tbl_account (id)
+00:40:39,333 DEBUG [org.hibernate.SQL] - alter table saver_saved add constraint FKsbesy82g9lrth9cgvbxhktrif foreign key (post_id) references HW15_One.tbl_post (id)
+00:40:40,098 DEBUG [org.hibernate.SQL] - alter table saver_saved add constraint FKbk1o6eel1dp8q4yjvry6mughf foreign key (account_id) references HW15_One.tbl_account (id)
+00:40:40,928 INFO  [org.hibernate.tool.schema.internal.SchemaCreatorImpl] - HHH000476: Executing import script 'C:\Program Files\apache-tomcat-8.5.59\bin\data.sql'
+00:40:40,929 WARN  [org.hibernate.tool.schema.internal.exec.ScriptSourceInputFromFile] - Specified schema generation script file [data.sql] did not exist for reading
+00:40:40,990 INFO  [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator] - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+00:40:47,662 DEBUG [org.hibernate.SQL] - select account0_.id as id1_0_, account0_.is_deleted as is_delet2_0_, account0_.about_me as about_me3_0_, account0_.first_name as first_na4_0_, account0_.last_name as last_nam5_0_, account0_.password as password6_0_, account0_.username as username7_0_ from HW15_One.tbl_account account0_ where account0_.is_deleted=0 and account0_.username=?
+00:40:47,733 TRACE [org.hibernate.type.descriptor.sql.BasicBinder] - binding parameter [1] as [VARCHAR] - [mamalimomen]
+00:41:18,573 DEBUG [org.hibernate.SQL] - select account0_.id as id1_0_, account0_.is_deleted as is_delet2_0_, account0_.about_me as about_me3_0_, account0_.first_name as first_na4_0_, account0_.last_name as last_nam5_0_, account0_.password as password6_0_, account0_.username as username7_0_ from HW15_One.tbl_account account0_ where account0_.is_deleted=0 and account0_.username=?
+00:41:18,577 TRACE [org.hibernate.type.descriptor.sql.BasicBinder] - binding parameter [1] as [VARCHAR] - [mamalimomen]
+00:41:18,619 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_0_] : [BIGINT]) - [1]
+00:41:18,651 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([is_delet2_0_] : [BOOLEAN]) - [false]
+00:41:18,653 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([about_me3_0_] : [VARCHAR]) - [a genius man with big dreams...]
+00:41:18,654 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([first_na4_0_] : [VARCHAR]) - [Mohammad Ali]
+00:41:18,655 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([last_nam5_0_] : [VARCHAR]) - [Momen]
+00:41:18,655 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([password6_0_] : [VARCHAR]) - [$s0$41010$rZ00IDHQmRMY3IZjYMKe0g==$D3rNm7LA0uudVIXl2h/LM++bAt+s8i8f2tQ6C4cy9XI=]
+00:41:18,656 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([username7_0_] : [VARCHAR]) - [mamalimomen]
+00:41:23,249 DEBUG [org.hibernate.SQL] - select p.* from hw15_one.tbl_post p left join hw15_one.tbl_like l on p.id = l.fk_post where p.is_deleted = false group by l.fk_post order by count(l.fk_post) desc
+00:41:23,258 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id] : [BIGINT]) - [5]
+00:41:23,259 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([is_deleted] : [BOOLEAN]) - [false]
+00:41:23,266 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([create_date] : [DATE]) - [2019-10-23]
+00:41:23,266 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([image_path] : [VARCHAR]) - [null]
+00:41:23,267 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([text] : [VARCHAR]) - [aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa]
+00:41:23,267 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id] : [BIGINT]) - [11]
+00:41:23,268 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([is_deleted] : [BOOLEAN]) - [false]
+00:41:23,268 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([create_date] : [DATE]) - [2020-11-17]
+00:41:23,268 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([image_path] : [VARCHAR]) - [D://hello/css]
+00:41:23,269 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([text] : [VARCHAR]) - [gggggggggggggggggggggggggggggggggggggggggg]
+00:41:23,269 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id] : [BIGINT]) - [6]
+00:41:23,270 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([is_deleted] : [BOOLEAN]) - [false]
+00:41:23,270 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([create_date] : [DATE]) - [2020-01-06]
+00:41:23,270 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([image_path] : [VARCHAR]) - [C://hello/world]
+00:41:23,271 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([text] : [VARCHAR]) - [bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb]
+00:41:23,271 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id] : [BIGINT]) - [7]
+00:41:23,271 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([is_deleted] : [BOOLEAN]) - [false]
+00:41:23,272 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([create_date] : [DATE]) - [2020-01-06]
+00:41:23,272 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([image_path] : [VARCHAR]) - [null]
+00:41:23,272 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([text] : [VARCHAR]) - [ccccccccccccccccccccccccccccccccc]
+00:41:23,273 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id] : [BIGINT]) - [10]
+00:41:23,273 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([is_deleted] : [BOOLEAN]) - [false]
+00:41:23,274 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([create_date] : [DATE]) - [2020-06-02]
+00:41:23,274 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([image_path] : [VARCHAR]) - [D://hello/html]
+00:41:23,274 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([text] : [VARCHAR]) - [fffffffffffffffffffffffffffffffffffffffff]
+00:41:23,275 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id] : [BIGINT]) - [9]
+00:41:23,275 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([is_deleted] : [BOOLEAN]) - [false]
+00:41:23,277 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([create_date] : [DATE]) - [2020-05-30]
+00:41:23,277 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([image_path] : [VARCHAR]) - [D://hello/mongo]
+00:41:23,278 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([text] : [VARCHAR]) - [eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee]
+00:41:23,279 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id] : [BIGINT]) - [8]
+00:41:23,280 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([is_deleted] : [BOOLEAN]) - [false]
+00:41:23,285 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([create_date] : [DATE]) - [2020-05-29]
+00:41:23,285 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([image_path] : [VARCHAR]) - [D://hello/hibernate]
+00:41:23,286 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([text] : [VARCHAR]) - [ddddddddddddddddddddddddddddddddddddd]
+00:41:23,308 DEBUG [org.hibernate.SQL] - select likes0_.fk_post as fk_post4_2_0_, likes0_.id as id1_2_0_, likes0_.id as id1_2_1_, likes0_.is_deleted as is_delet2_2_1_, likes0_.fk_liker_account as fk_liker3_2_1_, account1_.id as id1_0_2_, account1_.is_deleted as is_delet2_0_2_, account1_.about_me as about_me3_0_2_, account1_.first_name as first_na4_0_2_, account1_.last_name as last_nam5_0_2_, account1_.password as password6_0_2_, account1_.username as username7_0_2_ from HW15_One.tbl_like likes0_ inner join HW15_One.tbl_account account1_ on likes0_.fk_liker_account=account1_.id where likes0_.fk_post=?
+00:41:23,314 TRACE [org.hibernate.type.descriptor.sql.BasicBinder] - binding parameter [1] as [BIGINT] - [8]
+00:41:23,341 DEBUG [org.hibernate.SQL] - select comments0_.fk_post as fk_post6_1_0_, comments0_.id as id1_1_0_, comments0_.id as id1_1_1_, comments0_.is_deleted as is_delet2_1_1_, comments0_.create_date as create_d3_1_1_, comments0_.message as message4_1_1_, comments0_.fk_writer_account as fk_write5_1_1_, account1_.id as id1_0_2_, account1_.is_deleted as is_delet2_0_2_, account1_.about_me as about_me3_0_2_, account1_.first_name as first_na4_0_2_, account1_.last_name as last_nam5_0_2_, account1_.password as password6_0_2_, account1_.username as username7_0_2_ from HW15_One.tbl_comment comments0_ inner join HW15_One.tbl_account account1_ on comments0_.fk_writer_account=account1_.id where comments0_.fk_post=?
+00:41:23,342 TRACE [org.hibernate.type.descriptor.sql.BasicBinder] - binding parameter [1] as [BIGINT] - [8]
+00:41:23,351 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_1_1_] : [BIGINT]) - [18]
+00:41:23,351 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_0_2_] : [BIGINT]) - [1]
+00:41:23,352 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([is_delet2_1_1_] : [BOOLEAN]) - [false]
+00:41:23,353 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([create_d3_1_1_] : [DATE]) - [2020-05-29]
+00:41:23,353 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([message4_1_1_] : [VARCHAR]) - [ok ok ok]
+00:41:23,353 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_write5_1_1_] : [BIGINT]) - [1]
+00:41:23,356 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_post6_1_0_] : [BIGINT]) - [8]
+00:41:23,356 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_1_0_] : [BIGINT]) - [18]
+00:41:23,371 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_1_1_] : [BIGINT]) - [19]
+00:41:23,372 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_0_2_] : [BIGINT]) - [3]
+00:41:23,372 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([is_delet2_1_1_] : [BOOLEAN]) - [false]
+00:41:23,373 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([create_d3_1_1_] : [DATE]) - [2020-05-30]
+00:41:23,373 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([message4_1_1_] : [VARCHAR]) - [what what what]
+00:41:23,373 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_write5_1_1_] : [BIGINT]) - [3]
+00:41:23,374 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([is_delet2_0_2_] : [BOOLEAN]) - [false]
+00:41:23,374 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([about_me3_0_2_] : [VARCHAR]) - [es ist noch kein meister vom Himmel gefallen!]
+00:41:23,375 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([first_na4_0_2_] : [VARCHAR]) - [Sajjad]
+00:41:23,376 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([last_nam5_0_2_] : [VARCHAR]) - [Rahimzadeh]
+00:41:23,377 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([password6_0_2_] : [VARCHAR]) - [$s0$41010$qa/pAvNYvDgEyZ943yoE2Q==$eBG2KVGLESz0GS0v5XZbsEvsZvj41rUJ/+LRCYyAinI=]
+00:41:23,378 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([username7_0_2_] : [VARCHAR]) - [sajjadbirya]
+00:41:23,379 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_post6_1_0_] : [BIGINT]) - [8]
+00:41:23,380 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_1_0_] : [BIGINT]) - [19]
+00:41:23,385 DEBUG [org.hibernate.SQL] - select likes0_.fk_post as fk_post4_2_0_, likes0_.id as id1_2_0_, likes0_.id as id1_2_1_, likes0_.is_deleted as is_delet2_2_1_, likes0_.fk_liker_account as fk_liker3_2_1_, account1_.id as id1_0_2_, account1_.is_deleted as is_delet2_0_2_, account1_.about_me as about_me3_0_2_, account1_.first_name as first_na4_0_2_, account1_.last_name as last_nam5_0_2_, account1_.password as password6_0_2_, account1_.username as username7_0_2_ from HW15_One.tbl_like likes0_ inner join HW15_One.tbl_account account1_ on likes0_.fk_liker_account=account1_.id where likes0_.fk_post=?
+00:41:23,386 TRACE [org.hibernate.type.descriptor.sql.BasicBinder] - binding parameter [1] as [BIGINT] - [9]
+00:41:23,389 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_2_1_] : [BIGINT]) - [30]
+00:41:23,389 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_0_2_] : [BIGINT]) - [1]
+00:41:23,389 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([is_delet2_2_1_] : [BOOLEAN]) - [false]
+00:41:23,390 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_liker3_2_1_] : [BIGINT]) - [1]
+00:41:23,390 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_post4_2_0_] : [BIGINT]) - [9]
+00:41:23,391 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_2_0_] : [BIGINT]) - [30]
+00:41:23,393 DEBUG [org.hibernate.SQL] - select comments0_.fk_post as fk_post6_1_0_, comments0_.id as id1_1_0_, comments0_.id as id1_1_1_, comments0_.is_deleted as is_delet2_1_1_, comments0_.create_date as create_d3_1_1_, comments0_.message as message4_1_1_, comments0_.fk_writer_account as fk_write5_1_1_, account1_.id as id1_0_2_, account1_.is_deleted as is_delet2_0_2_, account1_.about_me as about_me3_0_2_, account1_.first_name as first_na4_0_2_, account1_.last_name as last_nam5_0_2_, account1_.password as password6_0_2_, account1_.username as username7_0_2_ from HW15_One.tbl_comment comments0_ inner join HW15_One.tbl_account account1_ on comments0_.fk_writer_account=account1_.id where comments0_.fk_post=?
+00:41:23,394 TRACE [org.hibernate.type.descriptor.sql.BasicBinder] - binding parameter [1] as [BIGINT] - [9]
+00:41:23,398 DEBUG [org.hibernate.SQL] - select likes0_.fk_post as fk_post4_2_0_, likes0_.id as id1_2_0_, likes0_.id as id1_2_1_, likes0_.is_deleted as is_delet2_2_1_, likes0_.fk_liker_account as fk_liker3_2_1_, account1_.id as id1_0_2_, account1_.is_deleted as is_delet2_0_2_, account1_.about_me as about_me3_0_2_, account1_.first_name as first_na4_0_2_, account1_.last_name as last_nam5_0_2_, account1_.password as password6_0_2_, account1_.username as username7_0_2_ from HW15_One.tbl_like likes0_ inner join HW15_One.tbl_account account1_ on likes0_.fk_liker_account=account1_.id where likes0_.fk_post=?
+00:41:23,399 TRACE [org.hibernate.type.descriptor.sql.BasicBinder] - binding parameter [1] as [BIGINT] - [10]
+00:41:23,403 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_2_1_] : [BIGINT]) - [31]
+00:41:23,403 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_0_2_] : [BIGINT]) - [2]
+00:41:23,404 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([is_delet2_2_1_] : [BOOLEAN]) - [false]
+00:41:23,404 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_liker3_2_1_] : [BIGINT]) - [2]
+00:41:23,405 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([is_delet2_0_2_] : [BOOLEAN]) - [false]
+00:41:23,405 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([about_me3_0_2_] : [VARCHAR]) - [world best soccer player in history!]
+00:41:23,405 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([first_na4_0_2_] : [VARCHAR]) - [Mohammad Mahdi]
+00:41:23,406 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([last_nam5_0_2_] : [VARCHAR]) - [Momen]
+00:41:23,406 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([password6_0_2_] : [VARCHAR]) - [$s0$41010$aaxpDMPr2vS6AcasZkZKnA==$S+CsCboUsWS1gYhqP1eVqNY6j4xqL3IkB0m3w0GS0A8=]
+00:41:23,406 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([username7_0_2_] : [VARCHAR]) - [mahdimomen]
+00:41:23,406 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_post4_2_0_] : [BIGINT]) - [10]
+00:41:23,407 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_2_0_] : [BIGINT]) - [31]
+00:41:23,407 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_2_1_] : [BIGINT]) - [32]
+00:41:23,408 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_0_2_] : [BIGINT]) - [3]
+00:41:23,408 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([is_delet2_2_1_] : [BOOLEAN]) - [false]
+00:41:23,409 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_liker3_2_1_] : [BIGINT]) - [3]
+00:41:23,410 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_post4_2_0_] : [BIGINT]) - [10]
+00:41:23,410 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_2_0_] : [BIGINT]) - [32]
+00:41:23,413 DEBUG [org.hibernate.SQL] - select comments0_.fk_post as fk_post6_1_0_, comments0_.id as id1_1_0_, comments0_.id as id1_1_1_, comments0_.is_deleted as is_delet2_1_1_, comments0_.create_date as create_d3_1_1_, comments0_.message as message4_1_1_, comments0_.fk_writer_account as fk_write5_1_1_, account1_.id as id1_0_2_, account1_.is_deleted as is_delet2_0_2_, account1_.about_me as about_me3_0_2_, account1_.first_name as first_na4_0_2_, account1_.last_name as last_nam5_0_2_, account1_.password as password6_0_2_, account1_.username as username7_0_2_ from HW15_One.tbl_comment comments0_ inner join HW15_One.tbl_account account1_ on comments0_.fk_writer_account=account1_.id where comments0_.fk_post=?
+00:41:23,414 TRACE [org.hibernate.type.descriptor.sql.BasicBinder] - binding parameter [1] as [BIGINT] - [10]
+00:41:23,417 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_1_1_] : [BIGINT]) - [20]
+00:41:23,418 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_0_2_] : [BIGINT]) - [2]
+00:41:23,418 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([is_delet2_1_1_] : [BOOLEAN]) - [false]
+00:41:23,419 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([create_d3_1_1_] : [DATE]) - [2020-06-02]
+00:41:23,419 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([message4_1_1_] : [VARCHAR]) - [serious? serious?]
+00:41:23,419 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_write5_1_1_] : [BIGINT]) - [2]
+00:41:23,420 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_post6_1_0_] : [BIGINT]) - [10]
+00:41:23,420 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_1_0_] : [BIGINT]) - [20]
+00:41:23,421 DEBUG [org.hibernate.SQL] - select likes0_.fk_post as fk_post4_2_0_, likes0_.id as id1_2_0_, likes0_.id as id1_2_1_, likes0_.is_deleted as is_delet2_2_1_, likes0_.fk_liker_account as fk_liker3_2_1_, account1_.id as id1_0_2_, account1_.is_deleted as is_delet2_0_2_, account1_.about_me as about_me3_0_2_, account1_.first_name as first_na4_0_2_, account1_.last_name as last_nam5_0_2_, account1_.password as password6_0_2_, account1_.username as username7_0_2_ from HW15_One.tbl_like likes0_ inner join HW15_One.tbl_account account1_ on likes0_.fk_liker_account=account1_.id where likes0_.fk_post=?
+00:41:23,422 TRACE [org.hibernate.type.descriptor.sql.BasicBinder] - binding parameter [1] as [BIGINT] - [7]
+00:41:23,427 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_2_1_] : [BIGINT]) - [28]
+00:41:23,427 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_0_2_] : [BIGINT]) - [1]
+00:41:23,429 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([is_delet2_2_1_] : [BOOLEAN]) - [false]
+00:41:23,430 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_liker3_2_1_] : [BIGINT]) - [1]
+00:41:23,430 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_post4_2_0_] : [BIGINT]) - [7]
+00:41:23,431 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_2_0_] : [BIGINT]) - [28]
+00:41:23,433 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_2_1_] : [BIGINT]) - [29]
+00:41:23,433 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_0_2_] : [BIGINT]) - [3]
+00:41:23,434 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([is_delet2_2_1_] : [BOOLEAN]) - [false]
+00:41:23,434 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_liker3_2_1_] : [BIGINT]) - [3]
+00:41:23,435 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_post4_2_0_] : [BIGINT]) - [7]
+00:41:23,435 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_2_0_] : [BIGINT]) - [29]
+00:41:23,437 DEBUG [org.hibernate.SQL] - select comments0_.fk_post as fk_post6_1_0_, comments0_.id as id1_1_0_, comments0_.id as id1_1_1_, comments0_.is_deleted as is_delet2_1_1_, comments0_.create_date as create_d3_1_1_, comments0_.message as message4_1_1_, comments0_.fk_writer_account as fk_write5_1_1_, account1_.id as id1_0_2_, account1_.is_deleted as is_delet2_0_2_, account1_.about_me as about_me3_0_2_, account1_.first_name as first_na4_0_2_, account1_.last_name as last_nam5_0_2_, account1_.password as password6_0_2_, account1_.username as username7_0_2_ from HW15_One.tbl_comment comments0_ inner join HW15_One.tbl_account account1_ on comments0_.fk_writer_account=account1_.id where comments0_.fk_post=?
+00:41:23,437 TRACE [org.hibernate.type.descriptor.sql.BasicBinder] - binding parameter [1] as [BIGINT] - [7]
+00:41:23,440 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_1_1_] : [BIGINT]) - [17]
+00:41:23,440 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_0_2_] : [BIGINT]) - [1]
+00:41:23,441 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([is_delet2_1_1_] : [BOOLEAN]) - [false]
+00:41:23,443 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([create_d3_1_1_] : [DATE]) - [2020-01-06]
+00:41:23,443 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([message4_1_1_] : [VARCHAR]) - [wonderful wonderful]
+00:41:23,444 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_write5_1_1_] : [BIGINT]) - [1]
+00:41:23,445 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_post6_1_0_] : [BIGINT]) - [7]
+00:41:23,446 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_1_0_] : [BIGINT]) - [17]
+00:41:23,449 DEBUG [org.hibernate.SQL] - select likes0_.fk_post as fk_post4_2_0_, likes0_.id as id1_2_0_, likes0_.id as id1_2_1_, likes0_.is_deleted as is_delet2_2_1_, likes0_.fk_liker_account as fk_liker3_2_1_, account1_.id as id1_0_2_, account1_.is_deleted as is_delet2_0_2_, account1_.about_me as about_me3_0_2_, account1_.first_name as first_na4_0_2_, account1_.last_name as last_nam5_0_2_, account1_.password as password6_0_2_, account1_.username as username7_0_2_ from HW15_One.tbl_like likes0_ inner join HW15_One.tbl_account account1_ on likes0_.fk_liker_account=account1_.id where likes0_.fk_post=?
+00:41:23,451 TRACE [org.hibernate.type.descriptor.sql.BasicBinder] - binding parameter [1] as [BIGINT] - [6]
+00:41:23,454 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_2_1_] : [BIGINT]) - [26]
+00:41:23,455 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_0_2_] : [BIGINT]) - [2]
+00:41:23,455 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([is_delet2_2_1_] : [BOOLEAN]) - [false]
+00:41:23,456 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_liker3_2_1_] : [BIGINT]) - [2]
+00:41:23,456 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_post4_2_0_] : [BIGINT]) - [6]
+00:41:23,456 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_2_0_] : [BIGINT]) - [26]
+00:41:23,457 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_2_1_] : [BIGINT]) - [27]
+00:41:23,457 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_0_2_] : [BIGINT]) - [3]
+00:41:23,458 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([is_delet2_2_1_] : [BOOLEAN]) - [false]
+00:41:23,458 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_liker3_2_1_] : [BIGINT]) - [3]
+00:41:23,459 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_post4_2_0_] : [BIGINT]) - [6]
+00:41:23,460 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_2_0_] : [BIGINT]) - [27]
+00:41:23,463 DEBUG [org.hibernate.SQL] - select comments0_.fk_post as fk_post6_1_0_, comments0_.id as id1_1_0_, comments0_.id as id1_1_1_, comments0_.is_deleted as is_delet2_1_1_, comments0_.create_date as create_d3_1_1_, comments0_.message as message4_1_1_, comments0_.fk_writer_account as fk_write5_1_1_, account1_.id as id1_0_2_, account1_.is_deleted as is_delet2_0_2_, account1_.about_me as about_me3_0_2_, account1_.first_name as first_na4_0_2_, account1_.last_name as last_nam5_0_2_, account1_.password as password6_0_2_, account1_.username as username7_0_2_ from HW15_One.tbl_comment comments0_ inner join HW15_One.tbl_account account1_ on comments0_.fk_writer_account=account1_.id where comments0_.fk_post=?
+00:41:23,464 TRACE [org.hibernate.type.descriptor.sql.BasicBinder] - binding parameter [1] as [BIGINT] - [6]
+00:41:23,468 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_1_1_] : [BIGINT]) - [15]
+00:41:23,468 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_0_2_] : [BIGINT]) - [4]
+00:41:23,469 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([is_delet2_1_1_] : [BOOLEAN]) - [false]
+00:41:23,470 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([create_d3_1_1_] : [DATE]) - [2020-01-06]
+00:41:23,470 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([message4_1_1_] : [VARCHAR]) - [better better]
+00:41:23,471 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_write5_1_1_] : [BIGINT]) - [4]
+00:41:23,472 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([is_delet2_0_2_] : [BOOLEAN]) - [false]
+00:41:23,472 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([about_me3_0_2_] : [VARCHAR]) - [richest man you ever seen!]
+00:41:23,472 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([first_na4_0_2_] : [VARCHAR]) - [Ali]
+00:41:23,472 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([last_nam5_0_2_] : [VARCHAR]) - [Arefnejhad]
+00:41:23,473 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([password6_0_2_] : [VARCHAR]) - [$s0$41010$yAEw+029mSAFaKESTSemPA==$ykPOqGkfwYfZqMaTYZZM2JKNxcaz/fSb7Fy0tN0WgKI=]
+00:41:23,473 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([username7_0_2_] : [VARCHAR]) - [aliluxury]
+00:41:23,473 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_post6_1_0_] : [BIGINT]) - [6]
+00:41:23,473 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_1_0_] : [BIGINT]) - [15]
+00:41:23,474 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_1_1_] : [BIGINT]) - [16]
+00:41:23,474 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_0_2_] : [BIGINT]) - [2]
+00:41:23,476 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([is_delet2_1_1_] : [BOOLEAN]) - [false]
+00:41:23,477 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([create_d3_1_1_] : [DATE]) - [2020-01-07]
+00:41:23,478 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([message4_1_1_] : [VARCHAR]) - [awsome awsome]
+00:41:23,478 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_write5_1_1_] : [BIGINT]) - [2]
+00:41:23,479 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_post6_1_0_] : [BIGINT]) - [6]
+00:41:23,479 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_1_0_] : [BIGINT]) - [16]
+00:41:23,482 DEBUG [org.hibernate.SQL] - select likes0_.fk_post as fk_post4_2_0_, likes0_.id as id1_2_0_, likes0_.id as id1_2_1_, likes0_.is_deleted as is_delet2_2_1_, likes0_.fk_liker_account as fk_liker3_2_1_, account1_.id as id1_0_2_, account1_.is_deleted as is_delet2_0_2_, account1_.about_me as about_me3_0_2_, account1_.first_name as first_na4_0_2_, account1_.last_name as last_nam5_0_2_, account1_.password as password6_0_2_, account1_.username as username7_0_2_ from HW15_One.tbl_like likes0_ inner join HW15_One.tbl_account account1_ on likes0_.fk_liker_account=account1_.id where likes0_.fk_post=?
+00:41:23,483 TRACE [org.hibernate.type.descriptor.sql.BasicBinder] - binding parameter [1] as [BIGINT] - [11]
+00:41:23,486 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_2_1_] : [BIGINT]) - [33]
+00:41:23,486 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_0_2_] : [BIGINT]) - [1]
+00:41:23,487 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([is_delet2_2_1_] : [BOOLEAN]) - [false]
+00:41:23,487 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_liker3_2_1_] : [BIGINT]) - [1]
+00:41:23,487 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_post4_2_0_] : [BIGINT]) - [11]
+00:41:23,488 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_2_0_] : [BIGINT]) - [33]
+00:41:23,488 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_2_1_] : [BIGINT]) - [34]
+00:41:23,488 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_0_2_] : [BIGINT]) - [2]
+00:41:23,489 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([is_delet2_2_1_] : [BOOLEAN]) - [false]
+00:41:23,489 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_liker3_2_1_] : [BIGINT]) - [2]
+00:41:23,489 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_post4_2_0_] : [BIGINT]) - [11]
+00:41:23,489 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_2_0_] : [BIGINT]) - [34]
+00:41:23,490 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_2_1_] : [BIGINT]) - [35]
+00:41:23,490 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_0_2_] : [BIGINT]) - [3]
+00:41:23,490 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([is_delet2_2_1_] : [BOOLEAN]) - [false]
+00:41:23,491 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_liker3_2_1_] : [BIGINT]) - [3]
+00:41:23,491 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_post4_2_0_] : [BIGINT]) - [11]
+00:41:23,491 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_2_0_] : [BIGINT]) - [35]
+00:41:23,494 DEBUG [org.hibernate.SQL] - select comments0_.fk_post as fk_post6_1_0_, comments0_.id as id1_1_0_, comments0_.id as id1_1_1_, comments0_.is_deleted as is_delet2_1_1_, comments0_.create_date as create_d3_1_1_, comments0_.message as message4_1_1_, comments0_.fk_writer_account as fk_write5_1_1_, account1_.id as id1_0_2_, account1_.is_deleted as is_delet2_0_2_, account1_.about_me as about_me3_0_2_, account1_.first_name as first_na4_0_2_, account1_.last_name as last_nam5_0_2_, account1_.password as password6_0_2_, account1_.username as username7_0_2_ from HW15_One.tbl_comment comments0_ inner join HW15_One.tbl_account account1_ on comments0_.fk_writer_account=account1_.id where comments0_.fk_post=?
+00:41:23,495 TRACE [org.hibernate.type.descriptor.sql.BasicBinder] - binding parameter [1] as [BIGINT] - [11]
+00:41:23,501 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_1_1_] : [BIGINT]) - [21]
+00:41:23,501 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_0_2_] : [BIGINT]) - [3]
+00:41:23,502 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([is_delet2_1_1_] : [BOOLEAN]) - [false]
+00:41:23,503 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([create_d3_1_1_] : [DATE]) - [2020-11-17]
+00:41:23,503 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([message4_1_1_] : [VARCHAR]) - [very good! very good!]
+00:41:23,503 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_write5_1_1_] : [BIGINT]) - [3]
+00:41:23,504 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_post6_1_0_] : [BIGINT]) - [11]
+00:41:23,504 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_1_0_] : [BIGINT]) - [21]
+00:41:23,505 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_1_1_] : [BIGINT]) - [22]
+00:41:23,505 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_0_2_] : [BIGINT]) - [1]
+00:41:23,506 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([is_delet2_1_1_] : [BOOLEAN]) - [false]
+00:41:23,507 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([create_d3_1_1_] : [DATE]) - [2020-11-18]
+00:41:23,507 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([message4_1_1_] : [VARCHAR]) - [nice job...]
+00:41:23,507 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_write5_1_1_] : [BIGINT]) - [1]
+00:41:23,515 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_post6_1_0_] : [BIGINT]) - [11]
+00:41:23,516 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_1_0_] : [BIGINT]) - [22]
+00:41:23,518 DEBUG [org.hibernate.SQL] - select likes0_.fk_post as fk_post4_2_0_, likes0_.id as id1_2_0_, likes0_.id as id1_2_1_, likes0_.is_deleted as is_delet2_2_1_, likes0_.fk_liker_account as fk_liker3_2_1_, account1_.id as id1_0_2_, account1_.is_deleted as is_delet2_0_2_, account1_.about_me as about_me3_0_2_, account1_.first_name as first_na4_0_2_, account1_.last_name as last_nam5_0_2_, account1_.password as password6_0_2_, account1_.username as username7_0_2_ from HW15_One.tbl_like likes0_ inner join HW15_One.tbl_account account1_ on likes0_.fk_liker_account=account1_.id where likes0_.fk_post=?
+00:41:23,519 TRACE [org.hibernate.type.descriptor.sql.BasicBinder] - binding parameter [1] as [BIGINT] - [5]
+00:41:23,523 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_2_1_] : [BIGINT]) - [23]
+00:41:23,524 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_0_2_] : [BIGINT]) - [2]
+00:41:23,526 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([is_delet2_2_1_] : [BOOLEAN]) - [false]
+00:41:23,527 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_liker3_2_1_] : [BIGINT]) - [2]
+00:41:23,528 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_post4_2_0_] : [BIGINT]) - [5]
+00:41:23,529 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_2_0_] : [BIGINT]) - [23]
+00:41:23,530 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_2_1_] : [BIGINT]) - [24]
+00:41:23,530 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_0_2_] : [BIGINT]) - [3]
+00:41:23,532 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([is_delet2_2_1_] : [BOOLEAN]) - [false]
+00:41:23,533 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_liker3_2_1_] : [BIGINT]) - [3]
+00:41:23,534 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_post4_2_0_] : [BIGINT]) - [5]
+00:41:23,534 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_2_0_] : [BIGINT]) - [24]
+00:41:23,535 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_2_1_] : [BIGINT]) - [25]
+00:41:23,535 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_0_2_] : [BIGINT]) - [4]
+00:41:23,535 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([is_delet2_2_1_] : [BOOLEAN]) - [false]
+00:41:23,536 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_liker3_2_1_] : [BIGINT]) - [4]
+00:41:23,536 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_post4_2_0_] : [BIGINT]) - [5]
+00:41:23,536 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_2_0_] : [BIGINT]) - [25]
+00:41:23,538 DEBUG [org.hibernate.SQL] - select comments0_.fk_post as fk_post6_1_0_, comments0_.id as id1_1_0_, comments0_.id as id1_1_1_, comments0_.is_deleted as is_delet2_1_1_, comments0_.create_date as create_d3_1_1_, comments0_.message as message4_1_1_, comments0_.fk_writer_account as fk_write5_1_1_, account1_.id as id1_0_2_, account1_.is_deleted as is_delet2_0_2_, account1_.about_me as about_me3_0_2_, account1_.first_name as first_na4_0_2_, account1_.last_name as last_nam5_0_2_, account1_.password as password6_0_2_, account1_.username as username7_0_2_ from HW15_One.tbl_comment comments0_ inner join HW15_One.tbl_account account1_ on comments0_.fk_writer_account=account1_.id where comments0_.fk_post=?
+00:41:23,539 TRACE [org.hibernate.type.descriptor.sql.BasicBinder] - binding parameter [1] as [BIGINT] - [5]
+00:41:23,544 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_1_1_] : [BIGINT]) - [12]
+00:41:23,545 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_0_2_] : [BIGINT]) - [2]
+00:41:23,546 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([is_delet2_1_1_] : [BOOLEAN]) - [false]
+00:41:23,547 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([create_d3_1_1_] : [DATE]) - [2019-10-24]
+00:41:23,548 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([message4_1_1_] : [VARCHAR]) - [good good good]
+00:41:23,548 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_write5_1_1_] : [BIGINT]) - [2]
+00:41:23,549 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_post6_1_0_] : [BIGINT]) - [5]
+00:41:23,549 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_1_0_] : [BIGINT]) - [12]
+00:41:23,550 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_1_1_] : [BIGINT]) - [13]
+00:41:23,550 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_0_2_] : [BIGINT]) - [3]
+00:41:23,551 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([is_delet2_1_1_] : [BOOLEAN]) - [false]
+00:41:23,552 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([create_d3_1_1_] : [DATE]) - [2019-10-24]
+00:41:23,552 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([message4_1_1_] : [VARCHAR]) - [nice nice nice]
+00:41:23,553 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_write5_1_1_] : [BIGINT]) - [3]
+00:41:23,553 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_post6_1_0_] : [BIGINT]) - [5]
+00:41:23,553 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_1_0_] : [BIGINT]) - [13]
+00:41:23,554 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_1_1_] : [BIGINT]) - [14]
+00:41:23,554 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_0_2_] : [BIGINT]) - [4]
+00:41:23,555 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([is_delet2_1_1_] : [BOOLEAN]) - [false]
+00:41:23,555 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([create_d3_1_1_] : [DATE]) - [2019-10-25]
+00:41:23,555 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([message4_1_1_] : [VARCHAR]) - [bad bad bad]
+00:41:23,556 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_write5_1_1_] : [BIGINT]) - [4]
+00:41:23,556 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_post6_1_0_] : [BIGINT]) - [5]
+00:41:23,556 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_1_0_] : [BIGINT]) - [14]
+00:41:23,557 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_1_1_] : [BIGINT]) - [36]
+00:41:23,557 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_0_2_] : [BIGINT]) - [4]
+00:41:23,557 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([is_delet2_1_1_] : [BOOLEAN]) - [false]
+00:41:23,558 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([create_d3_1_1_] : [DATE]) - [2019-10-25]
+00:41:23,558 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([message4_1_1_] : [VARCHAR]) - [worse]
+00:41:23,559 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_write5_1_1_] : [BIGINT]) - [4]
+00:41:23,559 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_post6_1_0_] : [BIGINT]) - [5]
+00:41:23,560 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_1_0_] : [BIGINT]) - [36]
+00:42:47,451 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] - Session Metrics {
+    2914498 nanoseconds spent acquiring 3 JDBC connections;
+    2484213 nanoseconds spent releasing 3 JDBC connections;
+    64433180 nanoseconds spent preparing 17 JDBC statements;
+    144657466 nanoseconds spent executing 17 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+00:42:47,478 INFO  [org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl] - HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+00:42:47,481 DEBUG [org.hibernate.SQL] - alter table HW15_One.tbl_comment drop foreign key FKc9jbrsjv5t2rh0pgfyeg0v6ah
+00:42:47,482 INFO  [org.hibernate.orm.connections.access] - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@1a231481] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+00:42:47,598 DEBUG [org.hibernate.SQL] - alter table HW15_One.tbl_comment drop foreign key FKlijfoqww9kni45ay4va3pktsp
+00:42:47,813 DEBUG [org.hibernate.SQL] - alter table HW15_One.tbl_like drop foreign key FK1cmbiit0rv1bqc4tcstc2euxp
+00:42:48,002 DEBUG [org.hibernate.SQL] - alter table HW15_One.tbl_like drop foreign key FKf3jkcoh4cegoljumhfn3vx7df
+00:42:48,044 DEBUG [org.hibernate.SQL] - alter table HW15_One.tbl_post drop foreign key FK2rrfo89uhrve5r94w910mfb0l
+00:42:48,089 DEBUG [org.hibernate.SQL] - drop table if exists HW15_One.tbl_account
+00:42:48,176 ERROR [org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl] - HHH000478: Unsuccessful: drop table if exists HW15_One.tbl_account
+00:42:48,176 DEBUG [org.hibernate.SQL] - drop table if exists HW15_One.tbl_comment
+00:42:48,342 DEBUG [org.hibernate.SQL] - drop table if exists HW15_One.tbl_like
+00:42:48,485 DEBUG [org.hibernate.SQL] - drop table if exists HW15_One.tbl_post
+00:42:48,674 ERROR [org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl] - HHH000478: Unsuccessful: drop table if exists HW15_One.tbl_post
+00:42:48,674 DEBUG [org.hibernate.SQL] - alter table follower_following drop foreign key FK4h29uaom1kwktrh5y06r5w1mj
+00:42:48,789 DEBUG [org.hibernate.SQL] - alter table follower_following drop foreign key FK7krl1j630b8t2kpdvn455jtqn
+00:42:48,852 DEBUG [org.hibernate.SQL] - alter table saver_saved drop foreign key FKsbesy82g9lrth9cgvbxhktrif
+00:42:48,941 DEBUG [org.hibernate.SQL] - alter table saver_saved drop foreign key FKbk1o6eel1dp8q4yjvry6mughf
+00:42:49,019 DEBUG [org.hibernate.SQL] - drop table if exists follower_following
+00:42:49,182 DEBUG [org.hibernate.SQL] - drop table if exists saver_saved
+00:42:49,341 INFO  [org.hibernate.orm.connections.pooling] - HHH10001008: Cleaning up connection pool [jdbc:mysql://127.0.0.1:3306/HW15_One?createDatabaseIfNotExist=true&autoReconnection=true&characterEncoding=UTF-8&userSSL=false]

@@ -3,24 +3,29 @@ package com.mamalimomen.services;
 import com.mamalimomen.base.services.BaseService;
 import com.mamalimomen.domains.Account;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.Optional;
 
 public interface AccountService extends BaseService<Long, Account> {
-    Optional<Account> createNewAccount();
+    String createNewAccount(HttpServletRequest req);
 
-    Optional<Account> retrieveExistActiveAccount();
+    Optional<Account> retrieveExistActiveAccount(HttpServletRequest req);
 
-    String updateExistActiveAccountPassword(Account account);
+    String updateExistActiveAccountPassword(HttpServletRequest req);
 
-    String updateExistActiveAccountInformation(Account account);
+    String updateExistActiveAccountInformation(HttpServletRequest req);
 
-    String addExistActiveAccountAPost(Account account);
+    String addExistActiveAccountAPost(HttpServletRequest req);
 
-    String removeExistActiveAccountAPost(Account account);
+    String addExistActiveAccountASavedPost(HttpServletRequest req);
 
-    String addExistActiveAccountAFollowing(Account followerAccount, Account followingAccount);
+    String removeExistActiveAccountAPost(HttpServletRequest req);
 
-    String removeExistActiveAccountAFollowing(Account followerAccount);
+    String removeExistActiveAccountASavedPost(HttpServletRequest req);
 
-    String deleteExistActiveAccount(Account account);
+    String addExistActiveAccountAFollowing(HttpServletRequest req);
+
+    String removeExistActiveAccountAFollowing(HttpServletRequest req);
+
+    String deleteExistActiveAccount(HttpServletRequest req);
 }

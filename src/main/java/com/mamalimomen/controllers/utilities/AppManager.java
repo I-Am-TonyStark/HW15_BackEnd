@@ -4,14 +4,13 @@ import com.mamalimomen.base.controllers.utilities.PersistenceUnitManager;
 import com.mamalimomen.base.controllers.utilities.PersistenceUnits;
 import com.mamalimomen.base.domains.BaseEntity;
 import com.mamalimomen.base.services.BaseService;
-import com.mamalimomen.services.Impl.AccountServiceImpl;
-import com.mamalimomen.services.Impl.CommentServiceImpl;
-import com.mamalimomen.services.Impl.LikeServiceImpl;
-import com.mamalimomen.services.Impl.PostServiceImpl;
+import com.mamalimomen.services.impl.AccountServiceImpl;
+import com.mamalimomen.services.impl.CommentServiceImpl;
+import com.mamalimomen.services.impl.LikeServiceImpl;
+import com.mamalimomen.services.impl.PostServiceImpl;
 
 import javax.persistence.EntityManager;
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.PrintStream;
 import java.util.*;
 
@@ -24,7 +23,7 @@ public final class AppManager {
 
     public synchronized static void startApp() {
         try {
-            System.setErr(new PrintStream("D:\\عزم راسخ\\جاوا مکتب\\کلاس\\40\\HW14_BackEnd\\src\\main\\resources\\log.txt"));
+            System.setErr(new PrintStream("D:\\عزم راسخ\\جاوا مکتب\\کلاس\\43\\HW15_BackEnd\\src\\main\\resources\\log.txt"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -37,8 +36,6 @@ public final class AppManager {
         serviceMapper.put(Services.POST_SERVICE, new PostServiceImpl(em));
         serviceMapper.put(Services.COMMENT_SERVICE, new CommentServiceImpl(em));
         serviceMapper.put(Services.LIKE_SERVICE, new LikeServiceImpl(em));
-
-        MenuFactory.getMenu(null).routerMenu();
     }
 
     public static <PK extends Long, E extends BaseEntity, S extends BaseService<PK, E>> S getService(Services service) {

@@ -8,7 +8,7 @@ import java.util.Date;
 
 @Entity
 @SelectBeforeUpdate
-@Table(name = "tbl_comment", catalog = "HW14_One", schema = "HW14_One")
+@Table(name = "tbl_comment", catalog = "HW15_One", schema = "HW15_One")
 public final class Comment extends BaseEntity implements Comparable<Comment> {
 
     @Transient

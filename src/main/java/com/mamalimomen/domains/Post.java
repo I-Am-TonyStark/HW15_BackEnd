@@ -12,12 +12,7 @@ import java.util.stream.Collectors;
 
 @Entity
 @SelectBeforeUpdate
-@Table(name = "tbl_post", catalog = "HW14_One", schema = "HW14_One")
-@NamedQueries({
-        @NamedQuery(
-                name = "Post.findAll",
-                query = "SELECT p FROM Post p LEFT JOIN p.likes l WHERE p.deleted = FALSE GROUP BY p.likes.size ORDER BY COUNT(p.likes.size) DESC")
-})
+@Table(name = "tbl_post", catalog = "HW15_One", schema = "HW15_One")
 public class Post extends BaseEntity implements Comparable<Post> {
 
     @Transient
@@ -45,10 +40,7 @@ public class Post extends BaseEntity implements Comparable<Post> {
         return text;
     }
 
-    public void setText(String text) throws InValidDataException {
-        if (text.length() < 20) {
-            throw new InValidDataException("Text");
-        }
+    public void setText(String text) {
         this.text = text;
     }
 

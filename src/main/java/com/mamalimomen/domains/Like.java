@@ -7,7 +7,7 @@ import javax.persistence.*;
 
 @Entity
 @SelectBeforeUpdate
-@Table(name = "tbl_like", catalog = "HW14_One", schema = "HW14_One",
+@Table(name = "tbl_like", catalog = "HW15_One", schema = "HW15_One",
         uniqueConstraints = {@UniqueConstraint(name = "unique_liker_post",columnNames = {"fk_liker_account","fk_post"})})
 public final class Like extends BaseEntity implements Comparable<Like> {
 
