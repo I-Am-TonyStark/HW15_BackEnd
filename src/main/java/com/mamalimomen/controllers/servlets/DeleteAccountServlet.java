@@ -29,7 +29,7 @@ public class DeleteAccountServlet extends HttpServlet {
 
             String destPage = "login.jsp";
             RequestDispatcher dispatcher = req.getRequestDispatcher(destPage);
-            dispatcher.include(req, resp);
+            dispatcher.forward(req, resp);
         }
     }
 }
