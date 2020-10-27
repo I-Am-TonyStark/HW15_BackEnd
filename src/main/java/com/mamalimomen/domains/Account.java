@@ -27,10 +27,10 @@ public final class Account extends BaseEntity implements Comparable<Account> {
     private User user;
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-    @JoinColumn(name = "fk_account", nullable = false)
+    @JoinColumn(name = "fk_account")
     private List<Post> posts = new ArrayList<>();
 
-    @ManyToMany(cascade = CascadeType.MERGE)
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "saver_saved", joinColumns = {@JoinColumn(name = "account_id")}, inverseJoinColumns = {@JoinColumn(name = "post_id")},
             uniqueConstraints = {@UniqueConstraint(name = "unique_saver_saved", columnNames = {"account_id", "post_id"})})
     private List<Post> savedPosts = new ArrayList<>();
@@ -40,7 +40,7 @@ public final class Account extends BaseEntity implements Comparable<Account> {
             uniqueConstraints = {@UniqueConstraint(name = "unique_follower_following", columnNames = {"follower_id", "following_id"})})
     private List<Account> followings = new ArrayList<>();
 
-    @ManyToMany(mappedBy = "followings", cascade = CascadeType.MERGE)
+    @ManyToMany(mappedBy = "followings")
     private List<Account> followers = new ArrayList<>();
 
     public User getUser() {
@@ -92,13 +92,18 @@ public final class Account extends BaseEntity implements Comparable<Account> {
         following.getFollowers().add(this);
     }
 
+    public void removeFollowing(Account chooseAccount) {
+        this.getFollowings().remove(chooseAccount);
+        chooseAccount.getFollowers().remove(this);
+    }
+
     public void addSavedPost(Post saved) {
         this.getSavedPosts().add(saved);
     }
 
     @Override
     public String toString() {
-        return String.format("Followings: %d\tFollowers: %d\tPosts: %d%n%s", getFollowings().size(), getFollowers().size(), getPosts().size(), getUser());
+        return String.format("Followings: %d\tFollowers: %d\tPosts: %d<br/>%s", getFollowings().size(), getFollowers().size(), getPosts().size(), getUser());
     }
 
     @Override

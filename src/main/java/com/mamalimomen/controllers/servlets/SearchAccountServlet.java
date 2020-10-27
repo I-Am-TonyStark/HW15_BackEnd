@@ -32,14 +32,13 @@ public class SearchAccountServlet extends HttpServlet {
 
             String destPage = "search_account.jsp";
             RequestDispatcher dispatcher = req.getRequestDispatcher(destPage);
-            dispatcher.include(req, resp);
+            dispatcher.forward(req, resp);
         }
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         try (PrintWriter out = resp.getWriter()) {
-            req.getSession().removeAttribute("searched_account");
 
             AccountService as = AppManager.getService(Services.ACCOUNT_SERVICE);
             Optional<Account> oAccount = as.retrieveExistActiveAccount(req);
@@ -47,17 +46,16 @@ public class SearchAccountServlet extends HttpServlet {
             String destPage = "search_account.jsp";
 
             if (oAccount.isEmpty()) {
-                String message = "There is not any Account with this username!, try again";
+                String message = "There is not any Account with this username!";
                 req.setAttribute("message", message);
 
             } else {
                 Account account = oAccount.get();
-                HttpSession session = req.getSession();
-                session.setAttribute("searched_account", account);
+                req.getSession().setAttribute("searched_account", account);
             }
 
             RequestDispatcher dispatcher = req.getRequestDispatcher(destPage);
-            dispatcher.include(req, resp);
+            dispatcher.forward(req, resp);
         }
     }
 }

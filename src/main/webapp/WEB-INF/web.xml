@@ -10,6 +10,12 @@
         <param-value>+989399589232</param-value>
     </context-param>
 
+    <context-param>
+        <param-name>uploaded</param-name>
+        <param-value>upload/</param-value>
+        <description>uploaded files directory</description>
+    </context-param>
+
     <listener>
         <listener-class>com.mamalimomen.controllers.AppContextListener</listener-class>
     </listener>
@@ -66,6 +72,10 @@
         <servlet-name>deleteAccount</servlet-name>
         <servlet-class>com.mamalimomen.controllers.servlets.DeleteAccountServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>logout</servlet-name>
+        <servlet-class>com.mamalimomen.controllers.servlets.LogoutServlet</servlet-class>
+    </servlet>
 
     <servlet-mapping>
         <servlet-name>login</servlet-name>
@@ -114,6 +124,10 @@
     <servlet-mapping>
         <servlet-name>deleteAccount</servlet-name>
         <url-pattern>/delete_account</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>logout</servlet-name>
+        <url-pattern>/logout</url-pattern>
     </servlet-mapping>
 
     <session-config>

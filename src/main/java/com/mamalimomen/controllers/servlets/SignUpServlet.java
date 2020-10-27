@@ -4,6 +4,7 @@ import com.mamalimomen.controllers.utilities.AppManager;
 import com.mamalimomen.controllers.utilities.Services;
 import com.mamalimomen.services.AccountService;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -14,17 +15,17 @@ import java.io.PrintWriter;
 public class SignUpServlet extends HttpServlet {
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
         try (PrintWriter out = resp.getWriter()) {
 
             AccountService as = AppManager.getService(Services.ACCOUNT_SERVICE);
-            String resultMessage = as.createNewAccount(req);
+            String message = as.createNewAccount(req);
 
-            resp.setContentType("text/html");
+            req.setAttribute("message", message);
 
-            out.println("<h1>" + resultMessage + "<h1>");
-            resp.sendRedirect("login.jsp");
+            String destPage = "signup.jsp";
+            RequestDispatcher dispatcher = req.getRequestDispatcher(destPage);
+            dispatcher.forward(req, resp);
         }
     }
 }

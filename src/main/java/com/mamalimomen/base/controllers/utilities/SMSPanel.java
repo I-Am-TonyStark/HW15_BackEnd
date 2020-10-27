@@ -72,7 +72,7 @@ public final class SMSPanel {
         System.err.println(response.body());
     }
 
-    private static class ApiTokenResponse {
+    private class ApiTokenResponse {
         private String TokenKey;
 
         public String getTokenKey() {

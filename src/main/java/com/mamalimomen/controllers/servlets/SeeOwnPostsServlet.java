@@ -28,18 +28,18 @@ public class SeeOwnPostsServlet extends HttpServlet {
             }
 
             if (req.getParameter("like") != null) {
-                result += ps.addExistPostALike(req);
+                result += "<br/>" + ps.addExistPostALike(req);
             }
 
             if (req.getParameter("delete") != null) {
-                result += as.removeExistActiveAccountAPost(req);
+                result += "<br/>" + as.removeExistActiveAccountAPost(req);
             }
 
             req.setAttribute("result", result);
 
             String destPage = "see_own_posts.jsp";
             RequestDispatcher dispatcher = req.getRequestDispatcher(destPage);
-            dispatcher.include(req, resp);
+            dispatcher.forward(req, resp);
         }
     }
 }

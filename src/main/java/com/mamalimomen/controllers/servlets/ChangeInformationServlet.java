@@ -20,12 +20,12 @@ public class ChangeInformationServlet extends HttpServlet {
 
             AccountService as = AppManager.getService(Services.ACCOUNT_SERVICE);
 
-            String result = as.updateExistActiveAccountInformation(req);
-            req.setAttribute("result", result);
+            String message = as.updateExistActiveAccountInformation(req);
+            req.setAttribute("message", message);
 
-            String destPage = "home.jsp";
+            String destPage = "change_information.jsp";
             RequestDispatcher dispatcher = req.getRequestDispatcher(destPage);
-            dispatcher.include(req, resp);
+            dispatcher.forward(req, resp);
         }
     }
 }

@@ -2,7 +2,6 @@ package com.mamalimomen.controllers.servlets;
 
 import com.mamalimomen.controllers.utilities.AppManager;
 import com.mamalimomen.controllers.utilities.Services;
-import com.mamalimomen.domains.Account;
 import com.mamalimomen.services.AccountService;
 
 import javax.servlet.RequestDispatcher;
@@ -21,10 +20,10 @@ public class ChangePasswordServlet extends HttpServlet {
 
             AccountService as = AppManager.getService(Services.ACCOUNT_SERVICE);
 
-            String result = as.updateExistActiveAccountPassword(req);
-            req.setAttribute("result", result);
+            String message = as.updateExistActiveAccountPassword(req);
+            req.setAttribute("message", message);
 
-            String destPage = "login.jsp";
+            String destPage = "change_password.jsp";
             RequestDispatcher dispatcher = req.getRequestDispatcher(destPage);
             dispatcher.forward(req, resp);
         }

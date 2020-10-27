@@ -22,19 +22,18 @@ public class LoginServlet extends HttpServlet {
             AccountService as = AppManager.getService(Services.ACCOUNT_SERVICE);
             Optional<Account> oAccount = as.retrieveExistActiveAccount(req);
 
-            Cookie cookie = new Cookie(req.getParameter("username"), req.getParameter("password"));
+            /*Cookie cookie = new Cookie(req.getParameter("username"), req.getParameter("password"));
             cookie.setComment("This cookie stores username and password of your account");
-            //cookie.setHttpOnly(true);
+            cookie.setHttpOnly(true);
             cookie.setMaxAge(365 * 24 * 60 * 60);
-            //cookie.setPath("/login");
-            resp.addCookie(cookie);
+            cookie.setPath("/login");
+            resp.addCookie(cookie);*/
 
             String destPage = "login.jsp";
+            String message = "";
 
             if (oAccount.isEmpty()) {
-                String message = "There is not any Account with this username!, try again";
-                req.setAttribute("message", message);
-
+                message = "There is not any Account with this username!";
             } else {
                 Account account = oAccount.get();
                 if (SecurityManager.checkPasswordHash(req.getParameter("password"), account.getUser().getPassword())) {
@@ -42,11 +41,11 @@ public class LoginServlet extends HttpServlet {
                     session.setAttribute("account", account);
                     destPage = "home.jsp";
                 } else {
-                    String message = " Wrong Password";
-                    req.setAttribute("message", message);
+                    message = "Wrong Password!";
                 }
             }
 
+            req.setAttribute("message", message);
             RequestDispatcher dispatcher = req.getRequestDispatcher(destPage);
             dispatcher.forward(req, resp);
         }

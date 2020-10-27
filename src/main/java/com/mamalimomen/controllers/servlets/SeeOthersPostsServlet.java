@@ -28,18 +28,18 @@ public class SeeOthersPostsServlet extends HttpServlet {
             }
 
             if (req.getParameter("like") != null) {
-                result += ps.addExistPostALike(req);
+                result += "<br/>" + ps.addExistPostALike(req);
             }
 
             if (req.getParameter("save") != null) {
-                result += as.addExistActiveAccountASavedPost(req);
+                result += "<br/>" + as.addExistActiveAccountASavedPost(req);
             }
 
             req.setAttribute("result", result);
 
             String destPage = "see_others_posts.jsp";
             RequestDispatcher dispatcher = req.getRequestDispatcher(destPage);
-            dispatcher.include(req, resp);
+            dispatcher.forward(req, resp);
         }
     }
 }

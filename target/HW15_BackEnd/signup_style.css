@@ -16,7 +16,7 @@ html, body {
     background: #ebebeb;
 }
 
-input[type=text], input[type=password] {
+input[type=text], input[type=password], input[type=file], img{
     width: 100%;
     padding: 16px 8px;
     margin: 8px 0;
@@ -44,7 +44,18 @@ button {
 
 h1 {
     text-align: center;
-    fone-size: 18;
+    font-size: 18px;
+}
+
+h6 {
+    padding: 10px 0;
+    font-weight: 300;
+    text-align: center;
+    margin: 0;
+    outline: none;
+    font-family: Roboto, Arial, sans-serif;
+    font-size: 16px;
+    color: #666;
 }
 
 button:hover {

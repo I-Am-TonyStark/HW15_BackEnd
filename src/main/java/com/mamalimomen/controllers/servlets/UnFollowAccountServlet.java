@@ -30,7 +30,7 @@ public class UnFollowAccountServlet extends HttpServlet {
 
             String destPage = "unfollow_account.jsp";
             RequestDispatcher dispatcher = req.getRequestDispatcher(destPage);
-            dispatcher.include(req, resp);
+            dispatcher.forward(req, resp);
         }
     }
 }

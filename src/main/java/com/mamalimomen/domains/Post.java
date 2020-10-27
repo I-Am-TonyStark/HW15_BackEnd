@@ -19,7 +19,7 @@ public class Post extends BaseEntity implements Comparable<Post> {
     private static final long serialVersionUID = 6446817660773091639L;
 
     @Column(name = "text", nullable = false, columnDefinition = "text")
-    private String text;
+    private String text = "";
 
     @Column(name = "image_path")
     private String imagePath = "";
@@ -85,16 +85,16 @@ public class Post extends BaseEntity implements Comparable<Post> {
     }
 
     public String printComments() {
-        return getComments().stream().map(Comment::toString).collect(Collectors.joining("\n"));
+        return getComments().stream().map(Comment::toString).collect(Collectors.joining("<br/>"));
     }
 
     public String printLikes() {
-        return getLikes().stream().map(Like::toString).collect(Collectors.joining("\n"));
+        return getLikes().stream().map(Like::toString).collect(Collectors.joining(" & "));
     }
 
     @Override
     public String toString() {
-        return String.format("%s%n%s%n%s%nLikes: %d\tComments: %d%n", getImagePath(), getText(), getCreateDate(), getLikes().size(), getComments().size());
+        return String.format("%s<br/>%s<br/>Likes: %d   Comments: %d", getText(), getCreateDate(), getLikes().size(), getComments().size());
     }
 
     @Override

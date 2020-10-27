@@ -20,7 +20,7 @@ public final class User implements Serializable {
     @Column(name = "last_name", nullable = false)
     private String lastName = "";
 
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true)
     private String username = "";
 
     @Column(nullable = false)
@@ -97,6 +97,6 @@ public final class User implements Serializable {
 
     @Override
     public String toString() {
-        return String.format("%s%n%s%n%s%n", getUsername(), getFullName(), getAboutMe());
+        return String.format("%s<br/>%s<br/>%s<br/>", getUsername(), getFullName(), getAboutMe());
     }
 }

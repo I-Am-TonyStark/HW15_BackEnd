@@ -13,15 +13,15 @@ import java.io.PrintWriter;
 public class InsertPostServlet extends HttpServlet {
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         try (PrintWriter out = resp.getWriter()) {
 
             AccountService as = AppManager.getService(Services.ACCOUNT_SERVICE);
-            String result = as.addExistActiveAccountAPost(req);
 
-            req.setAttribute("result", result);
+            String message = as.addExistActiveAccountAPost(req);
+            req.setAttribute("message", message);
 
-            String destPage = "home.jsp";
+            String destPage = "insert_post.jsp";
             RequestDispatcher dispatcher = req.getRequestDispatcher(destPage);
             dispatcher.forward(req, resp);
         }

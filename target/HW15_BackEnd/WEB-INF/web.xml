@@ -6,8 +6,14 @@
     <display-name>Archetype Created Web Application</display-name>
 
     <context-param>
-        <param-name>email</param-name>
-        <param-value>mamalimomen1996@gmail.com</param-value>
+        <param-name>phone</param-name>
+        <param-value>+989399589232</param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>uploaded</param-name>
+        <param-value>upload/</param-value>
+        <description>uploaded files directory</description>
     </context-param>
 
     <listener>
@@ -47,8 +53,28 @@
         <servlet-class>com.mamalimomen.controllers.servlets.SeeFollowingPostsServlet</servlet-class>
     </servlet>
     <servlet>
+        <servlet-name>seeSavedPosts</servlet-name>
+        <servlet-class>com.mamalimomen.controllers.servlets.SeeSavedPostsServlet</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>insertPost</servlet-name>
         <servlet-class>com.mamalimomen.controllers.servlets.InsertPostServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>searchAccount</servlet-name>
+        <servlet-class>com.mamalimomen.controllers.servlets.SearchAccountServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>unFollowAccount</servlet-name>
+        <servlet-class>com.mamalimomen.controllers.servlets.UnFollowAccountServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>deleteAccount</servlet-name>
+        <servlet-class>com.mamalimomen.controllers.servlets.DeleteAccountServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>logout</servlet-name>
+        <servlet-class>com.mamalimomen.controllers.servlets.LogoutServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
@@ -83,8 +109,28 @@
         <servlet-name>seeFollowingPosts</servlet-name>
         <url-pattern>/see_following_posts</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>seeSavedPosts</servlet-name>
+        <url-pattern>/see_saved_posts</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>searchAccount</servlet-name>
+        <url-pattern>/search_account</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>unFollowAccount</servlet-name>
+        <url-pattern>/unfollow_account</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>deleteAccount</servlet-name>
+        <url-pattern>/delete_account</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>logout</servlet-name>
+        <url-pattern>/logout</url-pattern>
+    </servlet-mapping>
 
     <session-config>
-        <session-timeout>15</session-timeout>
+        <session-timeout>30</session-timeout>
     </session-config>
 </web-app>

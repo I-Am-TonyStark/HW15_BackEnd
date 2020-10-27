@@ -1,5 +1,6 @@
 package com.mamalimomen.services.impl;
 
+import com.mamalimomen.base.controllers.utilities.FileUploader;
 import com.mamalimomen.base.services.impl.BaseServiceImpl;
 import com.mamalimomen.controllers.utilities.AppManager;
 import com.mamalimomen.controllers.utilities.Services;
@@ -27,9 +28,12 @@ public class PostServiceImpl extends BaseServiceImpl<Long, Post, PostRepository>
     public Optional<Post> createNewPost(HttpServletRequest req) {
         Post post = new Post();
 
-        post.setText(req.getParameter("text"));
+        String text = req.getParameter("post_text");
+        if (text == null)
+            text = "Hello world...";
+        post.setText(text);
 
-        post.setImagePath(req.getParameter("img_path"));
+        post.setImagePath(FileUploader.uploadFile(req));
 
         post.setCreateDate(new Date(System.currentTimeMillis()));
 
@@ -82,6 +86,8 @@ public class PostServiceImpl extends BaseServiceImpl<Long, Post, PostRepository>
             post.addLike(oLike.get());
             if (repository.updateOne(post)) {
                 return "Like selected post successfully!";
+            } else {
+                post.getLikes().remove(oLike.get());
             }
         }
         return "can not Like selected post!";

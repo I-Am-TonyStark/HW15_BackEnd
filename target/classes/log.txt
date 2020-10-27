@@ -1,16 +1,16 @@
-00:30:09,515 INFO  [org.hibernate.jpa.internal.util.LogHelper] - HHH000204: Processing PersistenceUnitInfo [name: persistence-unit-one]
-00:30:09,923 INFO  [org.hibernate.Version] - HHH000412: Hibernate Core {5.4.4.Final}
-00:30:10,542 INFO  [org.hibernate.annotations.common.Version] - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-00:30:11,116 WARN  [org.hibernate.orm.connections.pooling] - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+13:51:12,711 INFO  [org.hibernate.jpa.internal.util.LogHelper] - HHH000204: Processing PersistenceUnitInfo [name: persistence-unit-one]
+13:51:13,076 INFO  [org.hibernate.Version] - HHH000412: Hibernate Core {5.4.4.Final}
+13:51:13,709 INFO  [org.hibernate.annotations.common.Version] - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+13:51:14,258 WARN  [org.hibernate.orm.connections.pooling] - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
 Loading class `com.mysql.jdbc.Driver'. This is deprecated. The new driver class is `com.mysql.cj.jdbc.Driver'. The driver is automatically registered via the SPI and manual loading of the driver class is generally unnecessary.
-00:30:11,132 INFO  [org.hibernate.orm.connections.pooling] - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://127.0.0.1:3306/HW15_One?createDatabaseIfNotExist=true&autoReconnection=true&characterEncoding=UTF-8&userSSL=false]
-00:30:11,133 INFO  [org.hibernate.orm.connections.pooling] - HHH10001001: Connection properties: {password=****, user=mamali}
-00:30:11,134 INFO  [org.hibernate.orm.connections.pooling] - HHH10001003: Autocommit mode: false
-00:30:11,148 INFO  [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl] - HHH000115: Hibernate connection pool size: 20 (min=1)
-00:30:11,663 INFO  [org.hibernate.dialect.Dialect] - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
-00:30:15,263 DEBUG [org.hibernate.SQL] - alter table HW15_One.tbl_comment drop foreign key FKc9jbrsjv5t2rh0pgfyeg0v6ah
-00:30:15,270 INFO  [org.hibernate.orm.connections.access] - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@1599af1e] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
-00:30:15,329 WARN  [org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl] - GenerationTarget encountered exception accepting command : Error executing DDL "alter table HW15_One.tbl_comment drop foreign key FKc9jbrsjv5t2rh0pgfyeg0v6ah" via JDBC Statement
+13:51:14,270 INFO  [org.hibernate.orm.connections.pooling] - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://127.0.0.1:3306/HW15_One?createDatabaseIfNotExist=true&autoReconnection=true&characterEncoding=UTF-8&userSSL=false]
+13:51:14,272 INFO  [org.hibernate.orm.connections.pooling] - HHH10001001: Connection properties: {password=****, user=mamali}
+13:51:14,272 INFO  [org.hibernate.orm.connections.pooling] - HHH10001003: Autocommit mode: false
+13:51:14,280 INFO  [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl] - HHH000115: Hibernate connection pool size: 20 (min=1)
+13:51:14,671 INFO  [org.hibernate.dialect.Dialect] - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+13:51:18,522 DEBUG [org.hibernate.SQL] - alter table HW15_One.tbl_comment drop foreign key FKc9jbrsjv5t2rh0pgfyeg0v6ah
+13:51:18,531 INFO  [org.hibernate.orm.connections.access] - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@758fcfcb] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+13:51:18,610 WARN  [org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl] - GenerationTarget encountered exception accepting command : Error executing DDL "alter table HW15_One.tbl_comment drop foreign key FKc9jbrsjv5t2rh0pgfyeg0v6ah" via JDBC Statement
 org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "alter table HW15_One.tbl_comment drop foreign key FKc9jbrsjv5t2rh0pgfyeg0v6ah" via JDBC Statement
 	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67)
 	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlString(SchemaDropperImpl.java:375)
@@ -30,7 +30,7 @@ org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "a
 	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:54)
 	at com.mamalimomen.base.controllers.utilities.PersistenceUnitManager.getEntityManager(PersistenceUnitManager.java:19)
 	at com.mamalimomen.controllers.utilities.AppManager.startApp(AppManager.java:31)
-	at com.mamalimomen.controllers.AppContextListener.contextInitialized(AppContextListener.java:11)
+	at com.mamalimomen.controllers.AppContextListener.contextInitialized(AppContextListener.java:13)
 	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4689)
 	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5155)
 	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
@@ -85,8 +85,8 @@ Caused by: java.sql.SQLSyntaxErrorException: Table 'hw15_one.tbl_comment' doesn'
 	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
 	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54)
 	... 64 more
-00:30:15,341 DEBUG [org.hibernate.SQL] - alter table HW15_One.tbl_comment drop foreign key FKlijfoqww9kni45ay4va3pktsp
-00:30:15,343 WARN  [org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl] - GenerationTarget encountered exception accepting command : Error executing DDL "alter table HW15_One.tbl_comment drop foreign key FKlijfoqww9kni45ay4va3pktsp" via JDBC Statement
+13:51:18,622 DEBUG [org.hibernate.SQL] - alter table HW15_One.tbl_comment drop foreign key FKlijfoqww9kni45ay4va3pktsp
+13:51:18,624 WARN  [org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl] - GenerationTarget encountered exception accepting command : Error executing DDL "alter table HW15_One.tbl_comment drop foreign key FKlijfoqww9kni45ay4va3pktsp" via JDBC Statement
 org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "alter table HW15_One.tbl_comment drop foreign key FKlijfoqww9kni45ay4va3pktsp" via JDBC Statement
 	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67)
 	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlString(SchemaDropperImpl.java:375)
@@ -106,7 +106,7 @@ org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "a
 	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:54)
 	at com.mamalimomen.base.controllers.utilities.PersistenceUnitManager.getEntityManager(PersistenceUnitManager.java:19)
 	at com.mamalimomen.controllers.utilities.AppManager.startApp(AppManager.java:31)
-	at com.mamalimomen.controllers.AppContextListener.contextInitialized(AppContextListener.java:11)
+	at com.mamalimomen.controllers.AppContextListener.contextInitialized(AppContextListener.java:13)
 	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4689)
 	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5155)
 	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
@@ -161,8 +161,8 @@ Caused by: java.sql.SQLSyntaxErrorException: Table 'hw15_one.tbl_comment' doesn'
 	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
 	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54)
 	... 64 more
-00:30:15,351 DEBUG [org.hibernate.SQL] - alter table HW15_One.tbl_like drop foreign key FK1cmbiit0rv1bqc4tcstc2euxp
-00:30:15,353 WARN  [org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl] - GenerationTarget encountered exception accepting command : Error executing DDL "alter table HW15_One.tbl_like drop foreign key FK1cmbiit0rv1bqc4tcstc2euxp" via JDBC Statement
+13:51:18,630 DEBUG [org.hibernate.SQL] - alter table HW15_One.tbl_like drop foreign key FK1cmbiit0rv1bqc4tcstc2euxp
+13:51:18,631 WARN  [org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl] - GenerationTarget encountered exception accepting command : Error executing DDL "alter table HW15_One.tbl_like drop foreign key FK1cmbiit0rv1bqc4tcstc2euxp" via JDBC Statement
 org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "alter table HW15_One.tbl_like drop foreign key FK1cmbiit0rv1bqc4tcstc2euxp" via JDBC Statement
 	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67)
 	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlString(SchemaDropperImpl.java:375)
@@ -182,7 +182,7 @@ org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "a
 	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:54)
 	at com.mamalimomen.base.controllers.utilities.PersistenceUnitManager.getEntityManager(PersistenceUnitManager.java:19)
 	at com.mamalimomen.controllers.utilities.AppManager.startApp(AppManager.java:31)
-	at com.mamalimomen.controllers.AppContextListener.contextInitialized(AppContextListener.java:11)
+	at com.mamalimomen.controllers.AppContextListener.contextInitialized(AppContextListener.java:13)
 	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4689)
 	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5155)
 	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
@@ -237,8 +237,8 @@ Caused by: java.sql.SQLSyntaxErrorException: Table 'hw15_one.tbl_like' doesn't e
 	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
 	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54)
 	... 64 more
-00:30:15,357 DEBUG [org.hibernate.SQL] - alter table HW15_One.tbl_like drop foreign key FKf3jkcoh4cegoljumhfn3vx7df
-00:30:15,360 WARN  [org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl] - GenerationTarget encountered exception accepting command : Error executing DDL "alter table HW15_One.tbl_like drop foreign key FKf3jkcoh4cegoljumhfn3vx7df" via JDBC Statement
+13:51:18,636 DEBUG [org.hibernate.SQL] - alter table HW15_One.tbl_like drop foreign key FKf3jkcoh4cegoljumhfn3vx7df
+13:51:18,638 WARN  [org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl] - GenerationTarget encountered exception accepting command : Error executing DDL "alter table HW15_One.tbl_like drop foreign key FKf3jkcoh4cegoljumhfn3vx7df" via JDBC Statement
 org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "alter table HW15_One.tbl_like drop foreign key FKf3jkcoh4cegoljumhfn3vx7df" via JDBC Statement
 	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67)
 	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlString(SchemaDropperImpl.java:375)
@@ -258,7 +258,7 @@ org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "a
 	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:54)
 	at com.mamalimomen.base.controllers.utilities.PersistenceUnitManager.getEntityManager(PersistenceUnitManager.java:19)
 	at com.mamalimomen.controllers.utilities.AppManager.startApp(AppManager.java:31)
-	at com.mamalimomen.controllers.AppContextListener.contextInitialized(AppContextListener.java:11)
+	at com.mamalimomen.controllers.AppContextListener.contextInitialized(AppContextListener.java:13)
 	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4689)
 	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5155)
 	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
@@ -313,8 +313,8 @@ Caused by: java.sql.SQLSyntaxErrorException: Table 'hw15_one.tbl_like' doesn't e
 	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
 	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54)
 	... 64 more
-00:30:15,364 DEBUG [org.hibernate.SQL] - alter table HW15_One.tbl_post drop foreign key FK2rrfo89uhrve5r94w910mfb0l
-00:30:15,575 WARN  [org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl] - GenerationTarget encountered exception accepting command : Error executing DDL "alter table HW15_One.tbl_post drop foreign key FK2rrfo89uhrve5r94w910mfb0l" via JDBC Statement
+13:51:18,644 DEBUG [org.hibernate.SQL] - alter table HW15_One.tbl_post drop foreign key FK2rrfo89uhrve5r94w910mfb0l
+13:51:18,806 WARN  [org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl] - GenerationTarget encountered exception accepting command : Error executing DDL "alter table HW15_One.tbl_post drop foreign key FK2rrfo89uhrve5r94w910mfb0l" via JDBC Statement
 org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "alter table HW15_One.tbl_post drop foreign key FK2rrfo89uhrve5r94w910mfb0l" via JDBC Statement
 	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67)
 	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlString(SchemaDropperImpl.java:375)
@@ -334,7 +334,7 @@ org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "a
 	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:54)
 	at com.mamalimomen.base.controllers.utilities.PersistenceUnitManager.getEntityManager(PersistenceUnitManager.java:19)
 	at com.mamalimomen.controllers.utilities.AppManager.startApp(AppManager.java:31)
-	at com.mamalimomen.controllers.AppContextListener.contextInitialized(AppContextListener.java:11)
+	at com.mamalimomen.controllers.AppContextListener.contextInitialized(AppContextListener.java:13)
 	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4689)
 	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5155)
 	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
@@ -389,12 +389,12 @@ Caused by: java.sql.SQLSyntaxErrorException: Can't DROP 'FK2rrfo89uhrve5r94w910m
 	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
 	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54)
 	... 64 more
-00:30:15,577 DEBUG [org.hibernate.SQL] - drop table if exists HW15_One.tbl_account
-00:30:16,477 DEBUG [org.hibernate.SQL] - drop table if exists HW15_One.tbl_comment
-00:30:16,488 DEBUG [org.hibernate.SQL] - drop table if exists HW15_One.tbl_like
-00:30:16,490 DEBUG [org.hibernate.SQL] - drop table if exists HW15_One.tbl_post
-00:30:16,801 DEBUG [org.hibernate.SQL] - alter table follower_following drop foreign key FK4h29uaom1kwktrh5y06r5w1mj
-00:30:16,802 WARN  [org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl] - GenerationTarget encountered exception accepting command : Error executing DDL "alter table follower_following drop foreign key FK4h29uaom1kwktrh5y06r5w1mj" via JDBC Statement
+13:51:18,810 DEBUG [org.hibernate.SQL] - drop table if exists HW15_One.tbl_account
+13:51:18,888 DEBUG [org.hibernate.SQL] - drop table if exists HW15_One.tbl_comment
+13:51:18,900 DEBUG [org.hibernate.SQL] - drop table if exists HW15_One.tbl_like
+13:51:18,902 DEBUG [org.hibernate.SQL] - drop table if exists HW15_One.tbl_post
+13:51:19,198 DEBUG [org.hibernate.SQL] - alter table follower_following drop foreign key FK4h29uaom1kwktrh5y06r5w1mj
+13:51:19,200 WARN  [org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl] - GenerationTarget encountered exception accepting command : Error executing DDL "alter table follower_following drop foreign key FK4h29uaom1kwktrh5y06r5w1mj" via JDBC Statement
 org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "alter table follower_following drop foreign key FK4h29uaom1kwktrh5y06r5w1mj" via JDBC Statement
 	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67)
 	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlString(SchemaDropperImpl.java:375)
@@ -414,7 +414,7 @@ org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "a
 	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:54)
 	at com.mamalimomen.base.controllers.utilities.PersistenceUnitManager.getEntityManager(PersistenceUnitManager.java:19)
 	at com.mamalimomen.controllers.utilities.AppManager.startApp(AppManager.java:31)
-	at com.mamalimomen.controllers.AppContextListener.contextInitialized(AppContextListener.java:11)
+	at com.mamalimomen.controllers.AppContextListener.contextInitialized(AppContextListener.java:13)
 	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4689)
 	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5155)
 	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
@@ -469,8 +469,8 @@ Caused by: java.sql.SQLSyntaxErrorException: Table 'hw15_one.follower_following'
 	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
 	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54)
 	... 64 more
-00:30:16,806 DEBUG [org.hibernate.SQL] - alter table follower_following drop foreign key FK7krl1j630b8t2kpdvn455jtqn
-00:30:16,808 WARN  [org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl] - GenerationTarget encountered exception accepting command : Error executing DDL "alter table follower_following drop foreign key FK7krl1j630b8t2kpdvn455jtqn" via JDBC Statement
+13:51:19,202 DEBUG [org.hibernate.SQL] - alter table follower_following drop foreign key FK7krl1j630b8t2kpdvn455jtqn
+13:51:19,205 WARN  [org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl] - GenerationTarget encountered exception accepting command : Error executing DDL "alter table follower_following drop foreign key FK7krl1j630b8t2kpdvn455jtqn" via JDBC Statement
 org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "alter table follower_following drop foreign key FK7krl1j630b8t2kpdvn455jtqn" via JDBC Statement
 	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67)
 	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlString(SchemaDropperImpl.java:375)
@@ -490,7 +490,7 @@ org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "a
 	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:54)
 	at com.mamalimomen.base.controllers.utilities.PersistenceUnitManager.getEntityManager(PersistenceUnitManager.java:19)
 	at com.mamalimomen.controllers.utilities.AppManager.startApp(AppManager.java:31)
-	at com.mamalimomen.controllers.AppContextListener.contextInitialized(AppContextListener.java:11)
+	at com.mamalimomen.controllers.AppContextListener.contextInitialized(AppContextListener.java:13)
 	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4689)
 	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5155)
 	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
@@ -545,8 +545,8 @@ Caused by: java.sql.SQLSyntaxErrorException: Table 'hw15_one.follower_following'
 	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
 	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54)
 	... 64 more
-00:30:16,812 DEBUG [org.hibernate.SQL] - alter table saver_saved drop foreign key FKsbesy82g9lrth9cgvbxhktrif
-00:30:16,814 WARN  [org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl] - GenerationTarget encountered exception accepting command : Error executing DDL "alter table saver_saved drop foreign key FKsbesy82g9lrth9cgvbxhktrif" via JDBC Statement
+13:51:19,209 DEBUG [org.hibernate.SQL] - alter table saver_saved drop foreign key FKsbesy82g9lrth9cgvbxhktrif
+13:51:19,211 WARN  [org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl] - GenerationTarget encountered exception accepting command : Error executing DDL "alter table saver_saved drop foreign key FKsbesy82g9lrth9cgvbxhktrif" via JDBC Statement
 org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "alter table saver_saved drop foreign key FKsbesy82g9lrth9cgvbxhktrif" via JDBC Statement
 	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67)
 	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlString(SchemaDropperImpl.java:375)
@@ -566,7 +566,7 @@ org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "a
 	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:54)
 	at com.mamalimomen.base.controllers.utilities.PersistenceUnitManager.getEntityManager(PersistenceUnitManager.java:19)
 	at com.mamalimomen.controllers.utilities.AppManager.startApp(AppManager.java:31)
-	at com.mamalimomen.controllers.AppContextListener.contextInitialized(AppContextListener.java:11)
+	at com.mamalimomen.controllers.AppContextListener.contextInitialized(AppContextListener.java:13)
 	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4689)
 	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5155)
 	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
@@ -621,8 +621,8 @@ Caused by: java.sql.SQLSyntaxErrorException: Table 'hw15_one.saver_saved' doesn'
 	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
 	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54)
 	... 64 more
-00:30:16,818 DEBUG [org.hibernate.SQL] - alter table saver_saved drop foreign key FKbk1o6eel1dp8q4yjvry6mughf
-00:30:16,820 WARN  [org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl] - GenerationTarget encountered exception accepting command : Error executing DDL "alter table saver_saved drop foreign key FKbk1o6eel1dp8q4yjvry6mughf" via JDBC Statement
+13:51:19,214 DEBUG [org.hibernate.SQL] - alter table saver_saved drop foreign key FKbk1o6eel1dp8q4yjvry6mughf
+13:51:19,216 WARN  [org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl] - GenerationTarget encountered exception accepting command : Error executing DDL "alter table saver_saved drop foreign key FKbk1o6eel1dp8q4yjvry6mughf" via JDBC Statement
 org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "alter table saver_saved drop foreign key FKbk1o6eel1dp8q4yjvry6mughf" via JDBC Statement
 	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67)
 	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlString(SchemaDropperImpl.java:375)
@@ -642,7 +642,7 @@ org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "a
 	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:54)
 	at com.mamalimomen.base.controllers.utilities.PersistenceUnitManager.getEntityManager(PersistenceUnitManager.java:19)
 	at com.mamalimomen.controllers.utilities.AppManager.startApp(AppManager.java:31)
-	at com.mamalimomen.controllers.AppContextListener.contextInitialized(AppContextListener.java:11)
+	at com.mamalimomen.controllers.AppContextListener.contextInitialized(AppContextListener.java:13)
 	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4689)
 	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5155)
 	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
@@ -697,326 +697,300 @@ Caused by: java.sql.SQLSyntaxErrorException: Table 'hw15_one.saver_saved' doesn'
 	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
 	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54)
 	... 64 more
-00:30:16,823 DEBUG [org.hibernate.SQL] - drop table if exists follower_following
-00:30:16,825 DEBUG [org.hibernate.SQL] - drop table if exists saver_saved
-00:30:16,841 DEBUG [org.hibernate.SQL] - create table HW15_One.tbl_account (id bigint not null, is_deleted bit not null, about_me text not null, first_name varchar(255) not null, last_name varchar(255) not null, password varchar(255) not null, username varchar(255) not null, primary key (id)) engine=InnoDB
-00:30:16,842 INFO  [org.hibernate.orm.connections.access] - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@132096e4] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
-00:30:17,168 DEBUG [org.hibernate.SQL] - create table HW15_One.tbl_comment (id bigint not null, is_deleted bit not null, create_date date not null, message text not null, fk_writer_account bigint not null, fk_post bigint not null, primary key (id)) engine=InnoDB
-00:30:17,434 DEBUG [org.hibernate.SQL] - create table HW15_One.tbl_like (id bigint not null, is_deleted bit not null, fk_liker_account bigint not null, fk_post bigint not null, primary key (id)) engine=InnoDB
-00:30:17,673 DEBUG [org.hibernate.SQL] - create table HW15_One.tbl_post (id bigint not null, is_deleted bit not null, create_date date not null, image_path varchar(255), text text not null, fk_account bigint not null, primary key (id)) engine=InnoDB
-00:30:17,910 DEBUG [org.hibernate.SQL] - alter table HW15_One.tbl_like add constraint unique_liker_post unique (fk_liker_account, fk_post)
-00:30:18,140 DEBUG [org.hibernate.SQL] - create table follower_following (follower_id bigint not null, following_id bigint not null) engine=InnoDB
-00:30:18,613 DEBUG [org.hibernate.SQL] - create table saver_saved (account_id bigint not null, post_id bigint not null) engine=InnoDB
-00:30:18,850 DEBUG [org.hibernate.SQL] - alter table follower_following add constraint unique_follower_following unique (follower_id, following_id)
-00:30:19,356 DEBUG [org.hibernate.SQL] - alter table saver_saved add constraint unique_saver_saved unique (account_id, post_id)
-00:30:19,694 DEBUG [org.hibernate.SQL] - alter table HW15_One.tbl_comment add constraint FKc9jbrsjv5t2rh0pgfyeg0v6ah foreign key (fk_writer_account) references HW15_One.tbl_account (id)
-00:30:20,478 DEBUG [org.hibernate.SQL] - alter table HW15_One.tbl_comment add constraint FKlijfoqww9kni45ay4va3pktsp foreign key (fk_post) references HW15_One.tbl_post (id)
-00:30:21,248 DEBUG [org.hibernate.SQL] - alter table HW15_One.tbl_like add constraint FK1cmbiit0rv1bqc4tcstc2euxp foreign key (fk_liker_account) references HW15_One.tbl_account (id)
-00:30:22,062 DEBUG [org.hibernate.SQL] - alter table HW15_One.tbl_like add constraint FKf3jkcoh4cegoljumhfn3vx7df foreign key (fk_post) references HW15_One.tbl_post (id)
-00:30:23,401 DEBUG [org.hibernate.SQL] - alter table HW15_One.tbl_post add constraint FK2rrfo89uhrve5r94w910mfb0l foreign key (fk_account) references HW15_One.tbl_account (id)
-00:30:24,408 DEBUG [org.hibernate.SQL] - alter table follower_following add constraint FK4h29uaom1kwktrh5y06r5w1mj foreign key (following_id) references HW15_One.tbl_account (id)
-00:30:25,145 DEBUG [org.hibernate.SQL] - alter table follower_following add constraint FK7krl1j630b8t2kpdvn455jtqn foreign key (follower_id) references HW15_One.tbl_account (id)
-00:30:25,963 DEBUG [org.hibernate.SQL] - alter table saver_saved add constraint FKsbesy82g9lrth9cgvbxhktrif foreign key (post_id) references HW15_One.tbl_post (id)
-00:30:26,971 DEBUG [org.hibernate.SQL] - alter table saver_saved add constraint FKbk1o6eel1dp8q4yjvry6mughf foreign key (account_id) references HW15_One.tbl_account (id)
-00:30:27,989 INFO  [org.hibernate.tool.schema.internal.SchemaCreatorImpl] - HHH000476: Executing import script 'C:\Program Files\apache-tomcat-8.5.59\bin\data.sql'
-00:30:27,990 WARN  [org.hibernate.tool.schema.internal.exec.ScriptSourceInputFromFile] - Specified schema generation script file [data.sql] did not exist for reading
-00:30:28,053 INFO  [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator] - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-00:30:37,571 DEBUG [org.hibernate.SQL] - select account0_.id as id1_0_, account0_.is_deleted as is_delet2_0_, account0_.about_me as about_me3_0_, account0_.first_name as first_na4_0_, account0_.last_name as last_nam5_0_, account0_.password as password6_0_, account0_.username as username7_0_ from HW15_One.tbl_account account0_ where account0_.is_deleted=0 and account0_.username=?
-00:30:37,630 TRACE [org.hibernate.type.descriptor.sql.BasicBinder] - binding parameter [1] as [VARCHAR] - [mamalimomen]
-00:30:48,293 DEBUG [org.hibernate.SQL] - select account0_.id as id1_0_, account0_.is_deleted as is_delet2_0_, account0_.about_me as about_me3_0_, account0_.first_name as first_na4_0_, account0_.last_name as last_nam5_0_, account0_.password as password6_0_, account0_.username as username7_0_ from HW15_One.tbl_account account0_ where account0_.is_deleted=0 and account0_.username=?
-00:30:48,301 TRACE [org.hibernate.type.descriptor.sql.BasicBinder] - binding parameter [1] as [VARCHAR] - [mamalimomen]
-00:30:48,337 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_0_] : [BIGINT]) - [1]
-00:30:48,364 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([is_delet2_0_] : [BOOLEAN]) - [false]
-00:30:48,366 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([about_me3_0_] : [VARCHAR]) - [a genius man with big dreams...]
-00:30:48,366 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([first_na4_0_] : [VARCHAR]) - [Mohammad Ali]
-00:30:48,367 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([last_nam5_0_] : [VARCHAR]) - [Momen]
-00:30:48,367 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([password6_0_] : [VARCHAR]) - [$s0$41010$rZ00IDHQmRMY3IZjYMKe0g==$D3rNm7LA0uudVIXl2h/LM++bAt+s8i8f2tQ6C4cy9XI=]
-00:30:48,368 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([username7_0_] : [VARCHAR]) - [mamalimomen]
-00:30:53,992 DEBUG [org.hibernate.SQL] - select p.* from hw15_one.tbl_post p left join hw15_one.tbl_like l on p.id = l.fk_post where p.is_deleted = false group by l.fk_post order by count(l.fk_post) desc
-00:30:54,007 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id] : [BIGINT]) - [5]
-00:30:54,008 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([is_deleted] : [BOOLEAN]) - [false]
-00:30:54,014 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([create_date] : [DATE]) - [2019-10-23]
-00:30:54,015 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([image_path] : [VARCHAR]) - [null]
-00:30:54,015 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([text] : [VARCHAR]) - [aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa]
-00:30:54,017 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id] : [BIGINT]) - [11]
-00:30:54,018 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([is_deleted] : [BOOLEAN]) - [false]
-00:30:54,019 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([create_date] : [DATE]) - [2020-11-17]
-00:30:54,019 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([image_path] : [VARCHAR]) - [D://hello/css]
-00:30:54,019 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([text] : [VARCHAR]) - [gggggggggggggggggggggggggggggggggggggggggg]
-00:30:54,020 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id] : [BIGINT]) - [6]
-00:30:54,021 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([is_deleted] : [BOOLEAN]) - [false]
-00:30:54,022 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([create_date] : [DATE]) - [2020-01-06]
-00:30:54,022 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([image_path] : [VARCHAR]) - [C://hello/world]
-00:30:54,023 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([text] : [VARCHAR]) - [bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb]
-00:30:54,023 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id] : [BIGINT]) - [7]
-00:30:54,024 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([is_deleted] : [BOOLEAN]) - [false]
-00:30:54,025 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([create_date] : [DATE]) - [2020-01-06]
-00:30:54,025 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([image_path] : [VARCHAR]) - [null]
-00:30:54,026 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([text] : [VARCHAR]) - [ccccccccccccccccccccccccccccccccc]
-00:30:54,026 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id] : [BIGINT]) - [10]
-00:30:54,027 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([is_deleted] : [BOOLEAN]) - [false]
-00:30:54,028 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([create_date] : [DATE]) - [2020-06-02]
-00:30:54,028 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([image_path] : [VARCHAR]) - [D://hello/html]
-00:30:54,029 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([text] : [VARCHAR]) - [fffffffffffffffffffffffffffffffffffffffff]
-00:30:54,029 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id] : [BIGINT]) - [9]
-00:30:54,030 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([is_deleted] : [BOOLEAN]) - [false]
-00:30:54,031 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([create_date] : [DATE]) - [2020-05-30]
-00:30:54,031 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([image_path] : [VARCHAR]) - [D://hello/mongo]
-00:30:54,032 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([text] : [VARCHAR]) - [eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee]
-00:30:54,032 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id] : [BIGINT]) - [8]
-00:30:54,033 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([is_deleted] : [BOOLEAN]) - [false]
-00:30:54,036 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([create_date] : [DATE]) - [2020-05-29]
-00:30:54,036 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([image_path] : [VARCHAR]) - [D://hello/hibernate]
-00:30:54,037 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([text] : [VARCHAR]) - [ddddddddddddddddddddddddddddddddddddd]
-00:30:54,054 DEBUG [org.hibernate.SQL] - select likes0_.fk_post as fk_post4_2_0_, likes0_.id as id1_2_0_, likes0_.id as id1_2_1_, likes0_.is_deleted as is_delet2_2_1_, likes0_.fk_liker_account as fk_liker3_2_1_, account1_.id as id1_0_2_, account1_.is_deleted as is_delet2_0_2_, account1_.about_me as about_me3_0_2_, account1_.first_name as first_na4_0_2_, account1_.last_name as last_nam5_0_2_, account1_.password as password6_0_2_, account1_.username as username7_0_2_ from HW15_One.tbl_like likes0_ inner join HW15_One.tbl_account account1_ on likes0_.fk_liker_account=account1_.id where likes0_.fk_post=?
-00:30:54,059 TRACE [org.hibernate.type.descriptor.sql.BasicBinder] - binding parameter [1] as [BIGINT] - [8]
-00:30:54,090 DEBUG [org.hibernate.SQL] - select comments0_.fk_post as fk_post6_1_0_, comments0_.id as id1_1_0_, comments0_.id as id1_1_1_, comments0_.is_deleted as is_delet2_1_1_, comments0_.create_date as create_d3_1_1_, comments0_.message as message4_1_1_, comments0_.fk_writer_account as fk_write5_1_1_, account1_.id as id1_0_2_, account1_.is_deleted as is_delet2_0_2_, account1_.about_me as about_me3_0_2_, account1_.first_name as first_na4_0_2_, account1_.last_name as last_nam5_0_2_, account1_.password as password6_0_2_, account1_.username as username7_0_2_ from HW15_One.tbl_comment comments0_ inner join HW15_One.tbl_account account1_ on comments0_.fk_writer_account=account1_.id where comments0_.fk_post=?
-00:30:54,091 TRACE [org.hibernate.type.descriptor.sql.BasicBinder] - binding parameter [1] as [BIGINT] - [8]
-00:30:54,097 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_1_1_] : [BIGINT]) - [18]
-00:30:54,097 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_0_2_] : [BIGINT]) - [1]
-00:30:54,098 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([is_delet2_1_1_] : [BOOLEAN]) - [false]
-00:30:54,098 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([create_d3_1_1_] : [DATE]) - [2020-05-29]
-00:30:54,100 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([message4_1_1_] : [VARCHAR]) - [ok ok ok]
-00:30:54,100 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_write5_1_1_] : [BIGINT]) - [1]
-00:30:54,103 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_post6_1_0_] : [BIGINT]) - [8]
-00:30:54,104 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_1_0_] : [BIGINT]) - [18]
-00:30:54,119 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_1_1_] : [BIGINT]) - [19]
-00:30:54,120 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_0_2_] : [BIGINT]) - [3]
-00:30:54,121 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([is_delet2_1_1_] : [BOOLEAN]) - [false]
-00:30:54,121 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([create_d3_1_1_] : [DATE]) - [2020-05-30]
-00:30:54,122 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([message4_1_1_] : [VARCHAR]) - [what what what]
-00:30:54,122 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_write5_1_1_] : [BIGINT]) - [3]
-00:30:54,123 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([is_delet2_0_2_] : [BOOLEAN]) - [false]
-00:30:54,123 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([about_me3_0_2_] : [VARCHAR]) - [es ist noch kein meister vom Himmel gefallen!]
-00:30:54,124 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([first_na4_0_2_] : [VARCHAR]) - [Sajjad]
-00:30:54,124 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([last_nam5_0_2_] : [VARCHAR]) - [Rahimzadeh]
-00:30:54,124 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([password6_0_2_] : [VARCHAR]) - [$s0$41010$qa/pAvNYvDgEyZ943yoE2Q==$eBG2KVGLESz0GS0v5XZbsEvsZvj41rUJ/+LRCYyAinI=]
-00:30:54,125 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([username7_0_2_] : [VARCHAR]) - [sajjadbirya]
-00:30:54,125 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_post6_1_0_] : [BIGINT]) - [8]
-00:30:54,126 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_1_0_] : [BIGINT]) - [19]
-00:30:54,130 DEBUG [org.hibernate.SQL] - select likes0_.fk_post as fk_post4_2_0_, likes0_.id as id1_2_0_, likes0_.id as id1_2_1_, likes0_.is_deleted as is_delet2_2_1_, likes0_.fk_liker_account as fk_liker3_2_1_, account1_.id as id1_0_2_, account1_.is_deleted as is_delet2_0_2_, account1_.about_me as about_me3_0_2_, account1_.first_name as first_na4_0_2_, account1_.last_name as last_nam5_0_2_, account1_.password as password6_0_2_, account1_.username as username7_0_2_ from HW15_One.tbl_like likes0_ inner join HW15_One.tbl_account account1_ on likes0_.fk_liker_account=account1_.id where likes0_.fk_post=?
-00:30:54,131 TRACE [org.hibernate.type.descriptor.sql.BasicBinder] - binding parameter [1] as [BIGINT] - [9]
-00:30:54,134 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_2_1_] : [BIGINT]) - [30]
-00:30:54,136 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_0_2_] : [BIGINT]) - [1]
-00:30:54,137 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([is_delet2_2_1_] : [BOOLEAN]) - [false]
-00:30:54,140 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_liker3_2_1_] : [BIGINT]) - [1]
-00:30:54,141 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_post4_2_0_] : [BIGINT]) - [9]
-00:30:54,142 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_2_0_] : [BIGINT]) - [30]
-00:30:54,143 DEBUG [org.hibernate.SQL] - select comments0_.fk_post as fk_post6_1_0_, comments0_.id as id1_1_0_, comments0_.id as id1_1_1_, comments0_.is_deleted as is_delet2_1_1_, comments0_.create_date as create_d3_1_1_, comments0_.message as message4_1_1_, comments0_.fk_writer_account as fk_write5_1_1_, account1_.id as id1_0_2_, account1_.is_deleted as is_delet2_0_2_, account1_.about_me as about_me3_0_2_, account1_.first_name as first_na4_0_2_, account1_.last_name as last_nam5_0_2_, account1_.password as password6_0_2_, account1_.username as username7_0_2_ from HW15_One.tbl_comment comments0_ inner join HW15_One.tbl_account account1_ on comments0_.fk_writer_account=account1_.id where comments0_.fk_post=?
-00:30:54,145 TRACE [org.hibernate.type.descriptor.sql.BasicBinder] - binding parameter [1] as [BIGINT] - [9]
-00:30:54,148 DEBUG [org.hibernate.SQL] - select likes0_.fk_post as fk_post4_2_0_, likes0_.id as id1_2_0_, likes0_.id as id1_2_1_, likes0_.is_deleted as is_delet2_2_1_, likes0_.fk_liker_account as fk_liker3_2_1_, account1_.id as id1_0_2_, account1_.is_deleted as is_delet2_0_2_, account1_.about_me as about_me3_0_2_, account1_.first_name as first_na4_0_2_, account1_.last_name as last_nam5_0_2_, account1_.password as password6_0_2_, account1_.username as username7_0_2_ from HW15_One.tbl_like likes0_ inner join HW15_One.tbl_account account1_ on likes0_.fk_liker_account=account1_.id where likes0_.fk_post=?
-00:30:54,150 TRACE [org.hibernate.type.descriptor.sql.BasicBinder] - binding parameter [1] as [BIGINT] - [10]
-00:30:54,154 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_2_1_] : [BIGINT]) - [31]
-00:30:54,154 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_0_2_] : [BIGINT]) - [2]
-00:30:54,155 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([is_delet2_2_1_] : [BOOLEAN]) - [false]
-00:30:54,155 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_liker3_2_1_] : [BIGINT]) - [2]
-00:30:54,156 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([is_delet2_0_2_] : [BOOLEAN]) - [false]
-00:30:54,156 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([about_me3_0_2_] : [VARCHAR]) - [world best soccer player in history!]
-00:30:54,157 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([first_na4_0_2_] : [VARCHAR]) - [Mohammad Mahdi]
-00:30:54,157 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([last_nam5_0_2_] : [VARCHAR]) - [Momen]
-00:30:54,157 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([password6_0_2_] : [VARCHAR]) - [$s0$41010$aaxpDMPr2vS6AcasZkZKnA==$S+CsCboUsWS1gYhqP1eVqNY6j4xqL3IkB0m3w0GS0A8=]
-00:30:54,158 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([username7_0_2_] : [VARCHAR]) - [mahdimomen]
-00:30:54,158 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_post4_2_0_] : [BIGINT]) - [10]
-00:30:54,158 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_2_0_] : [BIGINT]) - [31]
-00:30:54,159 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_2_1_] : [BIGINT]) - [32]
-00:30:54,159 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_0_2_] : [BIGINT]) - [3]
-00:30:54,160 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([is_delet2_2_1_] : [BOOLEAN]) - [false]
-00:30:54,160 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_liker3_2_1_] : [BIGINT]) - [3]
-00:30:54,160 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_post4_2_0_] : [BIGINT]) - [10]
-00:30:54,160 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_2_0_] : [BIGINT]) - [32]
-00:30:54,162 DEBUG [org.hibernate.SQL] - select comments0_.fk_post as fk_post6_1_0_, comments0_.id as id1_1_0_, comments0_.id as id1_1_1_, comments0_.is_deleted as is_delet2_1_1_, comments0_.create_date as create_d3_1_1_, comments0_.message as message4_1_1_, comments0_.fk_writer_account as fk_write5_1_1_, account1_.id as id1_0_2_, account1_.is_deleted as is_delet2_0_2_, account1_.about_me as about_me3_0_2_, account1_.first_name as first_na4_0_2_, account1_.last_name as last_nam5_0_2_, account1_.password as password6_0_2_, account1_.username as username7_0_2_ from HW15_One.tbl_comment comments0_ inner join HW15_One.tbl_account account1_ on comments0_.fk_writer_account=account1_.id where comments0_.fk_post=?
-00:30:54,163 TRACE [org.hibernate.type.descriptor.sql.BasicBinder] - binding parameter [1] as [BIGINT] - [10]
-00:30:54,168 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_1_1_] : [BIGINT]) - [20]
-00:30:54,170 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_0_2_] : [BIGINT]) - [2]
-00:30:54,171 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([is_delet2_1_1_] : [BOOLEAN]) - [false]
-00:30:54,171 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([create_d3_1_1_] : [DATE]) - [2020-06-02]
-00:30:54,172 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([message4_1_1_] : [VARCHAR]) - [serious? serious?]
-00:30:54,172 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_write5_1_1_] : [BIGINT]) - [2]
-00:30:54,172 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_post6_1_0_] : [BIGINT]) - [10]
-00:30:54,172 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_1_0_] : [BIGINT]) - [20]
-00:30:54,175 DEBUG [org.hibernate.SQL] - select likes0_.fk_post as fk_post4_2_0_, likes0_.id as id1_2_0_, likes0_.id as id1_2_1_, likes0_.is_deleted as is_delet2_2_1_, likes0_.fk_liker_account as fk_liker3_2_1_, account1_.id as id1_0_2_, account1_.is_deleted as is_delet2_0_2_, account1_.about_me as about_me3_0_2_, account1_.first_name as first_na4_0_2_, account1_.last_name as last_nam5_0_2_, account1_.password as password6_0_2_, account1_.username as username7_0_2_ from HW15_One.tbl_like likes0_ inner join HW15_One.tbl_account account1_ on likes0_.fk_liker_account=account1_.id where likes0_.fk_post=?
-00:30:54,176 TRACE [org.hibernate.type.descriptor.sql.BasicBinder] - binding parameter [1] as [BIGINT] - [7]
-00:30:54,179 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_2_1_] : [BIGINT]) - [28]
-00:30:54,179 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_0_2_] : [BIGINT]) - [1]
-00:30:54,180 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([is_delet2_2_1_] : [BOOLEAN]) - [false]
-00:30:54,180 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_liker3_2_1_] : [BIGINT]) - [1]
-00:30:54,181 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_post4_2_0_] : [BIGINT]) - [7]
-00:30:54,181 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_2_0_] : [BIGINT]) - [28]
-00:30:54,182 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_2_1_] : [BIGINT]) - [29]
-00:30:54,182 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_0_2_] : [BIGINT]) - [3]
-00:30:54,183 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([is_delet2_2_1_] : [BOOLEAN]) - [false]
-00:30:54,184 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_liker3_2_1_] : [BIGINT]) - [3]
-00:30:54,184 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_post4_2_0_] : [BIGINT]) - [7]
-00:30:54,186 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_2_0_] : [BIGINT]) - [29]
-00:30:54,187 DEBUG [org.hibernate.SQL] - select comments0_.fk_post as fk_post6_1_0_, comments0_.id as id1_1_0_, comments0_.id as id1_1_1_, comments0_.is_deleted as is_delet2_1_1_, comments0_.create_date as create_d3_1_1_, comments0_.message as message4_1_1_, comments0_.fk_writer_account as fk_write5_1_1_, account1_.id as id1_0_2_, account1_.is_deleted as is_delet2_0_2_, account1_.about_me as about_me3_0_2_, account1_.first_name as first_na4_0_2_, account1_.last_name as last_nam5_0_2_, account1_.password as password6_0_2_, account1_.username as username7_0_2_ from HW15_One.tbl_comment comments0_ inner join HW15_One.tbl_account account1_ on comments0_.fk_writer_account=account1_.id where comments0_.fk_post=?
-00:30:54,189 TRACE [org.hibernate.type.descriptor.sql.BasicBinder] - binding parameter [1] as [BIGINT] - [7]
-00:30:54,192 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_1_1_] : [BIGINT]) - [17]
-00:30:54,193 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_0_2_] : [BIGINT]) - [1]
-00:30:54,193 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([is_delet2_1_1_] : [BOOLEAN]) - [false]
-00:30:54,194 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([create_d3_1_1_] : [DATE]) - [2020-01-06]
-00:30:54,194 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([message4_1_1_] : [VARCHAR]) - [wonderful wonderful]
-00:30:54,194 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_write5_1_1_] : [BIGINT]) - [1]
-00:30:54,195 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_post6_1_0_] : [BIGINT]) - [7]
-00:30:54,195 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_1_0_] : [BIGINT]) - [17]
-00:30:54,196 DEBUG [org.hibernate.SQL] - select likes0_.fk_post as fk_post4_2_0_, likes0_.id as id1_2_0_, likes0_.id as id1_2_1_, likes0_.is_deleted as is_delet2_2_1_, likes0_.fk_liker_account as fk_liker3_2_1_, account1_.id as id1_0_2_, account1_.is_deleted as is_delet2_0_2_, account1_.about_me as about_me3_0_2_, account1_.first_name as first_na4_0_2_, account1_.last_name as last_nam5_0_2_, account1_.password as password6_0_2_, account1_.username as username7_0_2_ from HW15_One.tbl_like likes0_ inner join HW15_One.tbl_account account1_ on likes0_.fk_liker_account=account1_.id where likes0_.fk_post=?
-00:30:54,197 TRACE [org.hibernate.type.descriptor.sql.BasicBinder] - binding parameter [1] as [BIGINT] - [6]
-00:30:54,199 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_2_1_] : [BIGINT]) - [26]
-00:30:54,200 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_0_2_] : [BIGINT]) - [2]
-00:30:54,200 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([is_delet2_2_1_] : [BOOLEAN]) - [false]
-00:30:54,201 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_liker3_2_1_] : [BIGINT]) - [2]
-00:30:54,201 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_post4_2_0_] : [BIGINT]) - [6]
-00:30:54,202 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_2_0_] : [BIGINT]) - [26]
-00:30:54,202 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_2_1_] : [BIGINT]) - [27]
-00:30:54,203 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_0_2_] : [BIGINT]) - [3]
-00:30:54,203 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([is_delet2_2_1_] : [BOOLEAN]) - [false]
-00:30:54,204 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_liker3_2_1_] : [BIGINT]) - [3]
-00:30:54,204 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_post4_2_0_] : [BIGINT]) - [6]
-00:30:54,205 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_2_0_] : [BIGINT]) - [27]
-00:30:54,206 DEBUG [org.hibernate.SQL] - select comments0_.fk_post as fk_post6_1_0_, comments0_.id as id1_1_0_, comments0_.id as id1_1_1_, comments0_.is_deleted as is_delet2_1_1_, comments0_.create_date as create_d3_1_1_, comments0_.message as message4_1_1_, comments0_.fk_writer_account as fk_write5_1_1_, account1_.id as id1_0_2_, account1_.is_deleted as is_delet2_0_2_, account1_.about_me as about_me3_0_2_, account1_.first_name as first_na4_0_2_, account1_.last_name as last_nam5_0_2_, account1_.password as password6_0_2_, account1_.username as username7_0_2_ from HW15_One.tbl_comment comments0_ inner join HW15_One.tbl_account account1_ on comments0_.fk_writer_account=account1_.id where comments0_.fk_post=?
-00:30:54,207 TRACE [org.hibernate.type.descriptor.sql.BasicBinder] - binding parameter [1] as [BIGINT] - [6]
-00:30:54,210 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_1_1_] : [BIGINT]) - [15]
-00:30:54,210 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_0_2_] : [BIGINT]) - [4]
-00:30:54,211 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([is_delet2_1_1_] : [BOOLEAN]) - [false]
-00:30:54,211 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([create_d3_1_1_] : [DATE]) - [2020-01-06]
-00:30:54,212 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([message4_1_1_] : [VARCHAR]) - [better better]
-00:30:54,212 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_write5_1_1_] : [BIGINT]) - [4]
-00:30:54,212 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([is_delet2_0_2_] : [BOOLEAN]) - [false]
-00:30:54,213 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([about_me3_0_2_] : [VARCHAR]) - [richest man you ever seen!]
-00:30:54,213 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([first_na4_0_2_] : [VARCHAR]) - [Ali]
-00:30:54,213 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([last_nam5_0_2_] : [VARCHAR]) - [Arefnejhad]
-00:30:54,213 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([password6_0_2_] : [VARCHAR]) - [$s0$41010$yAEw+029mSAFaKESTSemPA==$ykPOqGkfwYfZqMaTYZZM2JKNxcaz/fSb7Fy0tN0WgKI=]
-00:30:54,214 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([username7_0_2_] : [VARCHAR]) - [aliluxury]
-00:30:54,214 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_post6_1_0_] : [BIGINT]) - [6]
-00:30:54,214 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_1_0_] : [BIGINT]) - [15]
-00:30:54,215 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_1_1_] : [BIGINT]) - [16]
-00:30:54,215 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_0_2_] : [BIGINT]) - [2]
-00:30:54,215 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([is_delet2_1_1_] : [BOOLEAN]) - [false]
-00:30:54,216 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([create_d3_1_1_] : [DATE]) - [2020-01-07]
-00:30:54,216 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([message4_1_1_] : [VARCHAR]) - [awsome awsome]
-00:30:54,216 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_write5_1_1_] : [BIGINT]) - [2]
-00:30:54,217 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_post6_1_0_] : [BIGINT]) - [6]
-00:30:54,217 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_1_0_] : [BIGINT]) - [16]
-00:30:54,219 DEBUG [org.hibernate.SQL] - select likes0_.fk_post as fk_post4_2_0_, likes0_.id as id1_2_0_, likes0_.id as id1_2_1_, likes0_.is_deleted as is_delet2_2_1_, likes0_.fk_liker_account as fk_liker3_2_1_, account1_.id as id1_0_2_, account1_.is_deleted as is_delet2_0_2_, account1_.about_me as about_me3_0_2_, account1_.first_name as first_na4_0_2_, account1_.last_name as last_nam5_0_2_, account1_.password as password6_0_2_, account1_.username as username7_0_2_ from HW15_One.tbl_like likes0_ inner join HW15_One.tbl_account account1_ on likes0_.fk_liker_account=account1_.id where likes0_.fk_post=?
-00:30:54,221 TRACE [org.hibernate.type.descriptor.sql.BasicBinder] - binding parameter [1] as [BIGINT] - [11]
-00:30:54,227 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_2_1_] : [BIGINT]) - [33]
-00:30:54,228 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_0_2_] : [BIGINT]) - [1]
-00:30:54,228 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([is_delet2_2_1_] : [BOOLEAN]) - [false]
-00:30:54,229 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_liker3_2_1_] : [BIGINT]) - [1]
-00:30:54,229 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_post4_2_0_] : [BIGINT]) - [11]
-00:30:54,229 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_2_0_] : [BIGINT]) - [33]
-00:30:54,230 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_2_1_] : [BIGINT]) - [34]
-00:30:54,230 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_0_2_] : [BIGINT]) - [2]
-00:30:54,231 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([is_delet2_2_1_] : [BOOLEAN]) - [false]
-00:30:54,231 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_liker3_2_1_] : [BIGINT]) - [2]
-00:30:54,232 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_post4_2_0_] : [BIGINT]) - [11]
-00:30:54,232 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_2_0_] : [BIGINT]) - [34]
-00:30:54,233 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_2_1_] : [BIGINT]) - [35]
-00:30:54,233 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_0_2_] : [BIGINT]) - [3]
-00:30:54,234 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([is_delet2_2_1_] : [BOOLEAN]) - [false]
-00:30:54,234 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_liker3_2_1_] : [BIGINT]) - [3]
-00:30:54,235 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_post4_2_0_] : [BIGINT]) - [11]
-00:30:54,235 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_2_0_] : [BIGINT]) - [35]
-00:30:54,237 DEBUG [org.hibernate.SQL] - select comments0_.fk_post as fk_post6_1_0_, comments0_.id as id1_1_0_, comments0_.id as id1_1_1_, comments0_.is_deleted as is_delet2_1_1_, comments0_.create_date as create_d3_1_1_, comments0_.message as message4_1_1_, comments0_.fk_writer_account as fk_write5_1_1_, account1_.id as id1_0_2_, account1_.is_deleted as is_delet2_0_2_, account1_.about_me as about_me3_0_2_, account1_.first_name as first_na4_0_2_, account1_.last_name as last_nam5_0_2_, account1_.password as password6_0_2_, account1_.username as username7_0_2_ from HW15_One.tbl_comment comments0_ inner join HW15_One.tbl_account account1_ on comments0_.fk_writer_account=account1_.id where comments0_.fk_post=?
-00:30:54,238 TRACE [org.hibernate.type.descriptor.sql.BasicBinder] - binding parameter [1] as [BIGINT] - [11]
-00:30:54,241 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_1_1_] : [BIGINT]) - [21]
-00:30:54,242 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_0_2_] : [BIGINT]) - [3]
-00:30:54,242 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([is_delet2_1_1_] : [BOOLEAN]) - [false]
-00:30:54,243 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([create_d3_1_1_] : [DATE]) - [2020-11-17]
-00:30:54,243 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([message4_1_1_] : [VARCHAR]) - [very good! very good!]
-00:30:54,243 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_write5_1_1_] : [BIGINT]) - [3]
-00:30:54,244 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_post6_1_0_] : [BIGINT]) - [11]
-00:30:54,244 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_1_0_] : [BIGINT]) - [21]
-00:30:54,245 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_1_1_] : [BIGINT]) - [22]
-00:30:54,245 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_0_2_] : [BIGINT]) - [1]
-00:30:54,245 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([is_delet2_1_1_] : [BOOLEAN]) - [false]
-00:30:54,246 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([create_d3_1_1_] : [DATE]) - [2020-11-18]
-00:30:54,246 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([message4_1_1_] : [VARCHAR]) - [nice job...]
-00:30:54,246 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_write5_1_1_] : [BIGINT]) - [1]
-00:30:54,247 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_post6_1_0_] : [BIGINT]) - [11]
-00:30:54,247 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_1_0_] : [BIGINT]) - [22]
-00:30:54,252 DEBUG [org.hibernate.SQL] - select likes0_.fk_post as fk_post4_2_0_, likes0_.id as id1_2_0_, likes0_.id as id1_2_1_, likes0_.is_deleted as is_delet2_2_1_, likes0_.fk_liker_account as fk_liker3_2_1_, account1_.id as id1_0_2_, account1_.is_deleted as is_delet2_0_2_, account1_.about_me as about_me3_0_2_, account1_.first_name as first_na4_0_2_, account1_.last_name as last_nam5_0_2_, account1_.password as password6_0_2_, account1_.username as username7_0_2_ from HW15_One.tbl_like likes0_ inner join HW15_One.tbl_account account1_ on likes0_.fk_liker_account=account1_.id where likes0_.fk_post=?
-00:30:54,254 TRACE [org.hibernate.type.descriptor.sql.BasicBinder] - binding parameter [1] as [BIGINT] - [5]
-00:30:54,257 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_2_1_] : [BIGINT]) - [23]
-00:30:54,258 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_0_2_] : [BIGINT]) - [2]
-00:30:54,258 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([is_delet2_2_1_] : [BOOLEAN]) - [false]
-00:30:54,258 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_liker3_2_1_] : [BIGINT]) - [2]
-00:30:54,259 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_post4_2_0_] : [BIGINT]) - [5]
-00:30:54,259 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_2_0_] : [BIGINT]) - [23]
-00:30:54,259 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_2_1_] : [BIGINT]) - [24]
-00:30:54,260 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_0_2_] : [BIGINT]) - [3]
-00:30:54,260 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([is_delet2_2_1_] : [BOOLEAN]) - [false]
-00:30:54,260 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_liker3_2_1_] : [BIGINT]) - [3]
-00:30:54,261 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_post4_2_0_] : [BIGINT]) - [5]
-00:30:54,261 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_2_0_] : [BIGINT]) - [24]
-00:30:54,261 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_2_1_] : [BIGINT]) - [25]
-00:30:54,262 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_0_2_] : [BIGINT]) - [4]
-00:30:54,262 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([is_delet2_2_1_] : [BOOLEAN]) - [false]
-00:30:54,262 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_liker3_2_1_] : [BIGINT]) - [4]
-00:30:54,263 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_post4_2_0_] : [BIGINT]) - [5]
-00:30:54,263 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_2_0_] : [BIGINT]) - [25]
-00:30:54,264 DEBUG [org.hibernate.SQL] - select comments0_.fk_post as fk_post6_1_0_, comments0_.id as id1_1_0_, comments0_.id as id1_1_1_, comments0_.is_deleted as is_delet2_1_1_, comments0_.create_date as create_d3_1_1_, comments0_.message as message4_1_1_, comments0_.fk_writer_account as fk_write5_1_1_, account1_.id as id1_0_2_, account1_.is_deleted as is_delet2_0_2_, account1_.about_me as about_me3_0_2_, account1_.first_name as first_na4_0_2_, account1_.last_name as last_nam5_0_2_, account1_.password as password6_0_2_, account1_.username as username7_0_2_ from HW15_One.tbl_comment comments0_ inner join HW15_One.tbl_account account1_ on comments0_.fk_writer_account=account1_.id where comments0_.fk_post=?
-00:30:54,265 TRACE [org.hibernate.type.descriptor.sql.BasicBinder] - binding parameter [1] as [BIGINT] - [5]
-00:30:54,269 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_1_1_] : [BIGINT]) - [12]
-00:30:54,269 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_0_2_] : [BIGINT]) - [2]
-00:30:54,269 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([is_delet2_1_1_] : [BOOLEAN]) - [false]
-00:30:54,270 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([create_d3_1_1_] : [DATE]) - [2019-10-24]
-00:30:54,270 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([message4_1_1_] : [VARCHAR]) - [good good good]
-00:30:54,270 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_write5_1_1_] : [BIGINT]) - [2]
-00:30:54,271 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_post6_1_0_] : [BIGINT]) - [5]
-00:30:54,271 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_1_0_] : [BIGINT]) - [12]
-00:30:54,272 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_1_1_] : [BIGINT]) - [13]
-00:30:54,272 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_0_2_] : [BIGINT]) - [3]
-00:30:54,272 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([is_delet2_1_1_] : [BOOLEAN]) - [false]
-00:30:54,273 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([create_d3_1_1_] : [DATE]) - [2019-10-24]
-00:30:54,273 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([message4_1_1_] : [VARCHAR]) - [nice nice nice]
-00:30:54,273 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_write5_1_1_] : [BIGINT]) - [3]
-00:30:54,273 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_post6_1_0_] : [BIGINT]) - [5]
-00:30:54,274 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_1_0_] : [BIGINT]) - [13]
-00:30:54,274 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_1_1_] : [BIGINT]) - [14]
-00:30:54,274 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_0_2_] : [BIGINT]) - [4]
-00:30:54,275 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([is_delet2_1_1_] : [BOOLEAN]) - [false]
-00:30:54,275 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([create_d3_1_1_] : [DATE]) - [2019-10-25]
-00:30:54,275 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([message4_1_1_] : [VARCHAR]) - [bad bad bad]
-00:30:54,276 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_write5_1_1_] : [BIGINT]) - [4]
-00:30:54,276 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_post6_1_0_] : [BIGINT]) - [5]
-00:30:54,276 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_1_0_] : [BIGINT]) - [14]
-00:30:54,277 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_1_1_] : [BIGINT]) - [36]
-00:30:54,277 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_0_2_] : [BIGINT]) - [4]
-00:30:54,277 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([is_delet2_1_1_] : [BOOLEAN]) - [false]
-00:30:54,278 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([create_d3_1_1_] : [DATE]) - [2019-10-25]
-00:30:54,278 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([message4_1_1_] : [VARCHAR]) - [worse]
-00:30:54,278 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_write5_1_1_] : [BIGINT]) - [4]
-00:30:54,278 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_post6_1_0_] : [BIGINT]) - [5]
-00:30:54,279 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_1_0_] : [BIGINT]) - [36]
-00:39:52,631 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] - Session Metrics {
-    8771916 nanoseconds spent acquiring 3 JDBC connections;
-    2639352 nanoseconds spent releasing 3 JDBC connections;
-    67015686 nanoseconds spent preparing 17 JDBC statements;
-    108537510 nanoseconds spent executing 17 JDBC statements;
+13:51:19,218 DEBUG [org.hibernate.SQL] - drop table if exists follower_following
+13:51:19,220 DEBUG [org.hibernate.SQL] - drop table if exists saver_saved
+13:51:19,237 DEBUG [org.hibernate.SQL] - create table HW15_One.tbl_account (id bigint not null, is_deleted bit not null, about_me text not null, first_name varchar(255) not null, last_name varchar(255) not null, password varchar(255) not null, username varchar(255) not null, primary key (id)) engine=InnoDB
+13:51:19,238 INFO  [org.hibernate.orm.connections.access] - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@6edc3828] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+13:51:19,614 DEBUG [org.hibernate.SQL] - create table HW15_One.tbl_comment (id bigint not null, is_deleted bit not null, create_date date not null, message text not null, fk_writer_account bigint not null, fk_post bigint not null, primary key (id)) engine=InnoDB
+13:51:19,891 DEBUG [org.hibernate.SQL] - create table HW15_One.tbl_like (id bigint not null, is_deleted bit not null, fk_liker_account bigint not null, fk_post bigint not null, primary key (id)) engine=InnoDB
+13:51:20,084 DEBUG [org.hibernate.SQL] - create table HW15_One.tbl_post (id bigint not null, is_deleted bit not null, create_date date not null, image_path varchar(255), text text not null, fk_account bigint, primary key (id)) engine=InnoDB
+13:51:20,305 DEBUG [org.hibernate.SQL] - alter table HW15_One.tbl_account add constraint UK_miuqup74scqvyefkdlcoyou5n unique (username)
+13:51:20,733 DEBUG [org.hibernate.SQL] - alter table HW15_One.tbl_like add constraint unique_liker_post unique (fk_liker_account, fk_post)
+13:51:21,049 DEBUG [org.hibernate.SQL] - create table follower_following (follower_id bigint not null, following_id bigint not null) engine=InnoDB
+13:51:21,412 DEBUG [org.hibernate.SQL] - create table saver_saved (account_id bigint not null, post_id bigint not null) engine=InnoDB
+13:51:21,744 DEBUG [org.hibernate.SQL] - alter table follower_following add constraint unique_follower_following unique (follower_id, following_id)
+13:51:22,078 DEBUG [org.hibernate.SQL] - alter table saver_saved add constraint unique_saver_saved unique (account_id, post_id)
+13:51:22,616 DEBUG [org.hibernate.SQL] - alter table HW15_One.tbl_comment add constraint FKc9jbrsjv5t2rh0pgfyeg0v6ah foreign key (fk_writer_account) references HW15_One.tbl_account (id)
+13:51:23,183 DEBUG [org.hibernate.SQL] - alter table HW15_One.tbl_comment add constraint FKlijfoqww9kni45ay4va3pktsp foreign key (fk_post) references HW15_One.tbl_post (id)
+13:51:23,941 DEBUG [org.hibernate.SQL] - alter table HW15_One.tbl_like add constraint FK1cmbiit0rv1bqc4tcstc2euxp foreign key (fk_liker_account) references HW15_One.tbl_account (id)
+13:51:24,657 DEBUG [org.hibernate.SQL] - alter table HW15_One.tbl_like add constraint FKf3jkcoh4cegoljumhfn3vx7df foreign key (fk_post) references HW15_One.tbl_post (id)
+13:51:25,247 DEBUG [org.hibernate.SQL] - alter table HW15_One.tbl_post add constraint FK2rrfo89uhrve5r94w910mfb0l foreign key (fk_account) references HW15_One.tbl_account (id)
+13:51:26,123 DEBUG [org.hibernate.SQL] - alter table follower_following add constraint FK4h29uaom1kwktrh5y06r5w1mj foreign key (following_id) references HW15_One.tbl_account (id)
+13:51:26,872 DEBUG [org.hibernate.SQL] - alter table follower_following add constraint FK7krl1j630b8t2kpdvn455jtqn foreign key (follower_id) references HW15_One.tbl_account (id)
+13:51:27,616 DEBUG [org.hibernate.SQL] - alter table saver_saved add constraint FKsbesy82g9lrth9cgvbxhktrif foreign key (post_id) references HW15_One.tbl_post (id)
+13:51:29,629 DEBUG [org.hibernate.SQL] - alter table saver_saved add constraint FKbk1o6eel1dp8q4yjvry6mughf foreign key (account_id) references HW15_One.tbl_account (id)
+13:51:30,222 INFO  [org.hibernate.tool.schema.internal.SchemaCreatorImpl] - HHH000476: Executing import script 'C:\Program Files\apache-tomcat-8.5.59\bin\data.sql'
+13:51:30,222 WARN  [org.hibernate.tool.schema.internal.exec.ScriptSourceInputFromFile] - Specified schema generation script file [data.sql] did not exist for reading
+13:51:30,288 INFO  [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator] - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+13:52:00,048 DEBUG [org.hibernate.SQL] - select account0_.id as id1_0_, account0_.is_deleted as is_delet2_0_, account0_.about_me as about_me3_0_, account0_.first_name as first_na4_0_, account0_.last_name as last_nam5_0_, account0_.password as password6_0_, account0_.username as username7_0_ from HW15_One.tbl_account account0_ where account0_.is_deleted=0 and account0_.username=?
+13:52:00,099 TRACE [org.hibernate.type.descriptor.sql.BasicBinder] - binding parameter [1] as [VARCHAR] - [mamalimomen]
+13:52:00,120 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_0_] : [BIGINT]) - [1]
+13:52:00,155 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([is_delet2_0_] : [BOOLEAN]) - [false]
+13:52:00,157 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([about_me3_0_] : [VARCHAR]) - [a genius man with big dreams...]
+13:52:00,157 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([first_na4_0_] : [VARCHAR]) - [Mohammad Ali]
+13:52:00,158 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([last_nam5_0_] : [VARCHAR]) - [Momen]
+13:52:00,159 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([password6_0_] : [VARCHAR]) - [$s0$41010$rZ00IDHQmRMY3IZjYMKe0g==$D3rNm7LA0uudVIXl2h/LM++bAt+s8i8f2tQ6C4cy9XI=]
+13:52:00,159 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([username7_0_] : [VARCHAR]) - [mamalimomen]
+13:52:00,217 DEBUG [org.hibernate.SQL] - select savedposts0_.account_id as account_1_5_0_, savedposts0_.post_id as post_id2_5_0_, post1_.id as id1_3_1_, post1_.is_deleted as is_delet2_3_1_, post1_.create_date as create_d3_3_1_, post1_.image_path as image_pa4_3_1_, post1_.text as text5_3_1_ from saver_saved savedposts0_ inner join HW15_One.tbl_post post1_ on savedposts0_.post_id=post1_.id where savedposts0_.account_id=?
+13:52:00,222 TRACE [org.hibernate.type.descriptor.sql.BasicBinder] - binding parameter [1] as [BIGINT] - [1]
+13:52:59,836 DEBUG [org.hibernate.SQL] - select followings0_.follower_id as follower1_4_0_, followings0_.following_id as followin2_4_0_, account1_.id as id1_0_1_, account1_.is_deleted as is_delet2_0_1_, account1_.about_me as about_me3_0_1_, account1_.first_name as first_na4_0_1_, account1_.last_name as last_nam5_0_1_, account1_.password as password6_0_1_, account1_.username as username7_0_1_ from follower_following followings0_ inner join HW15_One.tbl_account account1_ on followings0_.following_id=account1_.id where followings0_.follower_id=?
+13:52:59,838 TRACE [org.hibernate.type.descriptor.sql.BasicBinder] - binding parameter [1] as [BIGINT] - [1]
+13:52:59,846 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_0_1_] : [BIGINT]) - [2]
+13:52:59,848 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([is_delet2_0_1_] : [BOOLEAN]) - [false]
+13:52:59,851 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([about_me3_0_1_] : [VARCHAR]) - [world best soccer player in history!]
+13:52:59,853 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([first_na4_0_1_] : [VARCHAR]) - [Mohammad Mahdi]
+13:52:59,856 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([last_nam5_0_1_] : [VARCHAR]) - [Momen]
+13:52:59,857 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([password6_0_1_] : [VARCHAR]) - [$s0$41010$aaxpDMPr2vS6AcasZkZKnA==$S+CsCboUsWS1gYhqP1eVqNY6j4xqL3IkB0m3w0GS0A8=]
+13:52:59,857 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([username7_0_1_] : [VARCHAR]) - [mahdimomen]
+13:52:59,864 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([follower1_4_0_] : [BIGINT]) - [1]
+13:52:59,865 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([followin2_4_0_] : [BIGINT]) - [2]
+13:52:59,897 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_0_1_] : [BIGINT]) - [3]
+13:52:59,899 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([is_delet2_0_1_] : [BOOLEAN]) - [false]
+13:52:59,900 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([about_me3_0_1_] : [VARCHAR]) - [es ist noch kein meister vom Himmel gefallen!]
+13:52:59,900 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([first_na4_0_1_] : [VARCHAR]) - [Sajjad]
+13:52:59,902 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([last_nam5_0_1_] : [VARCHAR]) - [Rahimzadeh]
+13:52:59,903 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([password6_0_1_] : [VARCHAR]) - [$s0$41010$qa/pAvNYvDgEyZ943yoE2Q==$eBG2KVGLESz0GS0v5XZbsEvsZvj41rUJ/+LRCYyAinI=]
+13:52:59,904 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([username7_0_1_] : [VARCHAR]) - [sajjadbirya]
+13:52:59,904 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([follower1_4_0_] : [BIGINT]) - [1]
+13:52:59,907 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([followin2_4_0_] : [BIGINT]) - [3]
+13:52:59,912 DEBUG [org.hibernate.SQL] - select savedposts0_.account_id as account_1_5_0_, savedposts0_.post_id as post_id2_5_0_, post1_.id as id1_3_1_, post1_.is_deleted as is_delet2_3_1_, post1_.create_date as create_d3_3_1_, post1_.image_path as image_pa4_3_1_, post1_.text as text5_3_1_ from saver_saved savedposts0_ inner join HW15_One.tbl_post post1_ on savedposts0_.post_id=post1_.id where savedposts0_.account_id=?
+13:52:59,913 TRACE [org.hibernate.type.descriptor.sql.BasicBinder] - binding parameter [1] as [BIGINT] - [3]
+13:52:59,919 DEBUG [org.hibernate.SQL] - select savedposts0_.account_id as account_1_5_0_, savedposts0_.post_id as post_id2_5_0_, post1_.id as id1_3_1_, post1_.is_deleted as is_delet2_3_1_, post1_.create_date as create_d3_3_1_, post1_.image_path as image_pa4_3_1_, post1_.text as text5_3_1_ from saver_saved savedposts0_ inner join HW15_One.tbl_post post1_ on savedposts0_.post_id=post1_.id where savedposts0_.account_id=?
+13:52:59,920 TRACE [org.hibernate.type.descriptor.sql.BasicBinder] - binding parameter [1] as [BIGINT] - [2]
+13:52:59,929 DEBUG [org.hibernate.SQL] - select followings0_.follower_id as follower1_4_0_, followings0_.following_id as followin2_4_0_, account1_.id as id1_0_1_, account1_.is_deleted as is_delet2_0_1_, account1_.about_me as about_me3_0_1_, account1_.first_name as first_na4_0_1_, account1_.last_name as last_nam5_0_1_, account1_.password as password6_0_1_, account1_.username as username7_0_1_ from follower_following followings0_ inner join HW15_One.tbl_account account1_ on followings0_.following_id=account1_.id where followings0_.follower_id=?
+13:52:59,930 TRACE [org.hibernate.type.descriptor.sql.BasicBinder] - binding parameter [1] as [BIGINT] - [2]
+13:52:59,937 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_0_1_] : [BIGINT]) - [1]
+13:52:59,938 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([follower1_4_0_] : [BIGINT]) - [2]
+13:52:59,938 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([followin2_4_0_] : [BIGINT]) - [1]
+13:52:59,939 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_0_1_] : [BIGINT]) - [3]
+13:52:59,939 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([follower1_4_0_] : [BIGINT]) - [2]
+13:52:59,940 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([followin2_4_0_] : [BIGINT]) - [3]
+13:52:59,940 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_0_1_] : [BIGINT]) - [4]
+13:52:59,941 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([is_delet2_0_1_] : [BOOLEAN]) - [false]
+13:52:59,941 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([about_me3_0_1_] : [VARCHAR]) - [richest man you ever seen!]
+13:52:59,942 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([first_na4_0_1_] : [VARCHAR]) - [Ali]
+13:52:59,942 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([last_nam5_0_1_] : [VARCHAR]) - [Arefnejhad]
+13:52:59,943 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([password6_0_1_] : [VARCHAR]) - [$s0$41010$yAEw+029mSAFaKESTSemPA==$ykPOqGkfwYfZqMaTYZZM2JKNxcaz/fSb7Fy0tN0WgKI=]
+13:52:59,943 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([username7_0_1_] : [VARCHAR]) - [aliluxury]
+13:52:59,944 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([follower1_4_0_] : [BIGINT]) - [2]
+13:52:59,951 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([followin2_4_0_] : [BIGINT]) - [4]
+13:52:59,956 DEBUG [org.hibernate.SQL] - select savedposts0_.account_id as account_1_5_0_, savedposts0_.post_id as post_id2_5_0_, post1_.id as id1_3_1_, post1_.is_deleted as is_delet2_3_1_, post1_.create_date as create_d3_3_1_, post1_.image_path as image_pa4_3_1_, post1_.text as text5_3_1_ from saver_saved savedposts0_ inner join HW15_One.tbl_post post1_ on savedposts0_.post_id=post1_.id where savedposts0_.account_id=?
+13:52:59,957 TRACE [org.hibernate.type.descriptor.sql.BasicBinder] - binding parameter [1] as [BIGINT] - [4]
+13:52:59,962 DEBUG [org.hibernate.SQL] - select followers0_.following_id as followin2_4_0_, followers0_.follower_id as follower1_4_0_, account1_.id as id1_0_1_, account1_.is_deleted as is_delet2_0_1_, account1_.about_me as about_me3_0_1_, account1_.first_name as first_na4_0_1_, account1_.last_name as last_nam5_0_1_, account1_.password as password6_0_1_, account1_.username as username7_0_1_ from follower_following followers0_ inner join HW15_One.tbl_account account1_ on followers0_.follower_id=account1_.id where followers0_.following_id=?
+13:52:59,963 TRACE [org.hibernate.type.descriptor.sql.BasicBinder] - binding parameter [1] as [BIGINT] - [2]
+13:52:59,967 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_0_1_] : [BIGINT]) - [1]
+13:52:59,967 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([followin2_4_0_] : [BIGINT]) - [2]
+13:52:59,968 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([follower1_4_0_] : [BIGINT]) - [1]
+13:52:59,968 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_0_1_] : [BIGINT]) - [3]
+13:52:59,969 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([followin2_4_0_] : [BIGINT]) - [2]
+13:52:59,969 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([follower1_4_0_] : [BIGINT]) - [3]
+13:52:59,971 DEBUG [org.hibernate.SQL] - select posts0_.fk_account as fk_accou6_3_0_, posts0_.id as id1_3_0_, posts0_.id as id1_3_1_, posts0_.is_deleted as is_delet2_3_1_, posts0_.create_date as create_d3_3_1_, posts0_.image_path as image_pa4_3_1_, posts0_.text as text5_3_1_ from HW15_One.tbl_post posts0_ where posts0_.fk_account=?
+13:52:59,972 TRACE [org.hibernate.type.descriptor.sql.BasicBinder] - binding parameter [1] as [BIGINT] - [2]
+13:52:59,975 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_3_1_] : [BIGINT]) - [7]
+13:52:59,977 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([is_delet2_3_1_] : [BOOLEAN]) - [false]
+13:52:59,985 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([create_d3_3_1_] : [DATE]) - [2020-01-06]
+13:52:59,986 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([image_pa4_3_1_] : [VARCHAR]) - [upload/3.jpg]
+13:52:59,986 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([text5_3_1_] : [VARCHAR]) - [ccccccccccccccccccccccccccccccccc]
+13:52:59,987 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_accou6_3_0_] : [BIGINT]) - [2]
+13:52:59,988 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_3_0_] : [BIGINT]) - [7]
+13:52:59,997 DEBUG [org.hibernate.SQL] - select likes0_.fk_post as fk_post4_2_0_, likes0_.id as id1_2_0_, likes0_.id as id1_2_1_, likes0_.is_deleted as is_delet2_2_1_, likes0_.fk_liker_account as fk_liker3_2_1_, account1_.id as id1_0_2_, account1_.is_deleted as is_delet2_0_2_, account1_.about_me as about_me3_0_2_, account1_.first_name as first_na4_0_2_, account1_.last_name as last_nam5_0_2_, account1_.password as password6_0_2_, account1_.username as username7_0_2_ from HW15_One.tbl_like likes0_ inner join HW15_One.tbl_account account1_ on likes0_.fk_liker_account=account1_.id where likes0_.fk_post=?
+13:52:59,998 TRACE [org.hibernate.type.descriptor.sql.BasicBinder] - binding parameter [1] as [BIGINT] - [7]
+13:53:00,005 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_2_1_] : [BIGINT]) - [28]
+13:53:00,005 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_0_2_] : [BIGINT]) - [1]
+13:53:00,006 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([is_delet2_2_1_] : [BOOLEAN]) - [false]
+13:53:00,006 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_liker3_2_1_] : [BIGINT]) - [1]
+13:53:00,007 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_post4_2_0_] : [BIGINT]) - [7]
+13:53:00,008 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_2_0_] : [BIGINT]) - [28]
+13:53:00,009 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_2_1_] : [BIGINT]) - [29]
+13:53:00,009 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_0_2_] : [BIGINT]) - [3]
+13:53:00,011 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([is_delet2_2_1_] : [BOOLEAN]) - [false]
+13:53:00,012 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_liker3_2_1_] : [BIGINT]) - [3]
+13:53:00,012 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_post4_2_0_] : [BIGINT]) - [7]
+13:53:00,013 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_2_0_] : [BIGINT]) - [29]
+13:53:00,020 DEBUG [org.hibernate.SQL] - select comments0_.fk_post as fk_post6_1_0_, comments0_.id as id1_1_0_, comments0_.id as id1_1_1_, comments0_.is_deleted as is_delet2_1_1_, comments0_.create_date as create_d3_1_1_, comments0_.message as message4_1_1_, comments0_.fk_writer_account as fk_write5_1_1_, account1_.id as id1_0_2_, account1_.is_deleted as is_delet2_0_2_, account1_.about_me as about_me3_0_2_, account1_.first_name as first_na4_0_2_, account1_.last_name as last_nam5_0_2_, account1_.password as password6_0_2_, account1_.username as username7_0_2_ from HW15_One.tbl_comment comments0_ inner join HW15_One.tbl_account account1_ on comments0_.fk_writer_account=account1_.id where comments0_.fk_post=?
+13:53:00,022 TRACE [org.hibernate.type.descriptor.sql.BasicBinder] - binding parameter [1] as [BIGINT] - [7]
+13:53:00,041 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_1_1_] : [BIGINT]) - [17]
+13:53:00,041 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_0_2_] : [BIGINT]) - [1]
+13:53:00,042 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([is_delet2_1_1_] : [BOOLEAN]) - [false]
+13:53:00,044 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([create_d3_1_1_] : [DATE]) - [2020-01-06]
+13:53:00,045 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([message4_1_1_] : [VARCHAR]) - [wonderful wonderful]
+13:53:00,045 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_write5_1_1_] : [BIGINT]) - [1]
+13:53:00,046 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_post6_1_0_] : [BIGINT]) - [7]
+13:53:00,047 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_1_0_] : [BIGINT]) - [17]
+13:53:00,049 DEBUG [org.hibernate.SQL] - select followings0_.follower_id as follower1_4_0_, followings0_.following_id as followin2_4_0_, account1_.id as id1_0_1_, account1_.is_deleted as is_delet2_0_1_, account1_.about_me as about_me3_0_1_, account1_.first_name as first_na4_0_1_, account1_.last_name as last_nam5_0_1_, account1_.password as password6_0_1_, account1_.username as username7_0_1_ from follower_following followings0_ inner join HW15_One.tbl_account account1_ on followings0_.following_id=account1_.id where followings0_.follower_id=?
+13:53:00,052 TRACE [org.hibernate.type.descriptor.sql.BasicBinder] - binding parameter [1] as [BIGINT] - [3]
+13:53:00,055 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_0_1_] : [BIGINT]) - [1]
+13:53:00,056 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([follower1_4_0_] : [BIGINT]) - [3]
+13:53:00,056 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([followin2_4_0_] : [BIGINT]) - [1]
+13:53:00,057 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_0_1_] : [BIGINT]) - [2]
+13:53:00,058 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([follower1_4_0_] : [BIGINT]) - [3]
+13:53:00,058 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([followin2_4_0_] : [BIGINT]) - [2]
+13:53:00,059 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_0_1_] : [BIGINT]) - [4]
+13:53:00,060 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([follower1_4_0_] : [BIGINT]) - [3]
+13:53:00,060 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([followin2_4_0_] : [BIGINT]) - [4]
+13:53:00,064 DEBUG [org.hibernate.SQL] - select followers0_.following_id as followin2_4_0_, followers0_.follower_id as follower1_4_0_, account1_.id as id1_0_1_, account1_.is_deleted as is_delet2_0_1_, account1_.about_me as about_me3_0_1_, account1_.first_name as first_na4_0_1_, account1_.last_name as last_nam5_0_1_, account1_.password as password6_0_1_, account1_.username as username7_0_1_ from follower_following followers0_ inner join HW15_One.tbl_account account1_ on followers0_.follower_id=account1_.id where followers0_.following_id=?
+13:53:00,066 TRACE [org.hibernate.type.descriptor.sql.BasicBinder] - binding parameter [1] as [BIGINT] - [3]
+13:53:00,073 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_0_1_] : [BIGINT]) - [1]
+13:53:00,073 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([followin2_4_0_] : [BIGINT]) - [3]
+13:53:00,074 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([follower1_4_0_] : [BIGINT]) - [1]
+13:53:00,075 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_0_1_] : [BIGINT]) - [2]
+13:53:00,076 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([followin2_4_0_] : [BIGINT]) - [3]
+13:53:00,077 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([follower1_4_0_] : [BIGINT]) - [2]
+13:53:00,079 DEBUG [org.hibernate.SQL] - select posts0_.fk_account as fk_accou6_3_0_, posts0_.id as id1_3_0_, posts0_.id as id1_3_1_, posts0_.is_deleted as is_delet2_3_1_, posts0_.create_date as create_d3_3_1_, posts0_.image_path as image_pa4_3_1_, posts0_.text as text5_3_1_ from HW15_One.tbl_post posts0_ where posts0_.fk_account=?
+13:53:00,080 TRACE [org.hibernate.type.descriptor.sql.BasicBinder] - binding parameter [1] as [BIGINT] - [3]
+13:53:04,997 DEBUG [org.hibernate.SQL] - delete from follower_following where follower_id=?
+13:53:05,000 TRACE [org.hibernate.type.descriptor.sql.BasicBinder] - binding parameter [1] as [BIGINT] - [1]
+13:53:05,007 DEBUG [org.hibernate.SQL] - insert into follower_following (follower_id, following_id) values (?, ?)
+13:53:05,011 TRACE [org.hibernate.type.descriptor.sql.BasicBinder] - binding parameter [1] as [BIGINT] - [1]
+13:53:05,012 TRACE [org.hibernate.type.descriptor.sql.BasicBinder] - binding parameter [2] as [BIGINT] - [3]
+13:53:16,890 DEBUG [org.hibernate.SQL] - select account0_.id as id1_0_, account0_.is_deleted as is_delet2_0_, account0_.about_me as about_me3_0_, account0_.first_name as first_na4_0_, account0_.last_name as last_nam5_0_, account0_.password as password6_0_, account0_.username as username7_0_ from HW15_One.tbl_account account0_ where account0_.is_deleted=0 and account0_.username=?
+13:53:16,892 TRACE [org.hibernate.type.descriptor.sql.BasicBinder] - binding parameter [1] as [VARCHAR] - [mamalimomen]
+13:53:16,897 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_0_] : [BIGINT]) - [1]
+13:53:16,904 DEBUG [org.hibernate.SQL] - select followers0_.following_id as followin2_4_0_, followers0_.follower_id as follower1_4_0_, account1_.id as id1_0_1_, account1_.is_deleted as is_delet2_0_1_, account1_.about_me as about_me3_0_1_, account1_.first_name as first_na4_0_1_, account1_.last_name as last_nam5_0_1_, account1_.password as password6_0_1_, account1_.username as username7_0_1_ from follower_following followers0_ inner join HW15_One.tbl_account account1_ on followers0_.follower_id=account1_.id where followers0_.following_id=?
+13:53:16,905 TRACE [org.hibernate.type.descriptor.sql.BasicBinder] - binding parameter [1] as [BIGINT] - [1]
+13:53:16,909 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_0_1_] : [BIGINT]) - [2]
+13:53:16,909 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([followin2_4_0_] : [BIGINT]) - [1]
+13:53:16,910 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([follower1_4_0_] : [BIGINT]) - [2]
+13:53:16,910 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_0_1_] : [BIGINT]) - [3]
+13:53:16,911 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([followin2_4_0_] : [BIGINT]) - [1]
+13:53:16,911 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([follower1_4_0_] : [BIGINT]) - [3]
+13:53:16,912 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_0_1_] : [BIGINT]) - [4]
+13:53:16,912 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([followin2_4_0_] : [BIGINT]) - [1]
+13:53:16,913 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([follower1_4_0_] : [BIGINT]) - [4]
+13:53:16,914 DEBUG [org.hibernate.SQL] - select posts0_.fk_account as fk_accou6_3_0_, posts0_.id as id1_3_0_, posts0_.id as id1_3_1_, posts0_.is_deleted as is_delet2_3_1_, posts0_.create_date as create_d3_3_1_, posts0_.image_path as image_pa4_3_1_, posts0_.text as text5_3_1_ from HW15_One.tbl_post posts0_ where posts0_.fk_account=?
+13:53:16,915 TRACE [org.hibernate.type.descriptor.sql.BasicBinder] - binding parameter [1] as [BIGINT] - [1]
+13:53:16,918 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_3_1_] : [BIGINT]) - [5]
+13:53:16,918 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([is_delet2_3_1_] : [BOOLEAN]) - [false]
+13:53:16,919 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([create_d3_3_1_] : [DATE]) - [2019-10-23]
+13:53:16,919 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([image_pa4_3_1_] : [VARCHAR]) - [upload/1.jpg]
+13:53:16,920 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([text5_3_1_] : [VARCHAR]) - [aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa]
+13:53:16,920 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_accou6_3_0_] : [BIGINT]) - [1]
+13:53:16,921 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_3_0_] : [BIGINT]) - [5]
+13:53:16,921 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_3_1_] : [BIGINT]) - [6]
+13:53:16,922 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([is_delet2_3_1_] : [BOOLEAN]) - [false]
+13:53:16,923 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([create_d3_3_1_] : [DATE]) - [2020-01-06]
+13:53:16,923 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([image_pa4_3_1_] : [VARCHAR]) - [upload/2.jpg]
+13:53:16,924 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([text5_3_1_] : [VARCHAR]) - [bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb]
+13:53:16,924 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_accou6_3_0_] : [BIGINT]) - [1]
+13:53:16,925 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_3_0_] : [BIGINT]) - [6]
+13:53:16,930 DEBUG [org.hibernate.SQL] - select likes0_.fk_post as fk_post4_2_0_, likes0_.id as id1_2_0_, likes0_.id as id1_2_1_, likes0_.is_deleted as is_delet2_2_1_, likes0_.fk_liker_account as fk_liker3_2_1_, account1_.id as id1_0_2_, account1_.is_deleted as is_delet2_0_2_, account1_.about_me as about_me3_0_2_, account1_.first_name as first_na4_0_2_, account1_.last_name as last_nam5_0_2_, account1_.password as password6_0_2_, account1_.username as username7_0_2_ from HW15_One.tbl_like likes0_ inner join HW15_One.tbl_account account1_ on likes0_.fk_liker_account=account1_.id where likes0_.fk_post=?
+13:53:16,932 TRACE [org.hibernate.type.descriptor.sql.BasicBinder] - binding parameter [1] as [BIGINT] - [6]
+13:53:16,935 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_2_1_] : [BIGINT]) - [26]
+13:53:16,936 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_0_2_] : [BIGINT]) - [2]
+13:53:16,936 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([is_delet2_2_1_] : [BOOLEAN]) - [false]
+13:53:16,936 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_liker3_2_1_] : [BIGINT]) - [2]
+13:53:16,937 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_post4_2_0_] : [BIGINT]) - [6]
+13:53:16,937 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_2_0_] : [BIGINT]) - [26]
+13:53:16,938 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_2_1_] : [BIGINT]) - [27]
+13:53:16,938 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_0_2_] : [BIGINT]) - [3]
+13:53:16,939 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([is_delet2_2_1_] : [BOOLEAN]) - [false]
+13:53:16,939 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_liker3_2_1_] : [BIGINT]) - [3]
+13:53:16,939 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_post4_2_0_] : [BIGINT]) - [6]
+13:53:16,940 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_2_0_] : [BIGINT]) - [27]
+13:53:16,942 DEBUG [org.hibernate.SQL] - select comments0_.fk_post as fk_post6_1_0_, comments0_.id as id1_1_0_, comments0_.id as id1_1_1_, comments0_.is_deleted as is_delet2_1_1_, comments0_.create_date as create_d3_1_1_, comments0_.message as message4_1_1_, comments0_.fk_writer_account as fk_write5_1_1_, account1_.id as id1_0_2_, account1_.is_deleted as is_delet2_0_2_, account1_.about_me as about_me3_0_2_, account1_.first_name as first_na4_0_2_, account1_.last_name as last_nam5_0_2_, account1_.password as password6_0_2_, account1_.username as username7_0_2_ from HW15_One.tbl_comment comments0_ inner join HW15_One.tbl_account account1_ on comments0_.fk_writer_account=account1_.id where comments0_.fk_post=?
+13:53:16,943 TRACE [org.hibernate.type.descriptor.sql.BasicBinder] - binding parameter [1] as [BIGINT] - [6]
+13:53:16,948 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_1_1_] : [BIGINT]) - [15]
+13:53:16,948 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_0_2_] : [BIGINT]) - [4]
+13:53:16,949 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([is_delet2_1_1_] : [BOOLEAN]) - [false]
+13:53:16,950 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([create_d3_1_1_] : [DATE]) - [2020-01-06]
+13:53:16,950 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([message4_1_1_] : [VARCHAR]) - [better better]
+13:53:16,950 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_write5_1_1_] : [BIGINT]) - [4]
+13:53:16,951 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_post6_1_0_] : [BIGINT]) - [6]
+13:53:16,951 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_1_0_] : [BIGINT]) - [15]
+13:53:16,952 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_1_1_] : [BIGINT]) - [16]
+13:53:16,952 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_0_2_] : [BIGINT]) - [2]
+13:53:16,953 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([is_delet2_1_1_] : [BOOLEAN]) - [false]
+13:53:16,953 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([create_d3_1_1_] : [DATE]) - [2020-01-07]
+13:53:16,954 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([message4_1_1_] : [VARCHAR]) - [awsome awsome]
+13:53:16,954 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_write5_1_1_] : [BIGINT]) - [2]
+13:53:16,955 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_post6_1_0_] : [BIGINT]) - [6]
+13:53:16,955 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_1_0_] : [BIGINT]) - [16]
+13:53:16,957 DEBUG [org.hibernate.SQL] - select likes0_.fk_post as fk_post4_2_0_, likes0_.id as id1_2_0_, likes0_.id as id1_2_1_, likes0_.is_deleted as is_delet2_2_1_, likes0_.fk_liker_account as fk_liker3_2_1_, account1_.id as id1_0_2_, account1_.is_deleted as is_delet2_0_2_, account1_.about_me as about_me3_0_2_, account1_.first_name as first_na4_0_2_, account1_.last_name as last_nam5_0_2_, account1_.password as password6_0_2_, account1_.username as username7_0_2_ from HW15_One.tbl_like likes0_ inner join HW15_One.tbl_account account1_ on likes0_.fk_liker_account=account1_.id where likes0_.fk_post=?
+13:53:16,958 TRACE [org.hibernate.type.descriptor.sql.BasicBinder] - binding parameter [1] as [BIGINT] - [5]
+13:53:16,964 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_2_1_] : [BIGINT]) - [23]
+13:53:16,964 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_0_2_] : [BIGINT]) - [2]
+13:53:16,965 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([is_delet2_2_1_] : [BOOLEAN]) - [false]
+13:53:16,965 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_liker3_2_1_] : [BIGINT]) - [2]
+13:53:16,965 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_post4_2_0_] : [BIGINT]) - [5]
+13:53:16,966 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_2_0_] : [BIGINT]) - [23]
+13:53:16,966 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_2_1_] : [BIGINT]) - [24]
+13:53:16,966 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_0_2_] : [BIGINT]) - [3]
+13:53:16,967 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([is_delet2_2_1_] : [BOOLEAN]) - [false]
+13:53:16,967 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_liker3_2_1_] : [BIGINT]) - [3]
+13:53:16,968 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_post4_2_0_] : [BIGINT]) - [5]
+13:53:16,968 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_2_0_] : [BIGINT]) - [24]
+13:53:16,969 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_2_1_] : [BIGINT]) - [25]
+13:53:16,969 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_0_2_] : [BIGINT]) - [4]
+13:53:16,970 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([is_delet2_2_1_] : [BOOLEAN]) - [false]
+13:53:16,970 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_liker3_2_1_] : [BIGINT]) - [4]
+13:53:16,971 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_post4_2_0_] : [BIGINT]) - [5]
+13:53:16,971 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_2_0_] : [BIGINT]) - [25]
+13:53:16,973 DEBUG [org.hibernate.SQL] - select comments0_.fk_post as fk_post6_1_0_, comments0_.id as id1_1_0_, comments0_.id as id1_1_1_, comments0_.is_deleted as is_delet2_1_1_, comments0_.create_date as create_d3_1_1_, comments0_.message as message4_1_1_, comments0_.fk_writer_account as fk_write5_1_1_, account1_.id as id1_0_2_, account1_.is_deleted as is_delet2_0_2_, account1_.about_me as about_me3_0_2_, account1_.first_name as first_na4_0_2_, account1_.last_name as last_nam5_0_2_, account1_.password as password6_0_2_, account1_.username as username7_0_2_ from HW15_One.tbl_comment comments0_ inner join HW15_One.tbl_account account1_ on comments0_.fk_writer_account=account1_.id where comments0_.fk_post=?
+13:53:16,974 TRACE [org.hibernate.type.descriptor.sql.BasicBinder] - binding parameter [1] as [BIGINT] - [5]
+13:53:16,978 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_1_1_] : [BIGINT]) - [12]
+13:53:16,979 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_0_2_] : [BIGINT]) - [2]
+13:53:16,979 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([is_delet2_1_1_] : [BOOLEAN]) - [false]
+13:53:16,980 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([create_d3_1_1_] : [DATE]) - [2019-10-24]
+13:53:16,980 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([message4_1_1_] : [VARCHAR]) - [good good good]
+13:53:16,981 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_write5_1_1_] : [BIGINT]) - [2]
+13:53:16,981 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_post6_1_0_] : [BIGINT]) - [5]
+13:53:16,982 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_1_0_] : [BIGINT]) - [12]
+13:53:16,983 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_1_1_] : [BIGINT]) - [13]
+13:53:16,983 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_0_2_] : [BIGINT]) - [3]
+13:53:16,983 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([is_delet2_1_1_] : [BOOLEAN]) - [false]
+13:53:16,985 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([create_d3_1_1_] : [DATE]) - [2019-10-24]
+13:53:16,986 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([message4_1_1_] : [VARCHAR]) - [nice nice nice]
+13:53:16,986 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_write5_1_1_] : [BIGINT]) - [3]
+13:53:16,987 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_post6_1_0_] : [BIGINT]) - [5]
+13:53:16,987 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_1_0_] : [BIGINT]) - [13]
+13:53:16,987 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_1_1_] : [BIGINT]) - [14]
+13:53:16,988 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_0_2_] : [BIGINT]) - [4]
+13:53:16,988 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([is_delet2_1_1_] : [BOOLEAN]) - [false]
+13:53:16,988 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([create_d3_1_1_] : [DATE]) - [2019-10-25]
+13:53:16,989 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([message4_1_1_] : [VARCHAR]) - [bad bad bad]
+13:53:16,989 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_write5_1_1_] : [BIGINT]) - [4]
+13:53:16,989 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_post6_1_0_] : [BIGINT]) - [5]
+13:53:16,990 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_1_0_] : [BIGINT]) - [14]
+13:53:16,990 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_1_1_] : [BIGINT]) - [36]
+13:53:16,990 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_0_2_] : [BIGINT]) - [4]
+13:53:16,991 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([is_delet2_1_1_] : [BOOLEAN]) - [false]
+13:53:16,991 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([create_d3_1_1_] : [DATE]) - [2019-10-25]
+13:53:16,992 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([message4_1_1_] : [VARCHAR]) - [worse]
+13:53:16,992 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_write5_1_1_] : [BIGINT]) - [4]
+13:53:16,992 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([fk_post6_1_0_] : [BIGINT]) - [5]
+13:53:16,993 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_1_0_] : [BIGINT]) - [36]
+13:53:27,147 DEBUG [org.hibernate.SQL] - select account0_.id as id1_0_, account0_.is_deleted as is_delet2_0_, account0_.about_me as about_me3_0_, account0_.first_name as first_na4_0_, account0_.last_name as last_nam5_0_, account0_.password as password6_0_, account0_.username as username7_0_ from HW15_One.tbl_account account0_ where account0_.is_deleted=0 and account0_.username=?
+13:53:27,150 TRACE [org.hibernate.type.descriptor.sql.BasicBinder] - binding parameter [1] as [VARCHAR] - [mahdimomen]
+13:53:27,152 TRACE [org.hibernate.type.descriptor.sql.BasicExtractor] - extracted value ([id1_0_] : [BIGINT]) - [2]
+13:55:45,845 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] - Session Metrics {
+    4054149 nanoseconds spent acquiring 5 JDBC connections;
+    3167920 nanoseconds spent releasing 5 JDBC connections;
+    56163988 nanoseconds spent preparing 24 JDBC statements;
+    186742734 nanoseconds spent executing 24 JDBC statements;
     0 nanoseconds spent executing 0 JDBC batches;
     0 nanoseconds spent performing 0 L2C puts;
     0 nanoseconds spent performing 0 L2C hits;
     0 nanoseconds spent performing 0 L2C misses;
-    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    220781800 nanoseconds spent executing 2 flushes (flushing a total of 16 entities and 36 collections);
     0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
 }
-00:39:52,667 INFO  [org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl] - HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
-00:39:52,670 DEBUG [org.hibernate.SQL] - alter table HW15_One.tbl_comment drop foreign key FKc9jbrsjv5t2rh0pgfyeg0v6ah
-00:39:52,672 INFO  [org.hibernate.orm.connections.access] - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@2c490d35] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
-00:39:52,788 DEBUG [org.hibernate.SQL] - alter table HW15_One.tbl_comment drop foreign key FKlijfoqww9kni45ay4va3pktsp
-00:39:52,842 DEBUG [org.hibernate.SQL] - alter table HW15_One.tbl_like drop foreign key FK1cmbiit0rv1bqc4tcstc2euxp
-00:39:52,871 DEBUG [org.hibernate.SQL] - alter table HW15_One.tbl_like drop foreign key FKf3jkcoh4cegoljumhfn3vx7df
-00:39:52,945 DEBUG [org.hibernate.SQL] - alter table HW15_One.tbl_post drop foreign key FK2rrfo89uhrve5r94w910mfb0l
-00:39:53,010 DEBUG [org.hibernate.SQL] - drop table if exists HW15_One.tbl_account
-00:39:53,150 ERROR [org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl] - HHH000478: Unsuccessful: drop table if exists HW15_One.tbl_account
-00:39:53,150 DEBUG [org.hibernate.SQL] - drop table if exists HW15_One.tbl_comment
-00:39:53,295 DEBUG [org.hibernate.SQL] - drop table if exists HW15_One.tbl_like
-00:39:53,472 DEBUG [org.hibernate.SQL] - drop table if exists HW15_One.tbl_post
-00:39:53,588 ERROR [org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl] - HHH000478: Unsuccessful: drop table if exists HW15_One.tbl_post
-00:39:53,588 DEBUG [org.hibernate.SQL] - alter table follower_following drop foreign key FK4h29uaom1kwktrh5y06r5w1mj
-00:39:53,640 DEBUG [org.hibernate.SQL] - alter table follower_following drop foreign key FK7krl1j630b8t2kpdvn455jtqn
-00:39:53,694 DEBUG [org.hibernate.SQL] - alter table saver_saved drop foreign key FKsbesy82g9lrth9cgvbxhktrif
-00:39:53,750 DEBUG [org.hibernate.SQL] - alter table saver_saved drop foreign key FKbk1o6eel1dp8q4yjvry6mughf
-00:39:53,791 DEBUG [org.hibernate.SQL] - drop table if exists follower_following
-00:39:53,981 DEBUG [org.hibernate.SQL] - drop table if exists saver_saved
-00:39:54,392 INFO  [org.hibernate.orm.connections.pooling] - HHH10001008: Cleaning up connection pool [jdbc:mysql://127.0.0.1:3306/HW15_One?createDatabaseIfNotExist=true&autoReconnection=true&characterEncoding=UTF-8&userSSL=false]
+13:55:45,870 INFO  [org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl] - HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+13:55:45,872 DEBUG [org.hibernate.SQL] - alter table HW15_One.tbl_comment drop foreign key FKc9jbrsjv5t2rh0pgfyeg0v6ah
+13:55:45,874 INFO  [org.hibernate.orm.connections.access] - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@7012499d] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+13:55:45,938 DEBUG [org.hibernate.SQL] - alter table HW15_One.tbl_comment drop foreign key FKlijfoqww9kni45ay4va3pktsp
+13:55:45,977 DEBUG [org.hibernate.SQL] - alter table HW15_One.tbl_like drop foreign key FK1cmbiit0rv1bqc4tcstc2euxp
+13:55:46,008 DEBUG [org.hibernate.SQL] - alter table HW15_One.tbl_like drop foreign key FKf3jkcoh4cegoljumhfn3vx7df
+13:55:46,044 DEBUG [org.hibernate.SQL] - alter table HW15_One.tbl_post drop foreign key FK2rrfo89uhrve5r94w910mfb0l
+13:55:46,100 DEBUG [org.hibernate.SQL] - drop table if exists HW15_One.tbl_account
+13:55:46,205 ERROR [org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl] - HHH000478: Unsuccessful: drop table if exists HW15_One.tbl_account
+13:55:46,205 DEBUG [org.hibernate.SQL] - drop table if exists HW15_One.tbl_comment
+13:55:46,418 DEBUG [org.hibernate.SQL] - drop table if exists HW15_One.tbl_like
+13:55:46,540 DEBUG [org.hibernate.SQL] - drop table if exists HW15_One.tbl_post
+13:55:46,628 ERROR [org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl] - HHH000478: Unsuccessful: drop table if exists HW15_One.tbl_post
+13:55:46,629 DEBUG [org.hibernate.SQL] - alter table follower_following drop foreign key FK4h29uaom1kwktrh5y06r5w1mj
+13:55:46,661 DEBUG [org.hibernate.SQL] - alter table follower_following drop foreign key FK7krl1j630b8t2kpdvn455jtqn
+13:55:46,697 DEBUG [org.hibernate.SQL] - alter table saver_saved drop foreign key FKsbesy82g9lrth9cgvbxhktrif
+13:55:46,728 DEBUG [org.hibernate.SQL] - alter table saver_saved drop foreign key FKbk1o6eel1dp8q4yjvry6mughf
+13:55:46,764 DEBUG [org.hibernate.SQL] - drop table if exists follower_following
+13:55:46,906 DEBUG [org.hibernate.SQL] - drop table if exists saver_saved
+13:55:47,051 INFO  [org.hibernate.orm.connections.pooling] - HHH10001008: Cleaning up connection pool [jdbc:mysql://127.0.0.1:3306/HW15_One?createDatabaseIfNotExist=true&autoReconnection=true&characterEncoding=UTF-8&userSSL=false]
