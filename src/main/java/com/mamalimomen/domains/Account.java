@@ -35,7 +35,7 @@ public final class Account extends BaseEntity implements Comparable<Account> {
             uniqueConstraints = {@UniqueConstraint(name = "unique_saver_saved", columnNames = {"account_id", "post_id"})})
     private List<Post> savedPosts = new ArrayList<>();
 
-    @ManyToMany(cascade = CascadeType.MERGE)
+    @ManyToMany
     @JoinTable(name = "follower_following", joinColumns = {@JoinColumn(name = "follower_id")}, inverseJoinColumns = {@JoinColumn(name = "following_id")},
             uniqueConstraints = {@UniqueConstraint(name = "unique_follower_following", columnNames = {"follower_id", "following_id"})})
     private List<Account> followings = new ArrayList<>();
