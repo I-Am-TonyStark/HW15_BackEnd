@@ -16,7 +16,7 @@
 <div class="main-block">
     <h1>Login</h1>
     <form name="login" method="post" action="/HW15_BackEnd_war/login">
-        <hr>
+            <hr>
         <label id="icon" for="username"><i class="fas fa-user"></i></label>
         <input type="text" name="username" id="username" placeholder="Username" required/>
         <label id="icon" for="password"><i class="fas fa-unlock-alt"></i></label>
